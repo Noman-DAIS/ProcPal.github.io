@@ -1,48 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DAIS Procurement Portal - Sign In</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DAIS Procurement Portal – Sign In</title>
+
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Dubai font -->
   <link href="https://fonts.googleapis.com/css2?family=Dubai:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: 'Dubai', sans-serif;
-      background-color: #191919; /* Shale Shadow */
-      color: #F9F3D9; /* Gypsum Glow */
+    :root{
+      --shale:#191919; --mist:#114036; --teal:#16AF8E; --citrine:#F9B73F; --gypsum:#F9F3D9;
+      --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.35);
     }
-    .card {
-      background-color: #F9F3D9;
-      border-radius: 12px;
+    html,body{height:100%;}
+    body{
+      font-family:'Dubai',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;
+      background:
+        radial-gradient(1200px 600px at 10% 10%, rgba(22,175,142,.08), transparent 60%),
+        radial-gradient(1000px 500px at 90% 80%, rgba(249,183,63,.10), transparent 60%),
+        linear-gradient(180deg,#1a1a1a 0%, #0f0f0f 100%);
+      color:var(--gypsum);
     }
-    .btn-dais {
-      background-color: #16AF8E; /* Teal Core */
-      color: #fff;
-      font-weight: bold;
-      text-transform: uppercase;
+    .shell{
+      max-width: 1060px;
+      margin: 6vh auto;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 32px;
+      padding: 16px;
     }
-    .btn-dais:hover {
-      background-color: #114036; /* Malachite Mist */
+    @media (max-width: 992px){ .shell{ grid-template-columns: 1fr; margin: 3vh auto; } }
+
+    .panel{
+      position: relative;
+      background: rgba(249,243,217,.08); /* glass */
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      border: 1px solid rgba(249,183,63,.22);
+      box-shadow: var(--shadow);
+      overflow: hidden;
     }
+    .panel:before{
+      content:"";
+      position:absolute; inset:0; pointer-events:none;
+      background: linear-gradient(135deg, rgba(249,183,63,.18), transparent 40% 60%, rgba(22,175,142,.15));
+      mix-blend-mode: overlay;
+    }
+
+    .brand-block{
+      padding: 48px 44px;
+      display:flex; flex-direction:column; justify-content:space-between; min-height: 520px;
+    }
+    .brand-badge{
+      display:flex; align-items:center; gap:12px;
+      letter-spacing:.04em; text-transform:uppercase; font-weight:700; color: var(--citrine);
+    }
+    .brand-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 10px rgba(22,175,142,.8);}
+    .brand-title{font-weight:700; font-size: clamp(28px, 3.2vw, 38px); color:#fff; line-height:1.15;}
+    .brand-sub{color: rgba(249,243,217,.85);}
+    .brand-line{
+      height:1px; background: linear-gradient(90deg, transparent, var(--citrine), transparent);
+      margin:24px 0;
+    }
+
+    .auth{
+      padding: 40px 38px; background: rgba(249,243,217,.12);
+    }
+    .auth h5{color:var(--citrine); font-weight:700; letter-spacing:.02em; margin-bottom:14px;}
+    .form-label{color:#eae5cf;}
+    .form-control{
+      background:#141414; border:1px solid rgba(249,243,217,.2); color:#fff;
+      border-radius:12px; padding:12px 14px;
+    }
+    .form-control:focus{border-color:var(--teal); box-shadow:0 0 0 .2rem rgba(22,175,142,.2);}
+
+    .btn-primary{
+      --bs-btn-bg: var(--teal); --bs-btn-border-color: var(--teal);
+      --bs-btn-hover-bg: var(--mist); --bs-btn-hover-border-color: var(--mist);
+      --bs-btn-active-bg: var(--mist); --bs-btn-active-border-color: var(--mist);
+      text-transform: uppercase; font-weight:700; letter-spacing:.03em; border-radius:12px;
+    }
+
+    .legal{opacity:.7; font-size:.9rem;}
   </style>
 </head>
-<body class="d-flex align-items-center justify-content-center vh-100">
+<body>
+  <main class="shell">
+    <!-- Left: Brand / Message -->
+    <section class="panel brand-block">
+      <div>
+        <div class="brand-badge"><span class="dot"></span> Deployable AI • DAIS</div>
+        <h1 class="brand-title mt-3">Strategic Procurement Portal</h1>
+        <p class="brand-sub mt-2">Your Enterprise A.I. — elegant analytics, supplier intelligence, and proactive alerts for high-stakes decisions.</p>
+        <div class="brand-line"></div>
+        <ul class="mb-0" style="opacity:.9">
+          <li>Spend visibility & supplier risk at a glance</li>
+          <li>Conversational insights with instant visuals</li>
+          <li>Executive-ready reports and alerts</li>
+        </ul>
+      </div>
+      <div class="legal">© Deployable Artificial Intelligence Consultancies LLC</div>
+    </section>
 
-  <div class="card shadow p-4" style="max-width: 400px; width: 100%;">
-    <h3 class="text-center mb-3 text-dark">DAIS Procurement Portal</h3>
-    <form onsubmit="event.preventDefault(); window.location.href='portal.html';">
-      <div class="mb-3">
-        <label for="email" class="form-label text-dark">Email address</label>
-        <input type="email" class="form-control" id="email" required>
+    <!-- Right: Auth -->
+    <section class="panel auth">
+      <h5>Sign in</h5>
+      <form onsubmit="event.preventDefault(); window.location.href='portal.html';">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input id="email" type="email" class="form-control" placeholder="name@company.com" required>
+        </div>
+        <div class="mb-2">
+          <label for="password" class="form-label">Password</label>
+          <input id="password" type="password" class="form-control" placeholder="••••••••" required>
+        </div>
+        <div class="d-flex justify-content-between align-items-center my-3">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="remember">
+            <label class="form-check-label" for="remember" style="opacity:.85">Remember me</label>
+          </div>
+          <a href="#" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover" style="color:var(--citrine)">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 py-2">Enter Portal</button>
+      </form>
+      <div class="mt-4 small" style="opacity:.8">
+        By continuing you agree to our <a href="#" class="link-light">Terms</a> and <a href="#" class="link-light">Privacy Policy</a>.
       </div>
-      <div class="mb-3">
-        <label for="password" class="form-label text-dark">Password</label>
-        <input type="password" class="form-control" id="password" required>
-      </div>
-      <button type="submit" class="btn btn-dais w-100">Sign In</button>
-    </form>
-  </div>
+    </section>
+  </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
