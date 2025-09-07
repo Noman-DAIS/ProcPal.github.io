@@ -13,143 +13,94 @@
   <link href="https://fonts.googleapis.com/css2?family=Dubai:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --shale:#191919; --mist:#114036; --teal:#16AF8E; --citrine:#F9B73F; --gypsum:#F9F3D9;
-      --surface: rgba(249,243,217,.07); --stroke: rgba(249,183,63,.22);
-      --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.35);
+    :root {
+      --shale:#191919; --mist:#114036; --teal:#16AF8E;
+      --citrine:#F9B73F; --gypsum:#F9F3D9;
+      --sidebar-width: 240px; --sidebar-collapsed: 80px;
     }
-    html,body{height:100%;}
-    body{
-      font-family:'Dubai',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;
-      background:
-        radial-gradient(1200px 600px at 6% 10%, rgba(22,175,142,.08), transparent 60%),
-        radial-gradient(1000px 500px at 95% 85%, rgba(249,183,63,.10), transparent 60%),
-        linear-gradient(180deg,#1a1a1a 0%, #0f0f0f 100%);
-      color:var(--gypsum);
+    body {
+      font-family:'Dubai', sans-serif;
+      background: linear-gradient(180deg,#1a1a1a 0%, #0f0f0f 100%);
+      color: var(--gypsum);
+    }
+    /* Layout */
+    .wrapper { display:flex; min-height:100vh; }
+    .sidebar {
+      width: var(--sidebar-width);
+      background: rgba(25,25,25,.95);
+      border-right: 1px solid rgba(249,183,63,.25);
+      transition: width .25s ease;
+      display:flex; flex-direction:column; align-items:center;
+    }
+    .sidebar.collapsed { width: var(--sidebar-collapsed); }
+    .sidebar .brand {
+      width:100%; text-align:center; padding:20px 0;
+      border-bottom:1px solid rgba(255,255,255,.1);
+    }
+    .sidebar .brand img { max-height:40px; transition:opacity .25s ease; }
+    .sidebar.collapsed .brand img { opacity:.8; }
+
+    .nav-links {
+      flex-grow:1; width:100%; padding-top:20px;
+    }
+    .nav-links a {
+      display:flex; align-items:center; gap:12px;
+      padding:12px 18px; margin:6px 12px;
+      color:var(--gypsum); text-decoration:none; border-radius:12px;
+      transition:background .2s ease;
+    }
+    .nav-links a:hover { background:rgba(22,175,142,.12); }
+    .nav-links a.active {
+      background:linear-gradient(135deg,var(--teal),var(--mist));
+      color:#fff; font-weight:700;
+    }
+    .nav-links i { font-size:1.2rem; }
+    .sidebar.collapsed .nav-links a span { display:none; }
+
+    .sidebar .toggle {
+      padding:12px; margin:12px auto;
+      border-top:1px solid rgba(255,255,255,.1);
+      cursor:pointer; color:var(--citrine);
     }
 
-    /* NAVBAR */
-    .navbar{
-      background: rgba(25,25,25,.85);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--stroke);
+    /* Main content */
+    .main { flex-grow:1; padding:20px; }
+    .surface {
+      background: rgba(249,243,217,.07);
+      border:1px solid rgba(249,183,63,.25);
+      border-radius:14px; padding:20px; margin-bottom:20px;
     }
-    .navbar-brand{
-      color: var(--citrine) !important; font-weight:700; letter-spacing:.02em;
-    }
-    .brand-divider{
-      width: 1px; height: 24px; background: linear-gradient(180deg, transparent, var(--citrine), transparent);
-      margin: 0 12px;
-    }
-    .btn-icon{
-      color:#fff; border:1px solid rgba(255,255,255,.15); border-radius:12px;
-      background: rgba(255,255,255,.03);
-    }
-    .btn-icon:hover{ border-color: var(--teal); color:#fff; }
-
-    /* HEADER STRIP */
-    .header{
-      padding: 18px 0 0;
-    }
-    .kpi{
-      display:flex; align-items:center; gap:12px; padding:14px 16px;
-      background: var(--surface); border:1px solid var(--stroke); border-radius:14px;
-    }
-    .kpi .value{font-weight:700; color:#fff; font-size:1.15rem;}
-    .kpi .label{opacity:.8; font-size:.9rem;}
-
-    /* TABS */
-    .nav-pills .nav-link{
-      color:#dedaC6; border:1px solid transparent; border-radius:12px; padding:.6rem 1rem;
-      background: rgba(255,255,255,.03);
-    }
-    .nav-pills .nav-link.active{
-      color:#fff; background: linear-gradient(135deg, var(--teal), var(--mist)); border-color: transparent;
-      box-shadow: 0 6px 20px rgba(22,175,142,.25);
-    }
-
-    /* SURFACE / CARDS */
-    .surface{
-      background: var(--surface); border: 1px solid var(--stroke);
-      border-radius: var(--radius); box-shadow: var(--shadow);
-    }
-    .surface-header{
-      padding: 16px 18px; border-bottom:1px solid rgba(255,255,255,.08);
-      display:flex; align-items:center; justify-content:space-between;
-    }
-    .surface-body{ padding: 16px; }
-
-    /* CHAT */
-    .chat-wrap{height: 460px; overflow:auto; padding-right:6px;}
-    .bubble{
-      max-width: 78%; padding:12px 14px; border-radius:14px; margin-bottom:10px;
-      background:#141414; border:1px solid rgba(255,255,255,.12); color:#f3f3f3;
-    }
-    .bubble.me{
-      margin-left:auto; background: rgba(22,175,142,.12); border-color: rgba(22,175,142,.35);
-    }
-    .bubble small{opacity:.75;}
-    .vis-wrap{
-      height: 460px; overflow:auto; display:flex; align-items:center; justify-content:center;
-      background: rgba(255,255,255,.04); border:1px dashed rgba(255,255,255,.18); border-radius:14px;
-      color: rgba(249,243,217,.75);
-    }
-
-    /* SAVED */
-    .card{
-      background: rgba(249,243,217,.08); border:1px solid var(--stroke); border-radius:16px;
-      overflow:hidden;
-    }
-    .thumb{
-      height:160px; background:
-        linear-gradient(135deg, rgba(22,175,142,.25), rgba(249,183,63,.25)),
-        repeating-linear-gradient(90deg, rgba(255,255,255,.08) 0 2px, transparent 2px 4px);
-    }
-    .card-title{font-weight:700;}
-    .card .meta{opacity:.75; font-size:.9rem;}
-
-    /* TABLE / DATA VIEWER */
-    .form-select{background:#141414; color:#fff; border:1px solid rgba(255,255,255,.2); border-radius:12px;}
-    .table{
-      --bs-table-color:#eae5cf; --bs-table-bg: transparent; --bs-table-border-color: rgba(255,255,255,.12);
-    }
-    thead th{
-      background: linear-gradient(135deg, var(--mist), var(--teal)); color:#fff; border:0 !important;
-      position: sticky; top:0; z-index:1;
-    }
-    tbody tr{transition: background .15s ease;}
-    tbody tr:hover{ background: rgba(255,255,255,.04); }
-
-    /* OFFCANVAS ALERTS */
-    .offcanvas{background: rgba(25,25,25,.95); color:#fff; border-left:1px solid var(--stroke); backdrop-filter: blur(10px);}
-    .list-group-item{
-      background: transparent; color:#eae5cf; border-color: rgba(255,255,255,.1);
-    }
-    .badge-alert{background: var(--citrine); color:#191919; font-weight:700;}
-
-    /* UTIL */
-    .accent-line{height:1px; background: linear-gradient(90deg, transparent, var(--citrine), transparent);}
-    .muted{opacity:.85;}
   </style>
 </head>
 <body>
-  <!-- NAV -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-xxl">
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <i class="bi bi-diagram-3-fill me-2"></i> DAIS Procurement
-      </a>
-      <div class="brand-divider d-none d-lg-block"></div>
-      <span class="d-none d-lg-inline muted">Your Enterprise A.I.</span>
+<div class="wrapper">
+  <!-- Sidebar -->
+  <nav id="sidebar" class="sidebar">
+    <div class="brand">
+      <img src="logo.png" alt="DAIS Logo">
+    </div>
+    <div class="nav-links">
+      <a href="#chat" class="active" data-bs-toggle="tab"><i class="bi bi-chat-dots"></i><span>Chat</span></a>
+      <a href="#saved" data-bs-toggle="tab"><i class="bi bi-bookmark-check"></i><span>Saved</span></a>
+      <a href="#data" data-bs-toggle="tab"><i class="bi bi-table"></i><span>Data Viewer</span></a>
+    </div>
+    <div class="toggle text-center">
+      <i class="bi bi-chevron-double-left" id="collapseBtn"></i>
+    </div>
+  </nav>
 
-      <div class="ms-auto d-flex align-items-center gap-2">
-        <button class="btn btn-sm btn-icon" data-bs-toggle="offcanvas" data-bs-target="#alertsCanvas" aria-controls="alertsCanvas" title="Alerts">
+  <!-- Main -->
+  <div class="main">
+    <!-- Topbar -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h4 class="mb-0 text-warning">DAIS Procurement Portal</h4>
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn btn-sm btn-outline-light position-relative" data-bs-toggle="offcanvas" data-bs-target="#alertsCanvas">
           <i class="bi bi-bell"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark">3</span>
         </button>
         <div class="dropdown">
-          <button class="btn btn-sm btn-icon dropdown-toggle" data-bs-toggle="dropdown">
-            <i class="bi bi-person-circle me-1"></i> User
-          </button>
+          <button class="btn btn-sm btn-outline-light dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person-circle"></i> User</button>
           <ul class="dropdown-menu dropdown-menu-end">
             <li><a class="dropdown-item" href="#">Profile</a></li>
             <li><a class="dropdown-item" href="index.html">Logout</a></li>
@@ -157,252 +108,53 @@
         </div>
       </div>
     </div>
-  </nav>
 
-  <!-- HEADER KPIs -->
-  <header class="header container-xxl">
-    <div class="row g-3">
-      <div class="col-12"><div class="accent-line"></div></div>
-      <div class="col-sm-4">
-        <div class="kpi"><i class="bi bi-cash-coin fs-5 text-warning"></i>
-          <div><div class="value">AED 42.8M</div><div class="label">YTD Spend</div></div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="kpi"><i class="bi bi-flag fs-5" style="color:var(--teal)"></i>
-          <div><div class="value">18</div><div class="label">High-risk Suppliers</div></div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="kpi"><i class="bi bi-file-earmark-text fs-5 text-light"></i>
-          <div><div class="value">12</div><div class="label">Contracts Expiring (90d)</div></div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- CONTENT -->
-  <main class="container-xxl my-4">
-    <!-- Tabs -->
-    <ul class="nav nav-pills gap-2 mb-3" id="portalTabs" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="chat-tab" data-bs-toggle="tab" data-bs-target="#chat" type="button" role="tab">
-          <i class="bi bi-chat-dots me-1"></i> Chat
-        </button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="saved-tab" data-bs-toggle="tab" data-bs-target="#saved" type="button" role="tab">
-          <i class="bi bi-bookmark-check me-1"></i> Saved
-        </button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="data-tab" data-bs-toggle="tab" data-bs-target="#data" type="button" role="tab">
-          <i class="bi bi-table me-1"></i> Data Viewer
-        </button>
-      </li>
-    </ul>
-
-    <div class="tab-content" id="portalTabsContent">
-      <!-- CHAT -->
-      <section class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
-        <div class="row g-3">
-          <div class="col-lg-8">
-            <div class="surface">
-              <div class="surface-header">
-                <div class="fw-bold"><i class="bi bi-magic me-1 text-warning"></i> AI Procurement Assistant</div>
-                <div class="small muted">Ask about spend, suppliers, or contracts</div>
-              </div>
-              <div class="surface-body">
-                <div class="chat-wrap" id="chatFeed">
-                  <div class="bubble"><strong>AI</strong><br>Welcome to DAIS. How can I help with procurement insights today?<br><small>09:41</small></div>
-                  <div class="bubble me"><strong>You</strong><br>Show supplier risk by category for Q3.<br><small>09:42</small></div>
-                </div>
-                <div class="mt-3">
-                  <div class="input-group">
-                    <input id="chatInput" type="text" class="form-control" placeholder="Type a question…">
-                    <button id="sendBtn" class="btn btn-primary"><i class="bi bi-send me-1"></i>Send</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Visuals -->
-          <div class="col-lg-4">
-            <div class="surface">
-              <div class="surface-header">
-                <div class="fw-bold"><i class="bi bi-bar-chart-line me-1" style="color:var(--teal)"></i> Visuals</div>
-                <div class="small muted">Rendered from responses</div>
-              </div>
-              <div class="surface-body">
-                <div class="vis-wrap">Visuals (charts, graphs) will appear here</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SAVED -->
-      <section class="tab-pane fade" id="saved" role="tabpanel" aria-labelledby="saved-tab">
+    <!-- Content Tabs -->
+    <div class="tab-content">
+      <div class="tab-pane fade show active" id="chat">
         <div class="surface">
-          <div class="surface-header">
-            <div class="fw-bold"><i class="bi bi-bookmark-check me-1 text-warning"></i> Saved Insights</div>
-            <div>
-              <button class="btn btn-sm btn-icon"><i class="bi bi-cloud-download"></i></button>
-            </div>
-          </div>
-          <div class="surface-body">
-            <div class="row g-3 row-cols-1 row-cols-sm-2 row-cols-lg-3">
-              <div class="col">
-                <div class="card h-100">
-                  <div class="thumb"></div>
-                  <div class="p-3">
-                    <div class="d-flex justify-content-between align-items-start">
-                      <h6 class="card-title mb-1">Supplier Risk Heatmap</h6>
-                      <span class="badge badge-alert">NEW</span>
-                    </div>
-                    <div class="meta">Saved 2h ago</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card h-100">
-                  <div class="thumb"></div>
-                  <div class="p-3">
-                    <h6 class="card-title mb-1">Spend by Category – Q3</h6>
-                    <div class="meta">Saved yesterday</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card h-100">
-                  <div class="thumb"></div>
-                  <div class="p-3">
-                    <h6 class="card-title mb-1">Contract Expiry Timeline</h6>
-                    <div class="meta">Saved 3 days ago</div>
-                  </div>
-                </div>
-              </div>
-              <!-- add more cards as needed -->
-            </div>
+          <h5><i class="bi bi-chat-dots me-1"></i> Chat Assistant</h5>
+          <div style="height:300px; overflow-y:auto;" class="mb-3 bg-dark rounded p-2">Chat messages here…</div>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Type message...">
+            <button class="btn btn-success">Send</button>
           </div>
         </div>
-      </section>
-
-      <!-- DATA VIEWER -->
-      <section class="tab-pane fade" id="data" role="tabpanel" aria-labelledby="data-tab">
-        <div class="surface">
-          <div class="surface-header">
-            <div class="fw-bold"><i class="bi bi-table me-1" style="color:var(--citrine)"></i> Datasets</div>
-            <div class="small muted">CSV files rendered client-side</div>
-          </div>
-          <div class="surface-body">
-            <div class="row g-3 align-items-end">
-              <div class="col-sm-6">
-                <label for="datasetSelect" class="form-label">Select Dataset</label>
-                <select id="datasetSelect" class="form-select">
-                  <option>Spend Data – Q1</option>
-                  <option>Supplier Performance</option>
-                  <option>Contracts Overview</option>
-                </select>
-              </div>
-              <div class="col-sm-6 text-sm-end">
-                <button class="btn btn-primary"><i class="bi bi-arrow-clockwise me-1"></i> Load</button>
-              </div>
-            </div>
-
-            <div class="table-responsive mt-3">
-              <table class="table align-middle">
-                <thead>
-                  <tr><th>Supplier</th><th>Category</th><th>Spend (AED)</th><th>On-Time %</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td>Alpha Industrial</td><td>Logistics</td><td>1,280,000</td><td>96%</td></tr>
-                  <tr><td>Blue Wave</td><td>IT Hardware</td><td>920,500</td><td>88%</td></tr>
-                  <tr><td>Desert Metals</td><td>Raw Materials</td><td>3,210,000</td><td>91%</td></tr>
-                </tbody>
-              </table>
-            </div>
-
-          </div>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <!-- OFFCANVAS ALERTS -->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="alertsCanvas" aria-labelledby="alertsLabel">
-    <div class="offcanvas-header">
-      <h5 id="alertsLabel"><i class="bi bi-bell-fill text-warning me-1"></i> Alerts</h5>
-      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
-    </div>
-    <div class="offcanvas-body">
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item d-flex justify-content-between align-items-start">
-          <div>
-            <div class="fw-bold">Supplier flagged: Orion Tools</div>
-            <div class="small">Risk ↑ due to late deliveries (7 days)</div>
-          </div>
-          <span class="badge badge-alert rounded-pill">High</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-start">
-          <div>
-            <div class="fw-bold">Contract expiring</div>
-            <div class="small">IT Support – 45 days remaining</div>
-          </div>
-          <span class="badge bg-secondary rounded-pill">Info</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-start">
-          <div>
-            <div class="fw-bold">Budget threshold</div>
-            <div class="small">Category: MRO exceeded 90%</div>
-          </div>
-          <span class="badge bg-danger rounded-pill">Critical</span>
-        </li>
-      </ul>
+      </div>
+      <div class="tab-pane fade" id="saved">
+        <div class="surface"><h5>Saved Insights</h5><p>Saved visuals go here...</p></div>
+      </div>
+      <div class="tab-pane fade" id="data">
+        <div class="surface"><h5>Data Viewer</h5><p>CSV table goes here...</p></div>
+      </div>
     </div>
   </div>
+</div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Offcanvas Alerts -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="alertsCanvas">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title"><i class="bi bi-bell-fill text-warning"></i> Alerts</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item bg-transparent text-light">Supplier risk alert</li>
+      <li class="list-group-item bg-transparent text-light">Contract expiring soon</li>
+    </ul>
+  </div>
+</div>
 
-  <!-- Micro-interactions: remember active tab + mock chat append -->
-  <script>
-    // Persist active tab across refresh
-    const tabs = document.querySelectorAll('button[data-bs-toggle="tab"],button[data-bs-toggle="pill"]');
-    tabs.forEach(t => {
-      t.addEventListener('shown.bs.tab', e => localStorage.setItem('dais-active-tab', e.target.getAttribute('data-bs-target')));
-    });
-    window.addEventListener('DOMContentLoaded', () => {
-      const id = localStorage.getItem('dais-active-tab');
-      if(id){
-        const triggerEl = document.querySelector(`[data-bs-target="${id}"]`);
-        if(triggerEl){ new bootstrap.Tab(triggerEl).show(); }
-      }
-    });
-
-    // Mock chat (front-end only): append user bubble
-    const sendBtn = document.getElementById('sendBtn');
-    const chatInput = document.getElementById('chatInput');
-    const chatFeed = document.getElementById('chatFeed');
-    function appendBubble(text, me=false){
-      const wrap = document.createElement('div');
-      wrap.className = 'bubble' + (me ? ' me' : '');
-      wrap.innerHTML = (me?'<strong>You</strong><br>':'<strong>AI</strong><br>') + text +
-        `<br><small>${new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}</small>`;
-      chatFeed.appendChild(wrap);
-      chatFeed.scrollTop = chatFeed.scrollHeight;
-    }
-    sendBtn?.addEventListener('click', () => {
-      const v = chatInput.value.trim();
-      if(!v) return;
-      appendBubble(v, true);
-      chatInput.value = '';
-      // placeholder AI echo (replace with real API call)
-      setTimeout(() => appendBubble('Received. Generating analysis…'), 500);
-    });
-    chatInput?.addEventListener('keydown', e => {
-      if(e.key==='Enter' && !e.shiftKey){ e.preventDefault(); sendBtn.click(); }
-    });
-  </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Sidebar collapse toggle
+  const sidebar = document.getElementById('sidebar');
+  const collapseBtn = document.getElementById('collapseBtn');
+  collapseBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('collapsed');
+    collapseBtn.classList.toggle('bi-chevron-double-right');
+    collapseBtn.classList.toggle('bi-chevron-double-left');
+  });
+</script>
 </body>
 </html>
