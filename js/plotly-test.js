@@ -2,7 +2,7 @@
 
 // CONFIG — adjust these to match your CSV
 const CONFIG = {
-  csvUrl: "data/all_spend_anonymized.csv",
+  csvUrl: "data/supplier_spend.csv",
   columns: {
     category: "supplier_category",     // e.g., "supplier_category" or "Category"
     value: "spend_anonymized"          // e.g., "spend_anonymized" or "SpendAED"
