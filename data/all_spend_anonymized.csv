@@ -1,0 +1,3513 @@
+supplier_id,supplier_name,supplier_location,spend_year,supplier_category,supplier_subcategory,spend_anonymized
+S0001,Supplier_0001,,2022,Electronics,,38747.0
+S0001,Supplier_0002,,2023,Electronics,,41810.0
+S0002,Supplier_0003,,2022,Metal Components,Sub-contracting,2852.9
+S0002,Supplier_0004,,2023,Electronics,,3155.52
+S0003,Supplier_0005,,2022,Electronics,,39780.0
+S0003,Supplier_0006,,2023,Metal Components,,61859.0
+S0004,Supplier_0007,,2022,Metal Components,,15235.0
+S0004,Supplier_0008,,2023,Electronics,,17995.32
+S0005,Supplier_0009,,2022,Electronics,,786.13
+S0005,Supplier_0010,,2023,Metal Components,,1044.45
+S0006,Supplier_0011,,2022,Electronics,,40371.2
+S0006,Supplier_0012,,2023,Electronics,,45877.0
+S0007,Supplier_0013,,2022,Plastics,,21325.26
+S0007,Supplier_0014,,2023,Electronics,,46551.54
+S0008,Supplier_0015,,2022,Plastics,,0.0
+S0008,Supplier_0016,,2023,Plastic Components,,2972.38
+S0009,Supplier_0017,,2022,Metal Components,Sub-contracting,32362.6
+S0009,Supplier_0018,,2023,Metal Components,,30707.0
+S0010,Supplier_0005,,2022,Sub-contracting,Sub-contracting,19964.0
+S0010,Supplier_0006,,2023,Metal Components,,19621.0
+S0011,Supplier_0019,,2022,Sub-contracting,Sub-contracting,3048.0
+S0011,Supplier_0020,,2023,Sub-Contracting,,4381.5
+S0012,Supplier_0021,,2022,Metal Components,Sub-contracting,19950.0
+S0012,Supplier_0022,,2023,Sub-Contracting,,19950.0
+S0013,Supplier_0023,,2022,Plastics,,24000.0
+S0013,Supplier_0024,,2023,Metal Components,,22800.0
+S0014,Supplier_0025,,2022,Packaging,,1214.56
+S0014,Supplier_0026,,2023,Plastic Components,,1744.08
+S0015,Supplier_0027,,2022,Packaging,,6111.57
+S0015,Supplier_0028,,2023,Packaging,,8651.48
+S0016,Supplier_0029,,2022,Electronics,,3720.18
+S0016,Supplier_0030,,2023,Packaging,,6753.6
+S0017,Supplier_0031,,2022,Electronics,,0.0
+S0017,Supplier_0032,,2023,Electronics,,7611.44
+S0018,Supplier_0033,,2022,,,522.9
+S0018,Supplier_0034,,2023,Plastic Components,,0.0
+S0019,Supplier_0035,,2023,,,5693.18
+S0020,Supplier_0036,,2022,Metal components,Other,2865.7
+S0020,Supplier_0036,,2023,Metal Components,,41021.81
+S0021,Supplier_0037,,2022,Metal components,Machined parts,874.6
+S0021,Supplier_0037,,2023,Metal Components,,2499.84
+S0022,Supplier_0038,,2022,Sub-contracting,Other (Sanding),11.64
+S0023,Supplier_0039,,2022,Electronics,Components,795.0
+S0024,Supplier_0040,,2022,Fibers,laser,430504.0
+S0024,Supplier_0040,,2023,Fibers,,371766.63
+S0025,Supplier_0041,,2023,,,25470.94
+S0026,Supplier_0042,,2022,Plastic component,Machined parts,10419.0
+S0027,Supplier_0043,,2022,Metal components,Machined parts,3625.0
+S0028,Supplier_0044,,2022,Fibers,light,459.0
+S0029,Supplier_0045,,2023,Fibers,,6777.73
+S0030,Supplier_0046,,2022,Plastic component,Injection moulding,176920.0
+S0031,Supplier_0047,,2022,Fibers,Other,48717.48
+S0031,Supplier_0047,,2023,Fibers,,198260.68
+S0032,Supplier_0048,,2022,Metal components,Machined parts,6790.0
+S0032,Supplier_0048,,2023,Metal Components,,626.28
+S0033,Supplier_0049,,2023,,,43544.72
+S0034,Supplier_0050,,2022,Metal components,Other,64754.41
+S0034,Supplier_0050,,2023,Metal Components,,33134.37
+S0035,Supplier_0051,,2023,,,4768.13
+S0036,Supplier_0052,,2022,Metal components,Other,52645.86
+S0036,Supplier_0052,,2023,Metal Components,,49390.31
+S0037,Supplier_0053,,2022,Plastic component,Injection moulding,6360.0
+S0037,Supplier_0053,,2023,Plastic Components,,6363.77
+S0038,Supplier_0054,,2022,Metal components,Other,99261.0
+S0038,Supplier_0054,,2023,Metal Components,,57842.18
+S0039,Supplier_0055,,2022,Metal components,Machined parts,9742.0
+S0039,Supplier_0055,,2023,Metal Components,,16848.73
+S0040,Supplier_0056,,2022,Electronics,Components,347.23
+S0041,Supplier_0057,,2022,Metal components,Machined parts,540950.0
+S0042,Supplier_0058,,2022,Electronics,Components,22500.0
+S0043,Supplier_0059,,2022,Plastic component,Machined parts,35636.0
+S0044,Supplier_0060,,2023,,,183.91
+S0045,Supplier_0061,,2023,Plastic Components,,1541.35
+S0046,Supplier_0062,,2023,,,27648.74
+S0047,Supplier_0063,,2022,Metal components,Other,66031.46
+S0048,Supplier_0064,,2022,Sub-contracting,Other (Sanding),206080.0
+S0048,Supplier_0064,,2023,Sub-Contracting,,232840.31
+S0049,Supplier_0065,,2022,Plastic component,Injection moulding,48659.0
+S0049,Supplier_0065,,2023,Plastic Components,,66223.71
+S0050,Supplier_0066,,2023,,,17952.8
+S0051,Supplier_0067,,2022,Metal components,Machined parts,32040.0
+S0051,Supplier_0067,,2023,Metal Components,,30558.61
+S0052,Supplier_0068,,2022,Medical device,Consumables,1264.0
+S0053,Supplier_0069,,2023,,,3009.2
+S0054,Supplier_0070,,2022,Packaging,Cartons,9214.1
+S0054,Supplier_0070,,2023,Packaging,,8265.35
+S0055,Supplier_0071,,2022,Medical device,Consumables,3200.0
+S0056,Supplier_0072,,2022,Fibers,Other,98414.0
+S0056,Supplier_0072,,2023,Fibers,,94882.15
+S0057,Supplier_0073,,2022,Electronics,Components,560.0
+S0058,Supplier_0074,,2023,,,3261.61
+S0059,Supplier_0075,,2022,Plastic component,Injection moulding,18000.0
+S0060,Supplier_0076,,2022,Electronics,Components,132.0
+S0061,Supplier_0077,,2022,Metal components,Machined parts,14115.0
+S0061,Supplier_0077,,2023,Metal Components,,7094.94
+S0062,Supplier_0078,,2022,Electronics,Components,2261.0
+S0062,Supplier_0078,,2023,Electronics,,3987.31
+S0063,Supplier_0068,,2022,Plastic component,Injection moulding,42997.0
+S0064,Supplier_0079,,2022,Packaging,Cartons,21360.0
+S0064,Supplier_0079,,2023,Packaging,,17688.78
+S0065,Supplier_0080,,2022,Electronics,Components,15470.0
+S0066,Supplier_0081,,2022,Electronics,Components,33160.0
+S0066,Supplier_0081,,2023,Electronics,,33131.14
+S0067,Supplier_0082,,2023,,,6711.22
+S0068,Supplier_0083,,2023,,,25046.66
+S0069,Supplier_0084,,2022,Medical device,Consumables,10165.0
+S0069,Supplier_0084,,2023,Medical Device,,8499.45
+S0070,Supplier_0085,,2022,Plastic component,Injection moulding,155.2
+S0071,Supplier_0086,,2022,Medical device,Consumables,1743.06
+S0071,Supplier_0087,,2023,Medical Device,,3334.97
+S0072,Supplier_0088,,2022,Electronics,Components,960.19
+S0073,Supplier_0089,,2022,Plastic component,Injection moulding,2170.8
+S0074,Supplier_0090,,2022,Metal components,Machined parts,650.0
+S0074,Supplier_0090,,2023,Metal Components,,626.28
+S0075,Supplier_0091,,2022,Metal components,Machined parts,616.0
+S0076,Supplier_0092,,2022,Metal Components,Machined Parts,10800.0
+S0076,Supplier_0092,,2023,Medical Device,,17267.3
+S0077,Supplier_0093,,2022,Fibers,Other,83878.0
+S0077,Supplier_0093,,2023,Fibers,,81155.42
+S0078,Supplier_0094,,2022,Plastic component,Injection moulding,141735.0
+S0079,Supplier_0095,,2022,Electronics,Components,7390.0
+S0079,Supplier_0095,,2023,Electronics,,12296.95
+S0080,Supplier_0096,,2022,Plastic component,Injection moulding,36283.2
+S0080,Supplier_0096,,2023,Plastic Components,,27259.12
+S0081,Supplier_0097,,2023,,,113677.36
+S0082,Supplier_0098,,2022,Metal components,Other,14895.72
+S0083,Supplier_0099,,2022,Electronics,Components,1571.0
+S0083,Supplier_0099,,2023,Electronics,,10617.38
+S0084,Supplier_0100,,2022,Plastic component,Machined parts,4063.0
+S0085,Supplier_0101,,2022,Packaging,Other,1326.0
+S0085,Supplier_0101,,2023,Packaging,,2135.96
+S0086,Supplier_0102,,2022,Sub-contracting,sterilization,675.0
+S0086,Supplier_0102,,2022,Sub-contracting,sterilization,675.0
+S0086,Supplier_0102,,2023,Sub-Contracting,,3203.04
+S0087,Supplier_0103,,2022,Plastic component,Injection moulding,25371.0
+S0087,Supplier_0103,,2023,Plastic Components,,27855.24
+S0088,Supplier_0104,,2023,,,5.92
+S0089,Supplier_0105,,2022,Packaging,Other,11285.35
+S0089,Supplier_0105,,2023,Packaging,,11545.94
+S0090,Supplier_0106,,2023,,,13703.63
+S0091,Supplier_0107,,2022,Packaging,Cartons,2245.0
+S0092,Supplier_0108,,2022,Medical device,Consumables,1640.0
+S0093,Supplier_0109,,2022,Packaging,Other,117.82
+S0094,Supplier_0110,,2022,Electronics,Components,408.0
+S0094,Supplier_0111,,2023,Electronics,,597.69
+S0095,Supplier_0112,,2022,Plastic component,Injection moulding,3739.8
+S0095,Supplier_0112,,2023,Plastic Components,,1316.58
+S0096,Supplier_0113,,2023,Packaging,,29630.78
+S0097,Supplier_0113,,2022,Packaging,Cartons,42750.0
+S0098,Supplier_0114,,2023,,,15968.0
+S0099,Supplier_0115,,2023,,,35996.14
+S0100,Supplier_0116,,2022,Metal components,Other,39937.28
+S0101,Supplier_0117,,2023,,,2462.7
+S0102,Supplier_0118,,2022,Sub-contracting,Other (Sanding),5010.0
+S0103,Supplier_0119,,2023,,,63950.06
+S0104,Supplier_0120,,2022,Plastic component,Thermoforming,48515.0
+S0105,Supplier_0121,,2022,Fibers,Other,637.2
+S0105,Supplier_0121,,2023,Fibers,,3319.49
+S0106,Supplier_0122,,2023,,,7563.34
+S0107,Supplier_0123,,2022,Medical device,Consumables,41000.0
+S0108,Supplier_0124,,2022,Fibers,glass,90710.0
+S0109,Supplier_0125,,2022,Fibers,Other,150449.27
+S0109,Supplier_0125,,2023,Fibers,,170685.12
+S0110,Supplier_0126,,2023,Sub-Contracting,,24236.66
+S0111,Supplier_0127,,2022,Packaging,Cartons,2781.0
+S0112,Supplier_0126,,2022,Sub-contracting,Other (Sanding),13993.29
+S0113,Supplier_0128,,2022,Metal components,Other,172980.96
+S0113,Supplier_0128,,2023,Metal Components,,285876.79
+S0114,Supplier_0129,,2022,Metal components,Other,399.0
+S0114,Supplier_0129,,2023,Metal Components,,1432.24
+S0115,Supplier_0130,,2023,,,4719.69
+S0116,Supplier_0131,,2022,Electronics,Components,1250.43
+S0117,Supplier_0131,,2022,Medical device,Consumables,32800.0
+S0118,Supplier_0132,,2023,,,36765.23
+S0119,Supplier_0133,,2022,Metal components,Other,13555.0
+S0119,Supplier_0133,,2023,Metal Components,,4720.65
+S0120,Supplier_0134,,2022,Medical device,Consumables,234.4
+S0121,Supplier_0135,,2022,Plastic component,Injection moulding,1842.1
+S0121,Supplier_0135,,2023,Plastic Components,,1266.68
+S0122,Supplier_0136,,2022,,,12273.0
+S0122,Supplier_0136,,2023,,,12273.0
+S0123,Supplier_0137,,2022,Packaging,Other,25050.0
+S0124,Supplier_0138,,2023,,,51673.66
+S0125,Supplier_0139,,2022,Metal components,Other,10304.0
+S0125,Supplier_0139,,2023,Metal Components,,13303.14
+S0126,Supplier_0140,,2023,,,647.77
+S0127,Supplier_0141,,2022,Fibers,light,50141.0
+S0127,Supplier_0141,,2023,Fibers,,2780.91
+S0128,Supplier_0142,,2023,,,149.36
+S0129,Supplier_0143,,2023,,,929.74
+S0130,Supplier_0144,,2022,Plastic component,Injection moulding,9785.0
+S0131,Supplier_0145,,2022,Fibers,Other,600.0
+S0132,Supplier_0146,,2022,Sub-contracting,sterilization,416.0
+S0133,Supplier_0147,,2023,,,45903.22
+S0134,Supplier_0148,,2022,Packaging,Other,1436.0
+S0134,Supplier_0148,,2023,Packaging,,1349.09
+S0135,Supplier_0149,,2022,Packaging,Other,38727.64
+S0135,Supplier_0149,,2023,Packaging,,51457.6
+S0136,Supplier_0150,,2023,,,945.42
+S0137,Supplier_0151,,2023,,,33204.92
+S0138,Supplier_0152,,2023,,,5534.15
+S0139,Supplier_0153,,2022,Fibers,light,71334.0
+S0139,Supplier_0153,,2023,Fibers,,93823.28
+S0140,Supplier_0154,,2022,Medical device,Consumables,189.8
+S0141,Supplier_0154,,2022,Plastic component,Other,4458.0
+S0141,Supplier_0154,,2023,Plastic Components,,15605.2
+S0142,Supplier_0155,,2022,Packaging,Other,3187.0
+S0142,Supplier_0155,,2023,Packaging,,3064.54
+S0143,Supplier_0156,,2022,Medical device,Consumables,2683.21
+S0144,Supplier_0157,,2022,Plastic component,Injection moulding,61378.0
+S0145,Supplier_0158,,2023,,,19743.57
+S0146,Supplier_0159,,2022,Plastic component,Machined parts,8805.0
+S0147,Supplier_0159,,2022,Metal components,Machined parts,13278.62
+S0148,Supplier_0160,,2023,,,1106.83
+S0149,Supplier_0161,,2022,Electronics,Components,6885.0
+S0149,Supplier_0161,,2023,Electronics,,8467.26
+S0150,Supplier_0162,,2022,Plastic component,Injection moulding,29700.0
+S0150,Supplier_0162,,2023,Plastic Components,,39010.25
+S0151,Supplier_0163,,2022,Packaging,Other,1100.16
+S0152,Supplier_0164,,2023,,,691.77
+S0153,Supplier_0165,,2023,Plastic Components,,640166.12
+S0154,Supplier_0166,,2022,Plastic component,Injection moulding,53560.0
+S0155,Supplier_0167,,2023,,,89428.01
+S0156,Supplier_0168,,2022,Metal components,Machined parts,311197.0
+S0157,Supplier_0169,,2022,Electronics,Components,2286.0
+S0157,Supplier_0169,,2023,Electronics,,3246.67
+S0158,Supplier_0170,,2022,Metal components,Machined parts,259.94
+S0158,Supplier_0170,,2023,Metal Components,,567.74
+S0159,Supplier_0171,,2022,Plastic component,Injection moulding,6328.0
+S0159,Supplier_0171,,2023,Plastic Components,,1606.29
+S0160,Supplier_0172,,2022,Plastic component,Injection moulding,17857.0
+S0161,Supplier_0173,,2022,Plastic component,Injection moulding,12136.18
+S0161,Supplier_0173,,2023,Plastic Components,,18159.69
+S0162,Supplier_0174,,2022,Sub-contracting,Other (Sanding),16979.0
+S0162,Supplier_0174,,2023,Sub-Contracting,,5222.03
+S0163,Supplier_0175,,2022,Metal components,Other,10710.0
+S0164,Supplier_0176,,2022,Plastic component,Injection moulding,2380.0
+S0165,Supplier_0177,,2023,,,7860.29
+S0166,Supplier_0178,,2022,Metal components,Machined parts,80025.0
+S0167,Supplier_0179,,2023,Metal Components,,27228.04
+S0168,Supplier_0179,,2022,Plastic component,Injection moulding,65674.24
+S0169,Supplier_0179,,2022,Metal components,Machined parts,259113.0
+S0170,Supplier_0180,,2023,,,67.31
+S0171,Supplier_0181,,2022,Medical device,Consumables,232451.6
+S0171,Supplier_0181,,2023,Medical Device,,201321.5
+S0172,Supplier_0182,,2022,Plastic component,Thermoforming,20989.0
+S0172,Supplier_0182,,2023,Plastic Components,,54216.26
+S0173,Supplier_0183,,2022,Fibers,glass,378375.0
+S0173,Supplier_0183,,2023,Fibers,,471915.16
+S0174,Supplier_0184,,2022,Plastic component,Injection moulding,10757.64
+S0174,Supplier_0184,,2023,Plastic Components,,20309.47
+S0175,Supplier_0185,,2023,,,1456.77
+S0176,Supplier_0186,,2022,Medical device,Consumables,1435.0
+S0177,Supplier_0187,,2023,Fibers,,924897.42
+S0178,Supplier_0188,,2022,Plastic component,Injection moulding,17218.0
+S0178,Supplier_0188,,2023,Plastic Components,,5320.17
+S0179,Supplier_0189,,2023,,,314.52
+S0180,Supplier_0190,,2023,,,940.81
+S0181,Supplier_0191,,2023,,,940.81
+S0182,Supplier_0192,,2023,,,13.84
+S0183,Supplier_0193,,2023,,,152.19
+S0184,Supplier_0194,,2023,,,8577.94
+S0185,Supplier_0195,,2023,,,13673.05
+S0186,Supplier_0196,,2023,,,6563.51
+S0187,Supplier_0197,,2023,,,4226.25
+S0188,Supplier_0198,,2023,,,7018.23
+S0189,Supplier_0199,,2023,Plastic Components,,366965.14
+S0190,Supplier_0200,,2023,,,461.18
+S0191,Supplier_0201,,2023,,,6113.4
+S0192,Supplier_0202,,2023,,,12518.26
+S0193,Supplier_0203,,2023,,,26123.05
+S0194,Supplier_0204,,2023,,,20222.72
+S0195,Supplier_0205,,2023,,,184.47
+S0196,Supplier_0206,,2023,,,2490.37
+S0197,Supplier_0207,,2023,,,2075.31
+S0198,Supplier_0208,,2023,,,4723.4
+S0199,Supplier_0209,,2023,,,3483.75
+S0200,Supplier_0210,,2023,Plastic Components,,145130.42
+S0201,Supplier_0211,,2023,,,8514.3
+S0202,Supplier_0212,,2023,,,613.37
+S0203,Supplier_0213,,2023,,,951.87
+S0204,Supplier_0214,,2023,,,6562.58
+S0205,Supplier_0215,,2023,,,146.66
+S0206,Supplier_0216,,2023,,,1347.57
+S0207,Supplier_0217,,2023,,,2013.51
+S0208,Supplier_0218,,2023,,,25022.68
+S0209,Supplier_0219,,2023,Packaging,,18815.2
+S0210,Supplier_0220,,2023,,,357.88
+S0211,Supplier_0221,,2023,Metal Components,,600784.99
+S0212,Supplier_0222,,2023,,,764.64
+S0213,Supplier_0223,,2023,,,10822.96
+S0214,Supplier_0224,,2023,,,1936.03
+S0215,Supplier_0225,,2023,,,1865.93
+S0216,Supplier_0226,,2023,,,6747.98
+S0217,Supplier_0227,,2023,,,1660.25
+S0218,Supplier_0228,,2023,,,22661.44
+S0219,Supplier_0229,,2023,,,353.26
+S0220,Supplier_0230,,2023,,,3535.4
+S0221,Supplier_0231,,2023,,,2058.71
+S0222,Supplier_0232,,2023,Medical Device,,24086.48
+S0223,Supplier_0233,,2023,,,31922.85
+S0224,Supplier_0234,,2023,,,6114.32
+S0225,Supplier_0235,,2023,,,7875.1
+S0226,Supplier_0236,,2023,,,6686.18
+S0227,Supplier_0237,,2023,,,1140.04
+S0228,Supplier_0238,,2023,Professional Services,,186804.45
+S0229,Supplier_0239,,2023,Logistics & Transport,,121394.44
+S0230,Supplier_0240,,2023,,,438.12
+S0231,Supplier_0241,,2023,,,13934.08
+S0232,Supplier_0242,,2023,,,48618.47
+S0233,Supplier_0243,,2023,,,21591.5
+S0234,Supplier_0244,,2023,,,5372.74
+S0235,Supplier_0245,,2023,,,255873.45
+S0236,Supplier_0246,,2023,,,21762.14
+S0237,Supplier_0247,,2023,,,6489.72
+S0238,Supplier_0248,,2023,,,4150.62
+S0239,Supplier_0249,,2023,,,7148.28
+S0240,Supplier_0250,,2023,Sub-Contracting,,84709.45
+S0241,Supplier_0251,,2023,,,15384.03
+S0242,Supplier_0252,,2023,,,2494.98
+S0243,Supplier_0253,,2023,,,29197.27
+S0244,Supplier_0254,,2023,Metal Components,,12035.86
+S0245,Supplier_0255,,2023,,,273.02
+S0246,Supplier_0256,,2023,,,35690.68
+S0247,Supplier_0257,,2023,,,10199.45
+S0248,Supplier_0258,,2023,,,1365.09
+S0249,Supplier_0259,,2023,,,8072.49
+S0250,Supplier_0260,,2023,,,55216.1
+S0251,Supplier_0261,,2023,,,24398.24
+S0252,Supplier_0262,,2023,,,184.47
+S0253,Supplier_0263,,2023,Not Categorized,,2500777.2
+S0254,Supplier_0264,,2023,Metal Components,,165415.86
+S0255,Supplier_0265,,2023,Plastic Components,,618323.65
+S0256,Supplier_0266,,2023,,,11387.44
+S0257,Supplier_0267,,2023,,,5959.36
+S0258,Supplier_0268,,2023,Plastic Components,,59676.63
+S0259,Supplier_0269,,2023,Plastic Components,,38185.66
+S0260,Supplier_0270,,2023,Medical Device,,11156.85
+S0261,Supplier_0271,,2023,Plastic Components,,11365.31
+S0262,Supplier_0272,,2023,Plastic Components,,99153.59
+S0263,Supplier_0273,,2023,Medical Device,,30437.85
+S0264,Supplier_0274,,2023,Medical Device,,69828.11
+S0265,Supplier_0275,,2023,,,6062.67
+S0266,Supplier_0276,,2023,Plastic Components,,28231.56
+S0267,Supplier_0277,,2023,Plastic Components,,171108.66
+S0268,Supplier_0278,,2023,Packaging,,32621.07
+S0269,Supplier_0279,,2023,Fibers,,226531.37
+S0270,Supplier_0280,,2023,Plastic Components,,48444.14
+S0271,Supplier_0281,,2023,,,57435.29
+S0272,Supplier_0282,,2023,Metal Components,,56636.53
+S0273,Supplier_0283,,2023,,,92.24
+S0274,Supplier_0284,,2023,,,81628.77
+S0275,Supplier_0285,,2023,,,307.15
+S0276,Supplier_0286,,2023,,,3030.87
+S0277,Supplier_0287,,2023,,,2748.63
+S0278,Supplier_0288,,2023,,,275.79
+S0279,Supplier_0289,,2023,,,10145.95
+S0280,Supplier_0290,,2023,,,1432.42
+S0281,Supplier_0291,,2023,,,966.63
+S0282,Supplier_0292,,2023,,,8831.59
+S0283,Supplier_0293,,2023,Plastic Components,,30963.59
+S0284,Supplier_0294,,2023,,,401.23
+S0285,Supplier_0295,,2023,,,5258.37
+S0286,Supplier_0296,,2023,,,52496.98
+S0287,Supplier_0297,,2023,,,4662.52
+S0288,Supplier_0298,,2023,,,122512.33
+S0289,Supplier_0299,,2023,,,46246.16
+S0290,Supplier_0300,,2023,,,6131.84
+S0291,Supplier_0301,,2023,,,26826.81
+S0292,Supplier_0302,,2023,,,6522.92
+S0293,Supplier_0303,,2023,,,1586.46
+S0294,Supplier_0304,,2023,,,6639.14
+S0295,Supplier_0305,,2023,,,11806.2
+S0296,Supplier_0306,,2023,,,1542.18
+S0297,Supplier_0307,,2023,,,1384.46
+S0298,Supplier_0308,,2023,,,482.39
+S0299,Supplier_0309,,2023,,,2774.46
+S0300,Supplier_0310,,2023,,,9091.69
+S0301,Supplier_0311,,2023,,,187552.48
+S0302,Supplier_0312,,2023,,,24439.75
+S0303,Supplier_0313,,2023,,,642.88
+S0304,Supplier_0314,,2023,,,23900.17
+S0305,Supplier_0315,,2023,Plastic Components,,7858.5
+S0306,Supplier_0316,,2023,,,184.47
+S0307,Supplier_0317,,2023,,,270.25
+S0308,Supplier_0318,,2023,,,6225.92
+S0309,Supplier_0319,,2023,,,527.59
+S0310,Supplier_0320,,2023,,,16762.95
+S0311,Supplier_0321,,2023,,,7432.37
+S0312,Supplier_0322,,2023,,,7300.47
+S0313,Supplier_0323,,2023,,,255.49
+S0314,Supplier_0324,,2023,,,1246.11
+S0315,Supplier_0325,,2023,,,613.37
+S0316,Supplier_0326,,2023,Plastic Components,,30281.05
+S0317,Supplier_0327,,2023,,,447.34
+S0318,Supplier_0328,,2023,,,18782.0
+S0319,Supplier_0329,,2023,Pharma,,23023.0
+S0320,Supplier_0330,,2023,,,1843.8
+S0321,Supplier_0331,,2023,,,2235.8
+S0322,Supplier_0332,,2023,,,26840.65
+S0323,Supplier_0333,,2023,,,583.85
+S0324,Supplier_0334,,2023,,,546.96
+S0325,Supplier_0335,,2023,,,41040.36
+S0326,Supplier_0336,,2023,,,529.43
+S0327,Supplier_0337,,2023,,,691.77
+S0328,Supplier_0338,,2023,Plastic Components,,50793.39
+S0329,Supplier_0339,,2023,,,33016.52
+S0330,Supplier_0340,,2023,,,16621.61
+S0331,Supplier_0341,,2023,,,1641.08
+S0332,Supplier_0342,,2023,,,4017.07
+S0333,Supplier_0343,,2023,,,125.0
+S0334,Supplier_0344,,2023,,,2375.24
+S0335,Supplier_0345,,2023,,,172.24
+S0336,Supplier_0346,,2023,,,1190.0
+S0337,Supplier_0347,,2023,,,1785.0
+S0338,Supplier_0348,,2023,,,6013.74
+S0339,Supplier_0349,,2023,,,7399.27
+S0339,Supplier_0350,,2023,,,71.4
+S0340,Supplier_0351,,2023,,,15374.8
+S0341,Supplier_0352,,2023,,,300.0
+S0342,Supplier_0353,,2023,,,595.0
+S0343,Supplier_0354,,2023,,,1533.0
+S0343,Supplier_0355,,2023,,,1190.0
+S0344,Supplier_0356,,2023,,,1076.12
+S0344,Supplier_0357,,2023,,,180.0
+S0344,Supplier_0358,,2023,,,2030.0
+S0344,Supplier_0359,,2023,,,800.0
+S0345,Supplier_0360,,2023,,,9000.0
+S0346,Supplier_0361,,2023,,,98.0
+S0347,Supplier_0362,,2023,,,1375.64
+S0348,Supplier_0363,,2023,,,346.0
+S0349,Supplier_0364,,2023,,,630.0
+S0350,Supplier_0365,,2023,,,1190.0
+S0351,Supplier_0366,,2023,,,48.0
+S0351,Supplier_0367,,2023,,,18629.3
+S0351,Supplier_0368,,2023,,,267.5
+S0351,Supplier_0369,,2023,,,237.88
+S0352,Supplier_0370,,2023,,,753.7
+S0352,Supplier_0371,,2023,,,2004.7
+S0352,Supplier_0372,,2023,,,12633.9
+S0353,Supplier_0373,,2023,,,368.19
+S0354,Supplier_0374,,2023,,,871.0
+S0355,Supplier_0375,,2023,,,327.25
+S0356,Supplier_0376,,2023,,,5539.76
+S0356,Supplier_0377,,2023,,,3300.0
+S0356,Supplier_0378,,2023,,,48.0
+S0357,Supplier_0379,,2023,,,350.0
+S0357,Supplier_0380,,2023,,,502.8
+S0357,Supplier_0381,,2023,,,3000.0
+S0358,Supplier_0382,,2023,,,595.0
+S0359,Supplier_0383,,2023,,,714.0
+S0360,Supplier_0384,,2023,,,430.0
+S0361,Supplier_0385,,2022,Travel,"Hotel, Meeting & Congres",46150.0
+S0362,Supplier_0386,,2022,Professional Services,Legal ,132763.9
+S0362,Supplier_0387,,2023,Professional Services,,82312.99
+S0363,Supplier_0388,,2022,,,1755.22
+S0364,Supplier_0389,,2022,,,5000.0
+S0365,Supplier_0390,,2022,,,2791.99
+S0365,Supplier_0391,,2023,,,13773.58
+S0366,Supplier_0392,,2022,Medical Device,Electronics,53141.71
+S0367,Supplier_0393,,2022,,,5000.0
+S0367,Supplier_0394,,2023,,,10000.0
+S0368,Supplier_0395,,2022,,,5000.0
+S0369,Supplier_0396,,2022,IT ,Software ,8453.72
+S0369,Supplier_0397,,2023,I.T,,32425.39
+S0370,Supplier_0398,,2022,,,367.99
+S0370,Supplier_0399,,2023,Electronics,,35291.13
+S0371,Supplier_0400,,2022,Metal Components,Machined Parts,428750.06
+S0371,Supplier_0401,,2023,Metal Components,,689826.98
+S0372,Supplier_0402,,2022,Medical Device,Re-Usables ,60560.01
+S0372,Supplier_0403,,2023,Medical Device,,87836.39
+S0373,Supplier_0404,,2023,,,234670.21
+S0374,Supplier_0405,,2022,Metal Components,Machined Parts,25571.94
+S0374,Supplier_0406,,2023,Metal Components,,2529.72
+S0375,Supplier_0407,,2023,,,565.09
+S0376,Supplier_0408,,2022,Metal Components,Machined Parts,375574.86
+S0376,Supplier_0409,,2023,Metal Components,,332373.76
+S0377,Supplier_0410,,2022,,,4339.46
+S0378,Supplier_0411,,2022,Metal Components,Machined Parts,15900.5
+S0378,Supplier_0411,,2023,Metal Components,,55183.0
+S0379,Supplier_0412,,2022,Professional Services,Legal ,29780.46
+S0380,Supplier_0413,,2022,,,4180.04
+S0381,Supplier_0414,,2022,,,3087.45
+S0382,Supplier_0415,,2023,,,41972.43
+S0383,Supplier_0416,,2022,Property,Other,4502.94
+S0384,Supplier_0417,,2022,Plastic Components,Injection Moulding,208791.95
+S0384,Supplier_0418,,2023,Plastic Components,,70735.08
+S0385,Supplier_0419,,2022,,,2747.29
+S0385,Supplier_0420,,2023,,,764.07
+S0386,Supplier_0421,,2022,,,1423.15
+S0386,Supplier_0422,,2023,,,1415.09
+S0387,Supplier_0423,,2023,,,19832.26
+S0388,Supplier_0424,,2022,Medical Device,Consumables,39707.56
+S0388,Supplier_0424,,2023,Medical Device,,13997.97
+S0389,Supplier_0425,,2023,,,2021.6
+S0390,Supplier_0426,,2022,,,2135.38
+S0390,Supplier_0427,,2023,,,22511.62
+S0391,Supplier_0428,,2022,,,5285.91
+S0391,Supplier_0429,,2023,,,3396.23
+S0392,Supplier_0430,,2023,,,1280.66
+S0393,Supplier_0431,,2022,Plastic Components,Other,7371.85
+S0393,Supplier_0432,,2023,Plastic Components,,1067.83
+S0394,Supplier_0433,,2023,,,36012.3
+S0395,Supplier_0434,,2023,,,20554.0
+S0396,Supplier_0435,,2022,,,20842.05
+S0397,Supplier_0436,,2023,Electronics ,,5540.57
+S0398,Supplier_0437,,2022,Electronics,Components,904288.63
+S0398,Supplier_0438,,2023,Electronics,,583090.15
+S0399,Supplier_0439,,2022,Fibres ,Laser,2685215.46
+S0400,Supplier_0440,,2023,,,3750.0
+S0401,Supplier_0441,,2022,IT ,Software ,4792.35
+S0401,Supplier_0442,,2023,I.T,,6226.42
+S0402,Supplier_0443,,2022,Professional Services,Finance (Accountancy),1447.26
+S0403,Supplier_0444,,2022,,,4916.0
+S0403,Supplier_0445,,2023,,,50460.0
+S0404,Supplier_0446,,2023,,,48664.32
+S0405,Supplier_0447,,2023,,,23924.73
+S0406,Supplier_0448,,2022,MARCOM,Other,26269.78
+S0406,Supplier_0449,,2023,Marcom,,28301.89
+S0407,Supplier_0450,,2022,MARCOM,Research,12812.15
+S0407,Supplier_0451,,2023,Marcom,,29056.6
+S0408,Supplier_0452,,2022,Medical Device,Consumables,3830.91
+S0409,Supplier_0453,,2022,Fibres ,Light,6412804.68
+S0410,Supplier_0454,,2023,,,10862.26
+S0411,Supplier_0455,,2023,,,1041994.23
+S0412,Supplier_0456,,2022,Medical Device,Re-Usables ,1098.53
+S0412,Supplier_0457,,2023,Medical Device,,2217.92
+S0413,Supplier_0458,,2023,,,15985.0
+S0414,Supplier_0459,,2023,,,9337.08
+S0414,Supplier_0460,,2022,,,15269.26
+S0414,Supplier_0461,,2023,,,22364.15
+S0415,Supplier_0462,,2022,Metal Components,Machined Parts,2122510.25
+S0415,Supplier_0463,,2023,Metal Components,,2598639.04
+S0416,Supplier_0464,,2022,Medical Device,Consumables,1202891.53
+S0416,Supplier_0465,,2023,Medical Device,,2091206.52
+S0417,Supplier_0466,,2022,Medical Device,Electronics,233854.9
+S0417,Supplier_0467,,2023,Medical Device,,332971.7
+S0418,Supplier_0468,,2022,Medical Device,Consumables,29196.58
+S0418,Supplier_0469,,2023,Medical Device,,33373.15
+S0419,Supplier_0470,,2022,Electronics,Laser,3153.29
+S0419,Supplier_0471,,2023,Electronics,,1533.48
+S0420,Supplier_0472,,2023,,,890.0
+S0421,Supplier_0473,,2023,,,15598.86
+S0422,Supplier_0474,,2022,Metal Components,Machined Parts,1523724.35
+S0422,Supplier_0474,,2023,Metal Components,,1769559.68
+S0423,Supplier_0475,,2023,,,25227.74
+S0424,Supplier_0476,,2022,,,22544.62
+S0424,Supplier_0477,,2023,,,11851.56
+S0425,Supplier_0478,,2022,Electronics,Other (Wiring),56451.02
+S0425,Supplier_0479,,2023,Electronics,,35633.12
+S0426,Supplier_0480,,2023,,,8563.68
+S0427,Supplier_0481,,2022,MARCOM,Other,78425.06
+S0427,Supplier_0482,,2023,Marcom,,33610.74
+S0428,Supplier_0483,,2022,,,4793.95
+S0429,Supplier_0484,,2022,Professional Services,Legal ,13935.6
+S0430,Supplier_0485,,2022,Plastic Components,Injection Moulding,18816.12
+S0430,Supplier_0486,,2023,Plastic Components,,24056.6
+S0431,Supplier_0487,,2022,Plastic Components,Other,5423.47
+S0432,Supplier_0488,,2022,HR,Recruitment,22824.98
+S0432,Supplier_0489,,2023,HR,,50025.0
+S0433,Supplier_0490,,2022,Professional Services,Legal ,9154.74
+S0433,Supplier_0491,,2023,Professional Services,,1654.48
+S0434,Supplier_0492,,2022,,,28081.98
+S0434,Supplier_0493,,2023,,,5731.83
+S0435,Supplier_0494,,2022,Travel,"Hotel, Meeting & Congres",18975.33
+S0436,Supplier_0495,,2022,,,1654.33
+S0437,Supplier_0496,,2022,Metal Components,Machined Parts,159869.72
+S0437,Supplier_0497,,2023,Metal Components,,272146.23
+S0438,Supplier_0498,,2023,,,19484.08
+S0439,Supplier_0499,,2022,Professional Services,Legal ,1849.57
+S0440,Supplier_0500,,2022,,,1041.83
+S0441,Supplier_0501,,2023,,,8748.57
+S0442,Supplier_0502,,2023,,,43561.32
+S0443,Supplier_0503,,2023,,,11554.72
+S0444,Supplier_0504,,2022,,,5314.42
+S0445,Supplier_0505,,2022,,,70557.07
+S0446,Supplier_0506,,2022,Professional Services,Finance (Accountancy),9732.37
+S0446,Supplier_0507,,2023,Professional Services,,3004.23
+S0447,Supplier_0508,,2023,,,131.3
+S0448,Supplier_0502,,2023,,,97966.98
+S0449,Supplier_0509,,2023,,,51111.27
+S0450,Supplier_0510,,2022,,,37329.88
+S0450,Supplier_0511,,2023,,,471.7
+S0451,Supplier_0512,,2022,HR,Education,38550.0
+S0451,Supplier_0513,,2023,HR,,79756.19
+S0452,Supplier_0514,,2022,,,4317.45
+S0453,Supplier_0515,,2022,Professional Services,Legal ,72710.5
+S0453,Supplier_0516,,2023,Professional Services,,28058.49
+S0454,Supplier_0517,,2023,,,71.53
+S0455,Supplier_0518,,2022,IT ,Software ,82590.19
+S0455,Supplier_0519,,2023,I.T,,101161.99
+S0456,Supplier_0520,,2023,,,96167.45
+S0457,Supplier_0521,,2023,,,1861698.97
+S0458,Supplier_0522,,2022,,,3790.0
+S0459,Supplier_0523,,2022,,,58164.86
+S0459,Supplier_0524,,2023,,,58867.92
+S0460,Supplier_0525,,2022,Metal Components,Machined Parts,4651.5
+S0460,Supplier_0526,,2023,Metal Components,,7000.74
+S0461,Supplier_0527,,2023,,,10800.0
+S0461,Supplier_0528,,2023,,,2502.08
+S0461,Supplier_0529,,2022,,,23180.0
+S0462,Supplier_0530,,2022,Travel,"Hotel, Meeting & Congres",30000.0
+S0463,Supplier_0531,,2022,Professional Services,Legal ,12528.68
+S0463,Supplier_0532,,2023,Professional Services,,6703.73
+S0464,Supplier_0533,,2023,,,3132.08
+S0465,Supplier_0534,,2022,Medical Device,Consumables,29903.38
+S0465,Supplier_0535,,2023,Medical Device,,297108.74
+S0466,Supplier_0536,,2022,Sub-Contracting,Assembly,233404.21
+S0466,Supplier_0537,,2023,Sub-Contracting,,678344.3
+S0467,Supplier_0538,,2022,Professional Services,Other,4218.06
+S0468,Supplier_0539,,2022,,,3963.3
+S0468,Supplier_0540,,2023,,,40987.17
+S0469,Supplier_0541,,2022,Medical Device,Re-Usables ,63211.75
+S0469,Supplier_0541,,2023,Medical Device,,42375.05
+S0470,Supplier_0542,,2023,,,48565.05
+S0471,Supplier_0543,,2023,,,95900.38
+S0472,Supplier_0544,,2023,,,178395.54
+S0473,Supplier_0545,,2022,Plastic Components,Injection Moulding,60760.04
+S0473,Supplier_0546,,2023,Medical Device,,91137.96
+S0474,Supplier_0547,,2022,,,3034.95
+S0474,Supplier_0548,,2023,,,1914.15
+S0475,Supplier_0549,,2023,,,38408.87
+S0475,Supplier_0550,,2023,,,649.33
+S0476,Supplier_0551,,2023,,,469.92
+S0477,Supplier_0552,,2023,,,16771.7
+S0478,Supplier_0553,,2023,,,1028.3
+S0479,Supplier_0554,,2023,,,86371.48
+S0480,Supplier_0555,,2022,Plastic Components,Injection Moulding,155932.4
+S0480,Supplier_0556,,2023,Plastic Components,,151278.3
+S0481,Supplier_0557,,2022,Plastic Components,Injection Moulding,379693.46
+S0481,Supplier_0558,,2023,Plastic Components,,629152.54
+S0482,Supplier_0559,,2022,Travel,"Hotel, Meeting & Congres",25479.04
+S0482,Supplier_0560,,2023,Travel,,896.23
+S0483,Supplier_0561,,2023,,,1005.64
+S0484,Supplier_0562,,2022,,,687.0
+S0485,Supplier_0563,,2023,,,170.0
+S0486,Supplier_0564,,2023,,,2250.0
+S0487,Supplier_0565,,2023,,,122.2
+S0487,Supplier_0566,,2023,,,298.0
+S0487,Supplier_0567,,2023,,,2380.0
+S0487,Supplier_0568,,2023,,,2677.5
+S0488,Supplier_0569,,2023,,,212.06
+S0489,Supplier_0570,,2023,,,214.2
+S0490,Supplier_0571,,2023,,,1102.5
+S0490,Supplier_0572,,2022,,,60.6
+S0491,Supplier_0573,,2022,Travel,"Hotel, Meeting & Congres",17988.0
+S0491,Supplier_0574,,2023,Travel,,27651.0
+S0492,Supplier_0575,,2022,,,3827.93
+S0492,Supplier_0576,,2023,,,1124.55
+S0493,Supplier_0577,,2022,,,1950.0
+S0493,Supplier_0578,,2023,,,1950.0
+S0494,Supplier_0579,,2022,,,1030.2
+S0495,Supplier_0580,,2023,,,960.0
+S0496,Supplier_0581,,2023,,,1195.14
+S0497,Supplier_0582,,2023,,,10119.7
+S0498,Supplier_0583,,2023,,,9597.89
+S0499,Supplier_0584,,2022,Logistics & transport,Freight - Other,89730.8
+S0499,Supplier_0585,,2023,Logistics & Transport,,92632.8
+S0500,Supplier_0586,,2022,,,5595.5
+S0500,Supplier_0587,,2023,,,8016.06
+S0501,Supplier_0588,,2022,,,2739.99
+S0502,Supplier_0589,,2022,MARCOM,Other,19060.0
+S0502,Supplier_0590,,2023,Marcom,,27405.7
+S0503,Supplier_0591,,2023,,,16184.73
+S0504,Supplier_0592,,2022,,,2520.63
+S0505,Supplier_0593,,2022,Medical Device,Electronics,1199200.0
+S0506,Supplier_0594,,2022,,,825.0
+S0506,Supplier_0595,,2023,,,1500.0
+S0507,Supplier_0596,,2023,,,12.74
+S0508,Supplier_0597,,2023,,,128590.0
+S0509,Supplier_0598,,2022,Travel,"Hotel, Meeting & Congres",45569.0
+S0510,Supplier_0599,,2022,Travel,"Hotel, Meeting & Congres",15571.5
+S0511,Supplier_0600,,2022,,,4900.0
+S0512,Supplier_0601,,2023,,,1849.09
+S0513,Supplier_0602,,2022,MARCOM,Research,17750.0
+S0514,Supplier_0603,,2022,Plastic Components,Thermoforming,152325.01
+S0514,Supplier_0604,,2023,Plastic Components,,140845.74
+S0515,Supplier_0605,,2022,Medical Device,Consumables,27289.44
+S0515,Supplier_0606,,2023,Medical Device,,29563.56
+S0516,Supplier_0607,,2022,IT ,Software ,26448.0
+S0516,Supplier_0608,,2023,I.T,,26448.0
+S0517,Supplier_0609,,2022,MARCOM,Research,13950.0
+S0518,Supplier_0610,,2022,,,3781.25
+S0518,Supplier_0611,,2023,,,21468.75
+S0519,Supplier_0612,,2023,,,2400.0
+S0520,Supplier_0613,,2022,,,3002.0
+S0521,Supplier_0614,,2022,Plastic Components,Injection Moulding,41545.72
+S0521,Supplier_0615,,2023,Plastic Components,,12850.32
+S0521,Supplier_0616,,2023,Plastic Components,,20236.0
+S0522,Supplier_0617,,2023,,,3600.0
+S0523,Supplier_0618,,2022,,,4400.0
+S0523,Supplier_0619,,2023,,,21053.33
+S0524,Supplier_0620,,2022,Electronics,Other,1336.0
+S0524,Supplier_0621,,2023,Electronics,,1539.31
+S0525,Supplier_0622,,2022,,,3000.0
+S0526,Supplier_0623,,2022,,,14005.13
+S0526,Supplier_0624,,2023,,,1164.77
+S0527,Supplier_0625,,2022,Packaging,Other (Polymer Packaging),2886.74
+S0527,Supplier_0626,,2023,Packaging,,14345.22
+S0528,Supplier_0627,,2022,,,2700.0
+S0529,Supplier_0628,,2023,,,10491.84
+S0530,Supplier_0629,,2023,,,27818.18
+S0531,Supplier_0630,,2023,,,5000.0
+S0532,Supplier_0631,,2023,,,16636.66
+S0533,Supplier_0632,,2022,Metal Components,Other (Fasteners),18220.64
+S0533,Supplier_0633,,2023,Metal Components,,31154.29
+S0534,Supplier_0634,,2022,IT ,Software ,389632.58
+S0534,Supplier_0635,,2023,I.T,,800051.56
+S0535,Supplier_0636,,2022,,,3025.0
+S0536,Supplier_0637,,2022,,,14931.95
+S0537,Supplier_0638,,2022,,,152.61
+S0537,Supplier_0639,,2023,,,1158.68
+S0538,Supplier_0640,,2023,,,448.8
+S0538,Supplier_0641,,2022,,,4773.6
+S0539,Supplier_0642,,2022,,,968.48
+S0540,Supplier_0643,,2022,IT ,Software ,153007.5
+S0540,Supplier_0644,,2023,I.T,,128386.75
+S0541,Supplier_0645,,2022,,,342.94
+S0542,Supplier_0646,,2023,,,4814.77
+S0543,Supplier_0647,,2022,,,12510.97
+S0544,Supplier_0648,,2022,Plastic Components,Injection Moulding,182699.2
+S0544,Supplier_0649,,2023,Plastic Components,,54115.8
+S0545,Supplier_0650,,2022,Sub-Contracting,Sterilization,2527.55
+S0545,Supplier_0651,,2023,Sub-Contracting,,18927.24
+S0546,Supplier_0652,,2023,,,5540.37
+S0547,Supplier_0653,,2022,Pharma,Other,8997.66
+S0548,Supplier_0654,,2022,Sub-Contracting,Sterilization,293918.34
+S0548,Supplier_0655,,2023,Sub-Contracting,,346304.68
+S0549,Supplier_0656,,2022,,,270.0
+S0550,Supplier_0657,,2022,Medical Device,Electronics,913941.14
+S0550,Supplier_0658,,2023,Medical Device,,1399048.04
+S0551,Supplier_0659,,2022,Medical Device,Re-Usables ,37730.28
+S0551,Supplier_0660,,2023,Medical Device,,14846.16
+S0552,Supplier_0661,,2022,Medical Device,Re-Usables ,85002.16
+S0552,Supplier_0662,,2023,Medical Device,,78397.43
+S0553,Supplier_0663,,2023,Electronics,,110284.59
+S0554,Supplier_0664,,2022,Plastic Components,Injection Moulding,222993.78
+S0554,Supplier_0665,,2023,Plastic Components,,509913.68
+S0555,Supplier_0666,,2022,,,2162.83
+S0555,Supplier_0667,,2023,,,2255.34
+S0556,Supplier_0668,,2022,,,70.28
+S0556,Supplier_0669,,2023,,,77.35
+S0557,Supplier_0670,,2022,Plastic Components,Other,3912.0
+S0557,Supplier_0671,,2023,Plastic Components,,1388.0
+S0558,Supplier_0672,,2023,,,18850.0
+S0559,Supplier_0673,,2022,,,840.0
+S0560,Supplier_0674,,2022,,,4251.44
+S0560,Supplier_0675,,2023,,,1918.19
+S0561,Supplier_0676,,2022,Electronics,Components,35419.0
+S0561,Supplier_0677,,2023,Electronics,,20792.87
+S0562,Supplier_0678,,2023,,,0.0
+S0563,Supplier_0679,,2022,Professional Services,Legal ,11450.0
+S0563,Supplier_0680,,2023,Professional Services,,7275.0
+S0564,Supplier_0681,,2022,IT ,Software ,14000.0
+S0564,Supplier_0682,,2023,I.T,,28980.0
+S0565,Supplier_0683,,2022,,,814.93
+S0565,Supplier_0684,,2023,,,3950.0
+S0566,Supplier_0685,,2022,IT ,Software ,2390.0
+S0566,Supplier_0686,,2023,I.T,,4780.0
+S0567,Supplier_0687,,2023,,,6313.0
+S0568,Supplier_0688,,2022,MARCOM,Advertising ,302.53
+S0569,Supplier_0689,,2023,,,500.0
+S0570,Supplier_0690,,2022,MARCOM,Research,16038.6
+S0570,Supplier_0691,,2023,Marcom,,2480.11
+S0571,Supplier_0692,,2022,IT ,Software ,32043.84
+S0571,Supplier_0693,,2023,I.T,,7733.73
+S0572,Supplier_0694,,2023,,,2000.0
+S0573,Supplier_0695,,2022,Medical Device,Re-Usables ,2130.0
+S0573,Supplier_0696,,2023,Medical Device,,6390.0
+S0574,Supplier_0697,,2022,Metal Components,Machined Parts,35292.53
+S0574,Supplier_0698,,2023,Metal Components,,50462.5
+S0575,Supplier_0699,,2022,,,2740.63
+S0575,Supplier_0700,,2023,,,-39.07
+S0576,Supplier_0701,,2022,IT ,Tele- and datacom,114.7
+S0577,Supplier_0702,,2023,,,14000.0
+S0578,Supplier_0703,,2023,,,32705.0
+S0579,Supplier_0704,,2023,,,147200.0
+S0580,Supplier_0705,,2022,,,3006.66
+S0581,Supplier_0706,,2022,IT ,Software ,110249.4
+S0581,Supplier_0707,,2023,I.T,,105532.29
+S0582,Supplier_0708,,2022,Facility Management,Catering and vending machines,305.55
+S0582,Supplier_0709,,2023,Facility Management,,308.7
+S0583,Supplier_0710,,2022,,,25111.3
+S0583,Supplier_0711,,2023,,,18358.99
+S0584,Supplier_0712,,2022,Pharma,Liquids,8670549.39
+S0584,Supplier_0713,,2023,Pharma,,9660009.23
+S0585,Supplier_0714,,2022,,,199.0
+S0585,Supplier_0715,,2022,,,188.0
+S0586,Supplier_0716,,2022,Electronics,Panels,3616.37
+S0587,Supplier_0717,,2022,Travel,"Hotel, Meeting & Congres",23603.73
+S0588,Supplier_0718,,2022,,,5973.13
+S0588,Supplier_0719,,2023,,,2420.45
+S0589,Supplier_0720,,2023,,,12360.06
+S0590,Supplier_0721,,2023,,,-44913.79
+S0591,Supplier_0722,,2022,MARCOM,Research,139959.3
+S0591,Supplier_0723,,2023,Marcom,,129021.31
+S0592,Supplier_0724,,2022,Metal Components,Machined Parts,36748.47
+S0592,Supplier_0725,,2023,Metal Components,,25246.35
+S0593,Supplier_0726,,2022,Medical Device,Consumables,353490.27
+S0593,Supplier_0727,,2023,Medical Device,,699110.0
+S0594,Supplier_0728,,2022,Medical Device,Electronics,22606.52
+S0594,Supplier_0729,,2023,Medical Device,,1992.26
+S0595,Supplier_0730,,2023,,,4749.64
+S0596,Supplier_0731,,2022,Plastic Components,Other,119.57
+S0597,Supplier_0732,,2022,IT ,Software ,31575.0
+S0597,Supplier_0733,,2023,I.T,,23800.0
+S0598,Supplier_0734,,2022,,,3688.0
+S0599,Supplier_0735,,2022,IT ,Software ,15566.0
+S0599,Supplier_0736,,2023,I.T,,52621.2
+S0600,Supplier_0737,,2022,Travel,"Hotel, Meeting & Congres",182755.94
+S0601,Supplier_0738,,2023,,,5965.3
+S0602,Supplier_0739,,2022,,,2761.0
+S0603,Supplier_0740,,2022,,,2741.0
+S0604,Supplier_0741,,2022,Travel,"Hotel, Meeting & Congres",176224.0
+S0604,Supplier_0742,,2023,Travel,,400.0
+S0605,Supplier_0743,,2022,Travel,"Hotel, Meeting & Congres",16602.0
+S0605,Supplier_0744,,2023,Travel,,19511.24
+S0606,Supplier_0745,,2023,,,1080.0
+S0607,Supplier_0746,,2022,Medical Device,Consumables,1723620.46
+S0607,Supplier_0747,,2023,Medical Device,,2274225.43
+S0608,Supplier_0748,,2023,,,3584.28
+S0609,Supplier_0749,,2022,Electronics,Pneumatic,43069.0
+S0609,Supplier_0750,,2023,Electronics,,46125.0
+S0610,Supplier_0751,,2022,,,17520.18
+S0610,Supplier_0362,,2023,,,44583.03
+S0611,Supplier_0752,,2022,Electronics,Components,59688.12
+S0611,Supplier_0753,,2023,Electronics,,125113.49
+S0612,Supplier_0754,,2023,,,2220.25
+S0613,Supplier_0755,,2022,Travel,Other travel,24776.82
+S0613,Supplier_0756,,2023,Travel,,25430.97
+S0614,Supplier_0757,,2023,,,266.0
+S0615,Supplier_0758,,2022,Plastic Components,Injection Moulding,114249.0
+S0615,Supplier_0759,,2023,Plastic Components,,77320.0
+S0616,Supplier_0760,,2022,Professional Services,Legal ,293.13
+S0616,Supplier_0761,,2023,Professional Services,,8536.45
+S0617,Supplier_0762,,2022,,,14000.0
+S0618,Supplier_0763,,2023,Professional Services,,1941733.01
+S0619,Supplier_0764,,2022,,,190.0
+S0620,Supplier_0765,,2023,,,3300.0
+S0621,Supplier_0766,,2023,,,50000.0
+S0622,Supplier_0767,,2022,,,595.66
+S0623,Supplier_0768,,2022,,,1987.92
+S0624,Supplier_0769,,2023,,,11650.0
+S0625,Supplier_0567,,2023,,,5500.0
+S0626,Supplier_0770,,2023,,,3906.97
+S0627,Supplier_0771,,2023,,,13133.33
+S0628,Supplier_0772,,2022,HR,Education,39186.82
+S0629,Supplier_0773,,2022,IT ,Software ,11402.88
+S0629,Supplier_0774,,2023,I.T,,11973.71
+S0630,Supplier_0775,,2022,IT ,Software ,2520.0
+S0630,Supplier_0776,,2023,I.T,,2520.0
+S0631,Supplier_0777,,2022,,,500.0
+S0632,Supplier_0778,,2023,,,26583.84
+S0633,Supplier_0779,,2022,,,400.0
+S0634,Supplier_0780,,2023,,,25321.68
+S0635,Supplier_0781,,2023,Professional Services,,206138.0
+S0636,Supplier_0782,,2022,,,1860.0
+S0637,Supplier_0783,,2022,IT ,Software ,42477.53
+S0637,Supplier_0784,,2023,I.T,,47091.51
+S0638,Supplier_0785,,2022,Travel,"Hotel, Meeting & Congres",7798.0
+S0638,Supplier_0786,,2023,Travel,,9743.6
+S0639,Supplier_0787,,2022,Travel,"Hotel, Meeting & Congres",23315.5
+S0640,Supplier_0788,,2022,,,1100.89
+S0641,Supplier_0789,,2023,,,178.54
+S0642,Supplier_0790,,2022,IT ,Software ,2050.32
+S0643,Supplier_0791,,2023,,,4000.0
+S0643,Supplier_0792,,2023,,,2900.0
+S0644,Supplier_0793,,2022,,,5366.66
+S0645,Supplier_0794,,2023,,,-2986.25
+S0646,Supplier_0795,,2023,,,1668.8
+S0647,Supplier_0796,,2022,IT ,Software ,8787.97
+S0647,Supplier_0797,,2023,I.T,,10421.32
+S0648,Supplier_0798,,2022,Medical Device,Consumables,4140.0
+S0648,Supplier_0799,,2023,Medical Device,,5334.0
+S0649,Supplier_0800,,2022,Glass ,Other,52309.2
+S0649,Supplier_0801,,2023,Glass ,,68369.23
+S0650,Supplier_0802,,2023,,,63045.3
+S0651,Supplier_0803,,2022,Medical Device,Re-Usables ,11364.29
+S0651,Supplier_0804,,2023,Medical Device,,15907.8
+S0652,Supplier_0805,,2023,,,8048.6
+S0653,Supplier_0806,,2022,Medical Device,Consumables,7808.64
+S0653,Supplier_0807,,2023,Medical Device,,4012.0
+S0653,Supplier_0808,,2022,,,15.6
+S0653,Supplier_0809,,2023,,,2820.8
+S0654,Supplier_0810,,2022,,,6156.8
+S0655,Supplier_0811,,2023,,,229.23
+S0656,Supplier_0812,,2022,,,2326.04
+S0657,Supplier_0813,,2022,Professional Services,Legal ,22252.61
+S0657,Supplier_0814,,2023,Professional Services,,2978.48
+S0658,Supplier_0815,,2022,,,2285.0
+S0659,Supplier_0816,,2022,Plastic Components,Injection Moulding,1756.2
+S0659,Supplier_0817,,2023,Plastic Components,,3561.22
+S0660,Supplier_0818,,2022,,,770.0
+S0660,Supplier_0819,,2023,,,2067.0
+S0661,Supplier_0820,,2022,,,1248.0
+S0661,Supplier_0821,,2023,,,1853.1
+S0662,Supplier_0822,,2022,Travel,"Hotel, Meeting & Congres",27280.0
+S0663,Supplier_0823,,2023,,,1500.0
+S0664,Supplier_0824,,2022,,,3219.2
+S0664,Supplier_0825,,2023,,,1986.06
+S0665,Supplier_0826,,2022,,,2801.66
+S0666,Supplier_0827,,2022,HR,Education,26133.91
+S0666,Supplier_0828,,2023,HR,,29935.2
+S0667,Supplier_0829,,2023,,,55000.0
+S0668,Supplier_0830,,2023,,,2000.0
+S0669,Supplier_0831,,2023,,,6509.3
+S0670,Supplier_0832,,2022,,,5297.77
+S0670,Supplier_0833,,2023,,,3541.98
+S0671,Supplier_0834,,2022,Fibres ,Other,23538.0
+S0671,Supplier_0835,,2023,Fibers,,27360.0
+S0672,Supplier_0836,,2023,,,16623.0
+S0672,Supplier_0837,,2023,,,3320.0
+S0673,Supplier_0838,,2022,,,2305.2
+S0674,Supplier_0839,,2022,,,11571.26
+S0675,Supplier_0840,,2022,Professional Services,Legal ,35537.0
+S0675,Supplier_0841,,2023,Professional Services,,23150.36
+S0676,Supplier_0842,,2022,Travel,"Hotel, Meeting & Congres",120594.46
+S0676,Supplier_0843,,2023,Travel,,15000.0
+S0677,Supplier_0844,,2023,,,139.8
+S0678,Supplier_0845,,2022,MARCOM,Advertising ,4758.14
+S0678,Supplier_0846,,2023,Marcom,,2321.36
+S0679,Supplier_0847,,2022,Metal Components,Machined Parts,129744.26
+S0679,Supplier_0092,,2023,Metal components,,362711.64
+S0680,Supplier_0848,,2023,,,598.0
+S0681,Supplier_0849,,2022,,,1287.8
+S0682,Supplier_0850,,2022,Electronics,Components,250153.3
+S0682,Supplier_0851,,2023,Electronics,,310927.6
+S0683,Supplier_0852,,2022,Travel,"Hotel, Meeting & Congres",78136.0
+S0683,Supplier_0853,,2023,Travel,,19200.0
+S0684,Supplier_0854,,2022,Plastic Components,Injection Moulding,295679.4
+S0684,Supplier_0855,,2023,Plastic Components,,75363.8
+S0685,Supplier_0856,,2022,Metal Components,Other,109034.49
+S0685,Supplier_0857,,2023,Metal Components,,157582.55
+S0686,Supplier_0858,,2022,Travel,"Hotel, Meeting & Congres",50800.0
+S0686,Supplier_0858,,2023,Travel,,38213.0
+S0687,Supplier_0859,,2022,Medical Device,Consumables,551.7
+S0687,Supplier_0860,,2023,Medical Device,,367.8
+S0688,Supplier_0861,,2022,Metal Components,Other (Exotic Metals),275267.02
+S0688,Supplier_0861,,2023,Metal Components,,403443.53
+S0689,Supplier_0862,,2022,,,1954.28
+S0689,Supplier_0863,,2023,,,3169.57
+S0690,Supplier_0864,,2023,,,10605.0
+S0691,Supplier_0865,,2022,,,21675.61
+S0692,Supplier_0866,,2022,Professional Services,Legal ,12257.0
+S0692,Supplier_0867,,2023,Professional Services,,21176.0
+S0693,Supplier_0868,,2022,,,15625.65
+S0694,Supplier_0869,,2023,,,2803.4
+S0695,Supplier_0870,,2022,,,572.86
+S0696,Supplier_0871,,2022,Facility Management,Cleaning services,7641.95
+S0696,Supplier_0871,,2023,Facility Management,,11887.82
+S0697,Supplier_0872,,2022,Plastic Components,Injection Moulding,1549.77
+S0697,Supplier_0873,,2023,Metal Components,,1898.97
+S0698,Supplier_0874,,2022,Fleet,Lease,16153.59
+S0698,Supplier_0875,,2023,Fleet,,17021.3
+S0699,Supplier_0876,,2022,CAPEX (Machines) ,Machines,111660.75
+S0699,Supplier_0877,,2023,Capex (Machines) ,,4451.94
+S0700,Supplier_0878,,2022,Travel,"Hotel, Meeting & Congres",31467.0
+S0700,Supplier_0879,,2023,Travel,,46728.0
+S0701,Supplier_0880,,2023,,,4326.4
+S0702,Supplier_0881,,2023,,,569830.0
+S0703,Supplier_0882,,2022,HR,Flexible employment,23588.55
+S0703,Supplier_0883,,2023,HR,,64802.98
+S0704,Supplier_0884,,2022,,,2995.0
+S0704,Supplier_0885,,2023,,,2995.0
+S0705,Supplier_0886,,2022,Electronics,Components,360179.19
+S0705,Supplier_0887,,2023,Electronics,,397551.6
+S0706,Supplier_0888,,2022,Plastic Components,Thermoforming,42452.48
+S0706,Supplier_0889,,2023,Plastic Components,,49365.61
+S0707,Supplier_0890,,2022,,,13487.94
+S0707,Supplier_0891,,2023,,,36954.55
+S0708,Supplier_0892,,2022,Metal Components,Machined Parts,9933.5
+S0708,Supplier_0893,,2023,Metal Components,,13425.84
+S0709,Supplier_0894,,2022,,,58376.5
+S0710,Supplier_0895,,2022,,,33059.0
+S0710,Supplier_0896,,2023,,,56135.75
+S0711,Supplier_0897,,2022,MARCOM,Other,33633.07
+S0711,Supplier_0898,,2023,Marcom,,107864.53
+S0712,Supplier_0899,,2022,,,6781.14
+S0712,Supplier_0358,,2023,,,7272.0
+S0713,Supplier_0900,,2022,,,400.0
+S0714,Supplier_0901,,2022,Travel,Other travel,6030.0
+S0714,Supplier_0902,,2023,Travel,,6030.0
+S0715,Supplier_0903,,2022,IT ,Software ,27036.9
+S0715,Supplier_0904,,2023,I.T,,26712.77
+S0716,Supplier_0905,,2022,Fleet,Lease,26338.53
+S0716,Supplier_0906,,2023,Fleet,,32146.07
+S0717,Supplier_0907,,2022,Electronics,Laser,1437616.14
+S0717,Supplier_0908,,2023,Electronics,,2407537.48
+S0718,Supplier_0909,,2022,Plastic Components,Other,793.5
+S0718,Supplier_0910,,2023,Plastic Components,,397.0
+S0719,Supplier_0911,,2022,Travel,"Hotel, Meeting & Congres",15540.0
+S0720,Supplier_0912,,2022,,,4411.72
+S0720,Supplier_0913,,2023,,,391.14
+S0721,Supplier_0914,,2022,,,1448.25
+S0721,Supplier_0915,,2023,,,531.3
+S0722,Supplier_0916,,2023,,,540962.72
+S0723,Supplier_0917,,2022,,,30751.37
+S0724,Supplier_0918,,2022,Plastic Components,Injection Moulding,1573.14
+S0725,Supplier_0919,,2022,Electronics,Other (Equipment),29157.1
+S0725,Supplier_0920,,2023,Electronics,,56943.65
+S0726,Supplier_0921,,2022,,,659.47
+S0727,Supplier_0922,,2022,,,3834.01
+S0727,Supplier_0923,,2023,,,13331.01
+S0728,Supplier_0924,,2022,,,7500.0
+S0729,Supplier_0925,,2023,,,595.0
+S0730,Supplier_0926,,2023,,,2165.41
+S0731,Supplier_0927,,2023,,,410.0
+S0732,Supplier_0928,,2023,,,1226.89
+S0733,Supplier_0929,,2023,,,2975.0
+S0734,Supplier_0930,,2023,,,96.0
+S0735,Supplier_0931,,2023,,,3102.19
+S0736,Supplier_0932,,2023,,,521.9
+S0737,Supplier_0933,,2023,,,21181.05
+S0738,Supplier_0934,,2022,,,1499.0
+S0739,Supplier_0935,,2023,Professional Services,,276494.05
+S0740,Supplier_0936,,2022,HR,Flexible employment,85666.7
+S0740,Supplier_0937,,2023,HR,,67256.0
+S0741,Supplier_0938,,2022,,,8640.0
+S0741,Supplier_0939,,2023,Professional Services,,107018.16
+S0742,Supplier_0940,,2022,Medical Device,Consumables,8764.9
+S0742,Supplier_0941,,2023,Medical Device,,496.1
+S0743,Supplier_0942,,2023,Professional Services,,323798.33
+S0744,Supplier_0943,,2022,Electronics,Components,93112.5
+S0744,Supplier_0944,,2023,Electronics,,77878.75
+S0745,Supplier_0945,,2022,Property,Maintenance ,597.5
+S0745,Supplier_0946,,2023,Property,,2605.68
+S0746,Supplier_0947,,2022,,,1556.25
+S0747,Supplier_0948,,2022,CAPEX (Machines) ,Maintenance ,21645.16
+S0747,Supplier_0949,,2023,Capex (Machines) ,,27249.5
+S0748,Supplier_0950,,2022,Metal Components,Machined Parts,415927.04
+S0748,Supplier_0951,,2023,Metal Components,,417330.12
+S0749,Supplier_0952,,2023,,,677.6
+S0750,Supplier_0953,,2023,,,262.0
+S0751,Supplier_0954,,2023,,,907.5
+S0752,Supplier_0955,,2023,,,187.31
+S0753,Supplier_0956,,2023,,,14368.5
+S0754,Supplier_0957,,2023,,,35057.87
+S0755,Supplier_0958,,2023,,,540.0
+S0756,Supplier_0959,,2023,,,21417.0
+S0757,Supplier_0960,,2023,,,19546.33
+S0758,Supplier_0961,,2023,,,5856.5
+S0759,Supplier_0962,,2023,,,139.31
+S0760,Supplier_0963,,2023,,,11505.34
+S0761,Supplier_0964,,2023,,,1609.51
+S0762,Supplier_0965,,2023,,,134.0
+S0763,Supplier_0966,,2023,,,6079.05
+S0763,Supplier_0967,,2023,,,102682.42
+S0764,Supplier_0968,,2023,,,250.0
+S0765,Supplier_0969,,2023,I.T,,218085.43
+S0766,Supplier_0970,,2023,,,538.33
+S0767,Supplier_0971,,2023,,,10375.99
+S0768,Supplier_0972,,2023,,,99419.65
+S0769,Supplier_0973,,2022,Property,Lease,62869.0
+S0769,Supplier_0974,,2023,Property,,10520.95
+S0770,Supplier_0975,,2022,,,383.95
+S0771,Supplier_0976,,2022,,,475.0
+S0772,Supplier_0977,,2022,,,2438.22
+S0773,Supplier_0978,,2022,,,349.8
+S0774,Supplier_0979,,2022,,,2408.85
+S0775,Supplier_0980,,2022,,,137.5
+S0776,Supplier_0981,,2022,,,104.03
+S0777,Supplier_0982,,2022,Medical Device,Consumables,240.0
+S0777,Supplier_0983,,2023,Medical Device,,254.42
+S0778,Supplier_0984,,2022,Property,Maintenance ,8125.0
+S0779,Supplier_0985,,2022,,,155.0
+S0780,Supplier_0986,,2022,,,175.0
+S0780,Supplier_0987,,2023,,,181.5
+S0781,Supplier_0988,,2023,,,27108.85
+S0782,Supplier_0989,,2022,,,860.0
+S0783,Supplier_0990,,2022,IT ,Hardware ,10369.32
+S0783,Supplier_0991,,2023,I.T,,2923.01
+S0784,Supplier_0992,,2022,,,1959.92
+S0784,Supplier_0993,,2023,,,1160.3
+S0785,Supplier_0994,,2022,,,9678.75
+S0785,Supplier_0995,,2023,,,2410.32
+S0786,Supplier_0996,,2023,,,3611.6
+S0787,Supplier_0997,,2022,,,4480.0
+S0787,Supplier_0998,,2023,,,20060.0
+S0788,Supplier_0999,,2023,,,83018.6
+S0789,Supplier_1000,,2022,IT ,Hardware ,30097.0
+S0789,Supplier_1001,,2023,I.T,,39667.18
+S0790,Supplier_1002,,2022,,,4828.91
+S0790,Supplier_1003,,2023,,,2525.74
+S0791,Supplier_1004,,2023,Professional Services,,144279.9
+S0792,Supplier_1005,,2022,Facility Management,Other ,600.0
+S0792,Supplier_1006,,2023,Facility Management,,600.0
+S0793,Supplier_1007,,2022,Professional Services,Other,6333.34
+S0793,Supplier_1008,,2023,Professional Services,,12039.5
+S0794,Supplier_1009,,2022,Property,Maintenance ,94104.77
+S0794,Supplier_1010,,2023,Property,,102202.8
+S0795,Supplier_1011,,2022,Facility Management,Cleaning services,660.4
+S0796,Supplier_1012,,2023,,,14520.0
+S0797,Supplier_1013,,2022,Facility Management,Other ,8.53
+S0797,Supplier_1014,,2023,Facility Management,,388.48
+S0798,Supplier_1015,,2022,IT ,Software ,2379230.81
+S0798,Supplier_1016,,2023,I.T,,461876.54
+S0799,Supplier_1017,,2022,Property,Maintenance ,800.93
+S0799,Supplier_1018,,2023,Property,,1335.97
+S0800,Supplier_1019,,2023,,,53.5
+S0801,Supplier_1020,,2022,Facility Management,Catering and vending machines,752.2
+S0801,Supplier_1021,,2023,Facility Management,,1014.1
+S0802,Supplier_1022,,2022,Facility Management,Office Supplies,12402.48
+S0802,Supplier_1023,,2023,Facility Management,,15864.73
+S0803,Supplier_1024,,2022,,,220.42
+S0804,Supplier_1025,,2022,,,2248.0
+S0805,Supplier_1026,,2022,,,744.5
+S0805,Supplier_1027,,2023,,,726.0
+S0806,Supplier_1028,,2022,,,636.0
+S0807,Supplier_1029,,2022,,,1188.0
+S0807,Supplier_1030,,2023,,,1312.74
+S0808,Supplier_1031,,2022,IT ,Tele- and datacom,40950.99
+S0808,Supplier_1032,,2023,I.T,,53083.92
+S0809,Supplier_1033,,2022,,,2400.0
+S0809,Supplier_1034,,2023,,,7516.54
+S0810,Supplier_1035,,2022,Professional Services,Legal ,15230.5
+S0810,Supplier_1036,,2023,Professional Services,,30038.78
+S0811,Supplier_1037,,2022,Facility Management,Catering and vending machines,5160.0
+S0811,Supplier_1038,,2023,Facility Management,,5430.9
+S0812,Supplier_1039,,2023,,,6082.42
+S0813,Supplier_1040,,2022,,,3713.0
+S0813,Supplier_1041,,2023,,,1784.75
+S0813,Supplier_1042,,2023,,,3275.0
+S0814,Supplier_1043,,2023,,,2338.32
+S0815,Supplier_1044,,2022,Facility Management,Catering and vending machines,44777.12
+S0815,Supplier_1045,,2023,Facility Management,,55267.85
+S0816,Supplier_1046,,2022,,,1979.4
+S0817,Supplier_1047,,2023,,,5309.66
+S0818,Supplier_1048,,2022,Energy,Energy,201580.01
+S0818,Supplier_1049,,2023,Energy,,198040.25
+S0819,Supplier_1050,,2022,Sub-Contracting,Sterilization,272381.65
+S0819,Supplier_1051,,2023,Sub-Contracting,,305477.34
+S0820,Supplier_1052,,2022,IT ,Tele- and datacom,1238.43
+S0820,Supplier_1053,,2023,I.T,,1111.47
+S0821,Supplier_1054,,2022,,,100.0
+S0822,Supplier_1055,,2023,,,100.0
+S0823,Supplier_1056,,2022,IT ,Tele- and datacom,107.34
+S0823,Supplier_1057,,2023,I.T,,263.4
+S0824,Supplier_1058,,2023,,,180.0
+S0825,Supplier_1059,,2022,,,2357.03
+S0825,Supplier_1060,,2023,,,4350.29
+S0826,Supplier_1061,,2022,Property,Maintenance ,2420.6
+S0826,Supplier_1062,,2023,Property,,4260.4
+S0827,Supplier_1063,,2022,,,60.0
+S0827,Supplier_1064,,2023,,,60.0
+S0828,Supplier_1065,,2023,,,18125.0
+S0829,Supplier_1066,,2022,,,475.0
+S0829,Supplier_1067,,2023,,,302.5
+S0830,Supplier_1068,,2022,Logistics & transport,Freight - Other,14158.78
+S0830,Supplier_1069,,2023,Logistics & Transport,,49611.84
+S0831,Supplier_1070,,2023,,,598.95
+S0832,Supplier_1071,,2022,IT ,Software ,36659.23
+S0832,Supplier_1072,,2023,I.T,,27623.14
+S0833,Supplier_1073,,2022,,,2784.36
+S0833,Supplier_1074,,2023,,,2388.14
+S0834,Supplier_1075,,2022,Professional Services,Legal ,2040.19
+S0834,Supplier_1076,,2023,Professional Services,,4689.5
+S0835,Supplier_1077,,2022,Professional Services,Finance (Accountancy),7832.8
+S0835,Supplier_1078,,2023,Professional Services,,20733.6
+S0836,Supplier_1079,,2023,,,2657.16
+S0837,Supplier_1080,,2022,IT ,Tele- and datacom,1549.52
+S0837,Supplier_1081,,2023,I.T,,650.0
+S0838,Supplier_1082,,2022,,,300.0
+S0838,Supplier_1083,,2023,,,300.0
+S0839,Supplier_1084,,2023,,,702.91
+S0839,Supplier_1085,,2023,,,29061.91
+S0840,Supplier_1086,,2022,,,446.25
+S0841,Supplier_1087,,2022,,,1364.0
+S0841,Supplier_1088,,2023,,,2017.8
+S0842,Supplier_1089,,2023,,,9680.0
+S0843,Supplier_1090,,2022,Fleet,Other,262.17
+S0844,Supplier_1091,,2022,,,1033.0
+S0845,Supplier_1092,,2022,HR,Flexible employment,929.89
+S0845,Supplier_1093,,2023,HR,,938.83
+S0846,Supplier_1094,,2022,IT ,Tele- and datacom,194.0
+S0846,Supplier_1095,,2023,I.T,,251.79
+S0847,Supplier_1096,,2022,HR,Education,39000.0
+S0847,Supplier_1097,,2023,HR,,51590.0
+S0848,Supplier_1098,,2022,Professional Services,Other,3402.72
+S0848,Supplier_1099,,2023,Professional Services,,41072.09
+S0849,Supplier_1100,,2022,Professional Services,Other,8380.0
+S0849,Supplier_1101,,2023,Professional Services,,57222.0
+S0850,Supplier_1102,,2023,,,51345.18
+S0851,Supplier_1103,,2023,,,108491.52
+S0852,Supplier_1104,,2022,,,3240.0
+S0852,Supplier_1105,,2023,,,16335.0
+S0853,Supplier_1106,,2023,Professional Services,,307291.68
+S0854,Supplier_1107,,2022,HR,Insurance,42283.23
+S0854,Supplier_1108,,2023,HR,,22289.62
+S0855,Supplier_1109,,2023,,,51217.5
+S0856,Supplier_1110,,2023,,,1943.5
+S0857,Supplier_1111,,2023,,,689.84
+S0858,Supplier_1112,,2023,,,14338.5
+S0859,Supplier_1113,,2023,Professional Services,,60741.47
+S0860,Supplier_1114,,2023,,,54.91
+S0861,Supplier_1115,,2023,,,795.0
+S0862,Supplier_1116,,2023,,,89374.35
+S0863,Supplier_1117,,2023,,,1386.93
+S0864,Supplier_1118,,2023,,,2413.95
+S0865,Supplier_1119,,2023,,,91965.17
+S0866,Supplier_1120,,2023,,,1131.35
+S0867,Supplier_1121,,2023,,,20747.5
+S0868,Supplier_1122,,2022,Property,Maintenance ,19709.94
+S0868,Supplier_1123,,2023,Property,,15829.98
+S0869,Supplier_1124,,2022,IT ,Tele- and datacom,268.0
+S0869,Supplier_1125,,2023,I.T,,311.0
+S0870,Supplier_1126,,2022,CAPEX (Machines) ,Maintenance ,191.1
+S0870,Supplier_1127,,2023,Capex (Machines) ,,622.13
+S0871,Supplier_1128,,2022,,,1203.0
+S0871,Supplier_1129,,2023,,,184.23
+S0872,Supplier_1130,,2022,,,390.4
+S0872,Supplier_1131,,2023,,,8739.91
+S0873,Supplier_1132,,2023,,,5390.95
+S0874,Supplier_1133,,2022,,,750.0
+S0875,Supplier_1134,,2022,,,433.0
+S0875,Supplier_1135,,2023,,,1498.54
+S0876,Supplier_1136,,2022,,,45705.77
+S0876,Supplier_1137,,2023,Travel,,53889.08
+S0877,Supplier_1138,,2022,Professional Services,Other,33500.0
+S0877,Supplier_1139,,2023,Professional Services,,18713.28
+S0878,Supplier_1140,,2022,,,350.0
+S0879,Supplier_1141,,2022,Property,Maintenance ,2650.0
+S0880,Supplier_1142,,2022,Electronics,Components,2051.09
+S0880,Supplier_1143,,2023,Electronics,,306.22
+S0881,Supplier_1144,,2022,Facility Management,Other ,575.0
+S0881,Supplier_1145,,2023,Facility Management,,828.85
+S0882,Supplier_1146,,2022,IT ,Tele- and datacom,68860.0
+S0882,Supplier_1147,,2023,I.T,,42725.48
+S0883,Supplier_1148,,2022,Property,Maintenance ,12072.92
+S0884,Supplier_1149,,2022,,,3500.0
+S0884,Supplier_1150,,2023,,,3500.0
+S0885,Supplier_1151,,2022,,,65.0
+S0886,Supplier_1152,,2023,,,3424.3
+S0887,Supplier_1153,,2023,,,2025.54
+S0888,Supplier_1154,,2022,,,5100.0
+S0889,Supplier_1155,,2022,,,821.85
+S0889,Supplier_1156,,2023,,,367.95
+S0890,Supplier_1157,,2022,HR,Flexible employment,9624.0
+S0890,Supplier_1158,,2023,HR,,16892.88
+S0891,Supplier_1159,,2022,,,2510.0
+S0892,Supplier_1160,,2023,,,139370.0
+S0893,Supplier_1161,,2022,HR,Flexible employment,123866.56
+S0893,Supplier_1162,,2023,HR,,125329.17
+S0894,Supplier_1163,,2022,IT ,Software ,166158.85
+S0894,Supplier_1164,,2023,I.T,,161775.17
+S0895,Supplier_1165,,2023,HR,,615178.77
+S0896,Supplier_1166,,2022,CAPEX (Machines) ,Maintenance ,178788.77
+S0896,Supplier_1167,,2023,Capex (Machines) ,,77198.23
+S0897,Supplier_1168,,2022,Property,Maintenance ,10326.44
+S0897,Supplier_1169,,2023,Property,,147759.37
+S0898,Supplier_1170,,2022,Electronics,Components,10100.4
+S0898,Supplier_1171,,2023,Electronics,,1390.2
+S0899,Supplier_1172,,2022,Packaging,Wood,199824.8
+S0899,Supplier_1173,,2023,Packaging,,163080.63
+S0900,Supplier_1174,,2022,HR,Moving,21195.59
+S0901,Supplier_1175,,2023,,,121.71
+S0902,Supplier_1176,,2022,,,1770.07
+S0902,Supplier_1177,,2023,,,202.93
+S0903,Supplier_1178,,2022,,,11731.6
+S0903,Supplier_1179,,2023,,,8125.3
+S0904,Supplier_1180,,2022,Medical Device,Consumables,165780.23
+S0904,Supplier_1180,,2023,Medical Device,,117271.42
+S0905,Supplier_1181,,2023,Electronics,,641622.51
+S0906,Supplier_1182,,2022,HR,Flexible employment,175.75
+S0906,Supplier_1183,,2023,HR,,10289.6
+S0907,Supplier_1184,,2022,,,1807.14
+S0907,Supplier_1185,,2023,,,1533.79
+S0908,Supplier_1186,,2022,,,123.97
+S0909,Supplier_1187,,2023,,,368.53
+S0910,Supplier_1188,,2022,Property,Maintenance ,4355.0
+S0910,Supplier_1189,,2023,Property,,4951.32
+S0911,Supplier_1190,,2023,Professional Services,,447013.29
+S0912,Supplier_1191,,2022,,,1238.5
+S0912,Supplier_1192,,2023,,,17517.5
+S0913,Supplier_1193,,2022,Facility Management,Furniture,507256.11
+S0913,Supplier_1194,,2023,Facility Management,,208648.75
+S0914,Supplier_1195,,2022,IT ,Tele- and datacom,9369.53
+S0914,Supplier_1196,,2023,I.T,,3403.22
+S0915,Supplier_1197,,2022,Metal Components,Casting,439360.33
+S0915,Supplier_1198,,2023,Metal Components,,735107.86
+S0916,Supplier_1199,,2022,,,816.2
+S0917,Supplier_1200,,2022,Travel,"Hotel, Meeting & Congres",47586.12
+S0917,Supplier_1201,,2023,Travel,,62482.79
+S0918,Supplier_1202,,2022,,,590.0
+S0919,Supplier_1203,,2022,IT ,Tele- and datacom,1814.33
+S0919,Supplier_1204,,2023,I.T,,1631.99
+S0920,Supplier_1205,,2022,,,775.4
+S0920,Supplier_1205,,2023,,,3002.01
+S0920,Supplier_1206,,2023,,,1672.93
+S0921,Supplier_1207,,2022,Electronics,Components,29075.85
+S0921,Supplier_1207,,2023,Electronics,,37084.73
+S0922,Supplier_1208,,2022,,,5361.06
+S0923,Supplier_1209,,2022,,,15266.6
+S0924,Supplier_1210,,2022,,,248616.28
+S0924,Supplier_1211,,2023,Professional Services,,384535.77
+S0925,Supplier_1212,,2022,Packaging,Cartons,79889.76
+S0925,Supplier_1213,,2023,Packaging,,90201.48
+S0926,Supplier_1214,,2022,,,2250.0
+S0927,Supplier_1215,,2022,Professional Services,Legal ,2700.0
+S0927,Supplier_1216,,2023,Professional Services,,13252.3
+S0928,Supplier_1217,,2023,,,9662.75
+S0929,Supplier_1218,,2023,,,14400.0
+S0930,Supplier_1219,,2022,,,587.31
+S0931,Supplier_1220,,2022,Travel,"Hotel, Meeting & Congres",51595.45
+S0931,Supplier_1221,,2023,Travel,,11438.39
+S0932,Supplier_1222,,2022,,,2703.0
+S0933,Supplier_1223,,2023,,,5414.75
+S0934,Supplier_1224,,2022,,,1134.69
+S0935,Supplier_1225,,2022,,,70.21
+S0935,Supplier_1226,,2023,,,437.19
+S0936,Supplier_1227,,2023,,,12977.25
+S0937,Supplier_1228,,2022,,,2940.36
+S0937,Supplier_1229,,2023,,,3040.0
+S0938,Supplier_1230,,2022,,,840.0
+S0939,Supplier_1231,,2023,,,19953.51
+S0940,Supplier_1232,,2022,HR,Flexible employment,28400.0
+S0940,Supplier_1233,,2023,HR,,80474.53
+S0941,Supplier_1234,,2022,HR,Flexible employment,45952.26
+S0941,Supplier_1235,,2023,HR,,59196.8
+S0942,Supplier_1236,,2023,,,97646.75
+S0943,Supplier_1237,,2022,,,1700.0
+S0943,Supplier_1238,,2023,,,680.0
+S0944,Supplier_1239,,2023,,,743.3
+S0945,Supplier_1240,,2022,,,183.75
+S0946,Supplier_1241,,2022,,,4981.4
+S0946,Supplier_1242,,2023,,,1969.4
+S0947,Supplier_1243,,2022,,,2418.0
+S0948,Supplier_1244,,2022,,,1613.5
+S0948,Supplier_1245,,2023,,,698.17
+S0949,Supplier_1246,,2022,,,5127.47
+S0949,Supplier_1247,,2023,,,712.41
+S0950,Supplier_1248,,2022,,,500.0
+S0951,Supplier_1249,,2023,Capex (Machines) ,,46490.94
+S0952,Supplier_1250,,2022,HR,Flexible employment,98252.38
+S0952,Supplier_1251,,2023,HR,,64519.94
+S0953,Supplier_1252,,2022,,,47500.0
+S0954,Supplier_1253,,2022,Property,Maintenance ,1022.85
+S0954,Supplier_1254,,2023,Property,,268.0
+S0955,Supplier_1255,,2022,Logistics & transport,Freight - Other,24981.18
+S0955,Supplier_1256,,2023,Logistics & Transport,,68870.98
+S0956,Supplier_1257,,2022,Logistics & transport,Courier Services,1091490.18
+S0956,Supplier_1258,,2023,Logistics & Transport,,1662334.22
+S0957,Supplier_0597,,2023,,,1400.0
+S0958,Supplier_1259,,2022,HR,Flexible employment,132975.0
+S0958,Supplier_1260,,2023,HR,,142610.9
+S0959,Supplier_1261,,2023,,,133960.83
+S0960,Supplier_1262,,2022,,,19302.5
+S0961,Supplier_1263,,2022,Fleet,Other,472.98
+S0961,Supplier_1264,,2023,Fleet,,276.95
+S0962,Supplier_1265,,2023,,,7773.75
+S0963,Supplier_1266,,2022,Property,Maintenance ,9735.04
+S0963,Supplier_1267,,2023,Property,,9260.37
+S0964,Supplier_1268,,2023,,,2078.56
+S0965,Supplier_1269,,2022,,,79.54
+S0966,Supplier_1270,,2023,Plastic Components,,52760.0
+S0967,Supplier_1271,,2022,Electronics,PCB,657759.61
+S0967,Supplier_1272,,2023,Electronics,,1068358.59
+S0968,Supplier_1273,,2022,,,1500.0
+S0969,Supplier_1274,,2022,HR,Flexible employment,85625.24
+S0969,Supplier_1275,,2023,HR,,120565.65
+S0970,Supplier_1276,,2023,,,3969.84
+S0971,Supplier_1277,,2022,HR,Payroll,89820.13
+S0971,Supplier_1278,,2023,HR,,101674.71
+S0972,Supplier_1279,,2022,IT ,Software ,40735.29
+S0972,Supplier_1280,,2023,I.T,,50487.03
+S0973,Supplier_1281,,2022,IT ,Hardware ,17404.2
+S0973,Supplier_1282,,2023,I.T,,31114.4
+S0974,Supplier_1283,,2022,Facility Management,Catering and vending machines,897.52
+S0974,Supplier_1284,,2023,Facility Management,,203.0
+S0975,Supplier_1285,,2022,Packaging,Other (Polymer Packaging),4288.0
+S0975,Supplier_1286,,2023,Packaging,,2365.55
+S0976,Supplier_0960,,2023,,,32949.99
+S0977,Supplier_1287,,2022,Professional Services,Other,3293.79
+S0977,Supplier_1288,,2023,Professional Services,,3253.44
+S0978,Supplier_1289,,2022,CAPEX (Machines) ,Machines,51773.8
+S0978,Supplier_1289,,2023,Capex (Machines) ,,40799.12
+S0979,Supplier_1290,,2022,IT ,Software ,17748.0
+S0979,Supplier_1291,,2023,I.T,,22724.71
+S0980,Supplier_1292,,2022,Packaging,Other (Polymer Packaging),2329.2
+S0980,Supplier_1293,,2023,Packaging,,2839.36
+S0981,Supplier_1294,,2022,Packaging,Cartons,371434.1
+S0981,Supplier_1295,,2023,Packaging,,393508.1
+S0982,Supplier_1296,,2022,,,238.8
+S0982,Supplier_1297,,2023,,,259.7
+S0983,Supplier_1298,,2022,Plastic Components,Injection Moulding,25523.37
+S0983,Supplier_1299,,2023,Plastic Components,,14297.93
+S0984,Supplier_1300,,2022,,,4920.0
+S0984,Supplier_1301,,2023,,,11767.7
+S0985,Supplier_1302,,2022,Metal Components,Machined Parts,72423.7
+S0985,Supplier_1303,,2023,Metal Components,,65964.79
+S0986,Supplier_1304,,2022,Metal Components,Other,71330.1
+S0986,Supplier_1305,,2023,Metal Components,,42308.33
+S0987,Supplier_1306,,2022,,,669.61
+S0988,Supplier_1307,,2022,,,1785.0
+S0988,Supplier_1308,,2023,,,411.4
+S0989,Supplier_1309,,2022,Plastic Components,Other (Machined Parts),2326.0
+S0989,Supplier_1310,,2023,Plastic Components,,1224.23
+S0990,Supplier_1311,,2023,,,10864.0
+S0991,Supplier_1312,,2023,,,5604.0
+S0992,Supplier_1313,,2022,Electronics,Other,4119.0
+S0993,Supplier_1314,,2023,,,1090.91
+S0994,Supplier_1315,,2023,,,44558.6
+S0995,Supplier_1316,,2023,,,84937.89
+S0996,Supplier_1317,,2023,,,7500.0
+S0997,Supplier_1318,,2023,,,113.64
+S0997,Supplier_1319,,2023,,,14507.74
+S0998,Supplier_1320,,2023,,,6039.25
+S0998,Supplier_1321,,2023,,,7620.06
+S0999,Supplier_1322,,2023,,,1151.85
+S1000,Supplier_1323,,2022,Professional Services,Other,9624.55
+S1000,Supplier_1324,,2023,Professional Services,,502434.85
+S1001,Supplier_1325,,2023,,,29282.0
+S1002,Supplier_1326,,2022,Metal Components,Machined Parts,6066.7
+S1002,Supplier_1327,,2023,Metal Components,,9027.27
+S1003,Supplier_1328,,2022,IT ,Tele- and datacom,598.97
+S1003,Supplier_1328,,2023,I.T,,704.75
+S1004,Supplier_1329,,2022,Plastic Components,Other,4486.25
+S1004,Supplier_1330,,2023,Plastic Components,,1343.1
+S1005,Supplier_1331,,2022,IT ,Tele- and datacom,1537.1
+S1006,Supplier_1332,,2022,Electronics,Pneumatic,326541.16
+S1006,Supplier_1333,,2023,Electronics,,411725.93
+S1006,Supplier_1334,,2022,,,483.12
+S1007,Supplier_1335,,2022,,,190.0
+S1007,Supplier_1336,,2023,,,242.0
+S1008,Supplier_1337,,2022,Sub-Contracting,Spark Eroding,2444121.0
+S1008,Supplier_1338,,2023,Sub-Contracting,,3254998.08
+S1009,Supplier_1339,,2023,Pharma,,4504.0
+S1009,Supplier_1340,,2023,Pharma,,730900.5
+S1010,Supplier_1341,,2023,,,522.14
+S1011,Supplier_1342,,2022,,,160.0
+S1011,Supplier_1343,,2023,,,514.12
+S1012,Supplier_1344,,2022,,,936.47
+S1012,Supplier_1345,,2023,,,1101.15
+S1013,Supplier_1346,,2023,,,18300.0
+S1014,Supplier_1347,,2023,,,2113.65
+S1015,Supplier_1348,,2022,Packaging,Other (Labelling & Print),826.65
+S1015,Supplier_1349,,2023,Packaging,,877.84
+S1016,Supplier_1350,,2023,,,1880.88
+S1017,Supplier_1351,,2023,,,1078.48
+S1018,Supplier_1352,,2023,,,280.6
+S1019,Supplier_1353,,2023,,,973.13
+S1020,Supplier_1354,,2023,,,3952.8
+S1020,Supplier_1355,,2023,,,14520.0
+S1021,Supplier_1356,,2023,,,21271.8
+S1022,Supplier_1357,,2023,,,3795.0
+S1022,Supplier_1358,,2023,,,20530.16
+S1023,Supplier_1359,,2022,,,93.6
+S1024,Supplier_1360,,2022,Electronics,Components,18601.67
+S1024,Supplier_1361,,2023,Electronics,,41523.44
+S1025,Supplier_1362,,2022,Electronics,Components,52131.71
+S1026,Supplier_1363,,2022,Logistics & transport,Freight - Other,525528.8
+S1026,Supplier_1364,,2023,Logistics & Transport,,993909.59
+S1027,Supplier_1365,,2023,,,1344.35
+S1028,Supplier_1366,,2022,Facility Management,Catering and vending machines,197564.2
+S1028,Supplier_1367,,2023,Facility Management,,228015.4
+S1029,Supplier_1368,,2022,HR,Flexible employment,707233.95
+S1029,Supplier_1369,,2023,HR,,569142.86
+S1030,Supplier_1370,,2022,,,100.0
+S1031,Supplier_1371,,2022,,,150.0
+S1031,Supplier_1372,,2023,,,150.0
+S1032,Supplier_1373,,2022,,,499.6
+S1033,Supplier_1374,,2023,,,1558.48
+S1034,Supplier_1375,,2023,IT,,366016.78
+S1035,Supplier_1376,,2022,Professional Services,Other,24435.38
+S1035,Supplier_1377,,2023,Professional Services,,13153.41
+S1036,Supplier_1378,,2022,,,532.0
+S1036,Supplier_1379,,2023,,,754.37
+S1037,Supplier_1380,,2022,,,1500.0
+S1037,Supplier_1381,,2023,,,1591.5
+S1038,Supplier_1382,,2022,Packaging,Other (Polymer Packaging),2410.38
+S1038,Supplier_1383,,2023,Packaging,,1470.9
+S1039,Supplier_1384,,2022,Packaging,Other (Polymer Packaging),377.45
+S1040,Supplier_1385,,2022,Plastic Components,Injection Moulding,31753.18
+S1040,Supplier_1386,,2023,Plastic Components,,19470.83
+S1041,Supplier_1387,,2023,,,16.35
+S1042,Supplier_1388,,2022,,,1717.1
+S1042,Supplier_1389,,2023,,,1887.2
+S1043,Supplier_1390,,2023,,,81.29
+S1044,Supplier_1391,,2022,Electronics,Components,37908.61
+S1044,Supplier_1392,,2023,Electronics,,20748.8
+S1044,Supplier_1393,,2023,,,81.9
+S1045,Supplier_1394,,2023,HR,,103759.51
+S1046,Supplier_1395,,2022,,,1174.28
+S1046,Supplier_1396,,2023,,,3243.79
+S1047,Supplier_1397,,2023,,,10407.74
+S1048,Supplier_1398,,2022,,,49.96
+S1049,Supplier_1399,,2022,IT ,Software ,1500.0
+S1050,Supplier_1400,,2022,,,14911.04
+S1050,Supplier_1401,,2023,,,1210.0
+S1051,Supplier_1402,,2022,,,805.4
+S1051,Supplier_1403,,2023,,,511.33
+S1052,Supplier_1404,,2022,Property,Lease,9752.5
+S1052,Supplier_1405,,2023,Property,,3202.25
+S1053,Supplier_1406,,2022,,,955.5
+S1053,Supplier_1407,,2023,,,935.9
+S1054,Supplier_1408,,2022,,,95.0
+S1054,Supplier_1409,,2023,,,199.65
+S1055,Supplier_1410,,2022,,,23896.25
+S1055,Supplier_1411,,2023,,,26921.09
+S1056,Supplier_1412,,2022,,,30.0
+S1056,Supplier_1413,,2023,,,270.48
+S1057,Supplier_1414,,2022,,,1975.0
+S1058,Supplier_1415,,2022,,,1349.75
+S1059,Supplier_1416,,2022,,,628.8
+S1059,Supplier_1417,,2023,,,2622.9
+S1060,Supplier_1418,,2022,Professional Services,Legal ,12295.0
+S1061,Supplier_1419,,2022,HR,Flexible employment,26427.5
+S1061,Supplier_1420,,2023,HR,,197691.65
+S1062,Supplier_1421,,2022,,,350.0
+S1063,Supplier_1422,,2022,IT ,Software ,21780.0
+S1064,Supplier_1423,,2023,,,22811.04
+S1065,Supplier_1424,,2022,IT ,Software ,28920.0
+S1066,Supplier_1425,,2022,,,16990.39
+S1066,Supplier_1426,,2023,Professional Services,,233453.46
+S1067,Supplier_1427,,2022,IT ,Software ,163677.5
+S1067,Supplier_1428,,2023,I.T,,16169.95
+S1068,Supplier_1429,,2022,Facility Management,Other ,15.37
+S1068,Supplier_1430,,2023,Facility Management,,10.36
+S1069,Supplier_1431,,2023,,,26779.12
+S1070,Supplier_1432,,2023,,,2380.0
+S1071,Supplier_1433,,2022,Facility Management,Other ,697.27
+S1071,Supplier_1434,,2023,Facility Management,,6533.2
+S1072,Supplier_1435,,2022,IT ,Software ,93424.0
+S1072,Supplier_1436,,2023,I.T,,108394.98
+S1073,Supplier_1437,,2023,Plastic Components,,692.78
+S1074,Supplier_1438,,2022,IT ,Tele- and datacom,6050.0
+S1074,Supplier_1438,,2023,I.T,,79115.26
+S1075,Supplier_1439,,2022,,,618.45
+S1076,Supplier_1440,,2022,Plastic Components,Injection Moulding,2157695.15
+S1076,Supplier_1441,,2023,Plastic Components,,2313419.26
+S1077,Supplier_1442,,2023,,,8760.55
+S1078,Supplier_1443,,2022,IT ,Hardware ,10102.0
+S1078,Supplier_1444,,2023,I.T,,8857.14
+S1079,Supplier_1445,,2022,IT ,Software ,7500.0
+S1079,Supplier_1446,,2023,I.T,,9982.5
+S1080,Supplier_1447,,2022,Property,Maintenance ,530.6
+S1080,Supplier_1448,,2023,Property,,13.1
+S1081,Supplier_1449,,2023,,,5885.52
+S1082,Supplier_1450,,2022,Sub-Contracting,Other,930.0
+S1082,Supplier_1451,,2023,Sub-Contracting,,315.0
+S1083,Supplier_1452,,2022,,,994.52
+S1083,Supplier_1453,,2023,,,1124.34
+S1084,Supplier_1454,,2022,,,2110.0
+S1085,Supplier_1455,,2022,Metal Components,Machined Parts,13360.67
+S1085,Supplier_1456,,2023,Metal Components,,23281.92
+S1086,Supplier_1457,,2022,Packaging,Other,13301.8
+S1086,Supplier_1458,,2023,Packaging,,4096.35
+S1087,Supplier_1459,,2022,Property,Maintenance ,19231.86
+S1087,Supplier_1460,,2023,Property,,36983.7
+S1088,Supplier_1461,,2022,Metal Components,Machined Parts,29917.16
+S1088,Supplier_1462,,2023,Metal Components,,38469.94
+S1089,Supplier_1463,,2023,,,2608.36
+S1090,Supplier_1464,,2022,Packaging,Cartons,2151.44
+S1090,Supplier_1465,,2023,Packaging,,1984.48
+S1091,Supplier_1466,,2023,,,18903.19
+S1092,Supplier_1467,,2023,,,17752.36
+S1093,Supplier_1468,,2022,Logistics & transport,Courier Services,333.0
+S1094,Supplier_1469,,2022,Travel,Other travel,46642.97
+S1094,Supplier_1470,,2023,Travel,,87503.91
+S1095,Supplier_1471,,2022,,,9761.11
+S1095,Supplier_1472,,2023,,,8335.23
+S1096,Supplier_1473,,2022,Property,Maintenance ,32824.7
+S1096,Supplier_1474,,2023,Property,,9362.88
+S1097,Supplier_1475,,2022,,,2216.0
+S1098,Supplier_1476,,2022,CAPEX (Machines) ,Maintenance ,36790.0
+S1098,Supplier_1477,,2023,Capex (Machines) ,,2795.1
+S1099,Supplier_1478,,2022,,,875.0
+S1099,Supplier_1479,,2023,,,1123.5
+S1100,Supplier_1480,,2022,HR,Flexible employment,57943.75
+S1101,Supplier_1481,,2022,Property,Lease,1545257.58
+S1101,Supplier_1482,,2023,Medical Device?,,997125.96
+S1102,Supplier_1483,,2022,Electronics,Mechatronics,888796.0
+S1102,Supplier_1484,,2023,Electronics,,1211654.26
+S1103,Supplier_1485,,2022,IT ,Software ,27806.0
+S1103,Supplier_1486,,2023,I.T,,37073.19
+S1104,Supplier_1487,,2022,,,1250.0
+S1104,Supplier_1488,,2023,,,483.0
+S1105,Supplier_1489,,2022,Metal Components,Other,10293.89
+S1105,Supplier_1490,,2023,Metal Components,,15793.23
+S1106,Supplier_1491,,2023,,,3969.0
+S1107,Supplier_1492,,2022,IT ,Software ,27178.75
+S1107,Supplier_1493,,2023,I.T,,24292.75
+S1108,Supplier_1494,,2022,,,3733.76
+S1109,Supplier_1495,,2023,,,10208.04
+S1110,Supplier_1496,,2023,,,3842.35
+S1111,Supplier_1497,,2022,Property,Maintenance ,12978.83
+S1111,Supplier_1498,,2023,Property,,17986.01
+S1112,Supplier_1499,,2022,Metal Components,Machined Parts,1590.75
+S1112,Supplier_1500,,2023,Metal Components,,1619.5
+S1113,Supplier_1501,,2023,Professional Services,,167557.3
+S1114,Supplier_1502,,2022,HR,Insurance,21371.64
+S1115,Supplier_1503,,2023,,,1179.75
+S1116,Supplier_1504,,2022,,,5045.5
+S1116,Supplier_1505,,2023,,,8751.15
+S1117,Supplier_1506,,2022,Property,Maintenance ,12758.42
+S1117,Supplier_1507,,2023,Property,,6979.13
+S1118,Supplier_1508,,2022,,,567.28
+S1118,Supplier_1509,,2023,,,278.89
+S1119,Supplier_1510,,2022,,,41.0
+S1120,Supplier_1511,,2022,IT ,Tele- and datacom,97560.1
+S1120,Supplier_1512,,2023,I.T,,41179.45
+S1121,Supplier_1513,,2022,,,1.71
+S1122,Supplier_1514,,2022,,,1575.0
+S1123,Supplier_1515,,2022,,,576.76
+S1123,Supplier_1516,,2023,,,246.96
+S1124,Supplier_1517,,2022,Facility Management,Other ,505.61
+S1124,Supplier_1518,,2023,Facility Management,,371.0
+S1125,Supplier_1519,,2023,,,474.26
+S1126,Supplier_1520,,2022,CAPEX (Machines) ,Machines,1224202.3
+S1126,Supplier_1521,,2023,Plastic Components,,1975224.68
+S1127,Supplier_1522,,2022,Packaging,Other (Polymer Packaging),785.01
+S1127,Supplier_1523,,2023,Packaging,,1204.91
+S1128,Supplier_1524,,2023,,,2886.0
+S1129,Supplier_1525,,2022,,,12481.96
+S1129,Supplier_1526,,2023,,,4523.76
+S1130,Supplier_1527,,2023,,,0.0
+S1131,Supplier_1528,,2023,,,2758.0
+S1132,Supplier_1529,,2022,,,148.87
+S1133,Supplier_1530,,2022,IT ,Software ,32210.0
+S1133,Supplier_1531,,2023,I.T,,13307.0
+S1134,Supplier_1532,,2022,Packaging,Other,885.0
+S1134,Supplier_1533,,2023,Packaging,,1426.7
+S1135,Supplier_1534,,2022,Metal Components,Machined Parts,347107.36
+S1135,Supplier_1534,,2023,Metal Components,,374203.03
+S1136,Supplier_1535,,2022,Plastic Components,Other (Machined Parts),20790.0
+S1136,Supplier_1536,,2023,Plastic Components,,9717.5
+S1137,Supplier_1537,,2022,,,2132.9
+S1138,Supplier_1538,,2022,Medical Device,Re-Usables ,9999.36
+S1138,Supplier_1539,,2023,Medical Device,,8990.41
+S1139,Supplier_1540,,2022,Plastic Components,Injection Moulding,257500.0
+S1139,Supplier_1541,,2023,Plastic Components,,355239.8
+S1140,Supplier_1542,,2022,,,1230.8
+S1140,Supplier_1543,,2023,,,874.42
+S1141,Supplier_1544,,2023,HR,,38085.2
+S1142,Supplier_1545,,2022,Electronics,Components,29750.0
+S1142,Supplier_1546,,2023,Electronics,,78599.5
+S1143,Supplier_1547,,2022,HR,Education,20037.0
+S1143,Supplier_1548,,2023,HR,,1810.0
+S1144,Supplier_1549,,2022,Packaging,Other (Polymer Packaging),10150.42
+S1144,Supplier_1550,,2023,Packaging,,15487.46
+S1145,Supplier_1551,,2023,,,33.28
+S1146,Supplier_1552,,2022,MARCOM,Translation agency,15839.62
+S1146,Supplier_1553,,2023,Marcom,,56961.67
+S1147,Supplier_1554,,2023,,,704.0
+S1148,Supplier_1555,,2023,,,17127.4
+S1149,Supplier_1556,,2023,,,4162.73
+S1149,Supplier_1557,,2023,,,943.63
+S1150,Supplier_1558,,2023,,,295.52
+S1151,Supplier_1559,,2022,,,1233.3
+S1151,Supplier_1560,,2023,,,53.09
+S1152,Supplier_1561,,2022,,,486.8
+S1152,Supplier_1562,,2023,,,766.31
+S1153,Supplier_1563,,2022,Metal Components,Other ,2286.1
+S1153,Supplier_1563,,2023,Metal Components,,3541.0
+S1154,Supplier_1564,,2023,,,147.27
+S1155,Supplier_1565,,2022,IT ,Software ,8027.25
+S1155,Supplier_1566,,2023,I.T,,21296.62
+S1156,Supplier_1567,,2022,Metal Components,Machined Parts,6230.29
+S1156,Supplier_1568,,2023,Metal Components,,6062.36
+S1157,Supplier_1569,,2023,,,840.22
+S1158,Supplier_1570,,2022,,,66.68
+S1159,Supplier_1571,,2022,IT ,Software ,33734.28
+S1159,Supplier_1572,,2023,I.T,,31278.25
+S1160,Supplier_1573,,2022,IT ,Software ,15866.69
+S1160,Supplier_1574,,2023,I.T,,13823.46
+S1161,Supplier_1575,,2022,IT ,Software ,5153.4
+S1162,Supplier_1576,,2022,Facility Management,Office Supplies,44104.46
+S1162,Supplier_1577,,2023,Facility Management,,34128.8
+S1163,Supplier_1578,,2022,,,3622.44
+S1163,Supplier_1579,,2023,,,3520.07
+S1164,Supplier_1580,,2023,,,353.0
+S1165,Supplier_1581,,2023,,,3456.91
+S1166,Supplier_1582,,2023,,,452.0
+S1167,Supplier_1583,,2022,IT ,Hardware ,179863.52
+S1167,Supplier_1584,,2023,I.T,,183117.74
+S1168,Supplier_1585,,2022,Property,Maintenance ,15800.0
+S1168,Supplier_1586,,2023,Property,,19118.0
+S1169,Supplier_1587,,2022,Sub-Contracting,Other ,18389.88
+S1170,Supplier_1588,,2022,IT ,Software ,128473.49
+S1170,Supplier_1589,,2023,I.T,,131557.44
+S1171,Supplier_1590,,2022,HR,Flexible employment,20748.07
+S1171,Supplier_1591,,2023,HR,,11978.24
+S1172,Supplier_1592,,2022,Sub-Contracting,Laser Welding,821748.22
+S1172,Supplier_1593,,2023,Sub-Contracting,,896577.87
+S1173,Supplier_1594,,2022,HR,Flexible employment,116724.65
+S1173,Supplier_1595,,2023,HR,,511206.45
+S1174,Supplier_1596,,2022,Electronics,PCB,663464.59
+S1174,Supplier_1597,,2023,Electronics,,785257.32
+S1175,Supplier_1598,,2022,Professional Services,Finance (Accountancy),110737.3
+S1175,Supplier_1599,,2023,Professional Services,,123698.58
+S1176,Supplier_1600,,2022,Fleet,Lease,20168.64
+S1176,Supplier_1601,,2023,Fleet,,18532.22
+S1177,Supplier_1602,,2022,Sub-Contracting,Other,5357.78
+S1177,Supplier_1602,,2023,Sub-Contracting,,6761.24
+S1178,Supplier_1603,,2022,CAPEX (Machines) ,Maintenance ,14925.0
+S1178,Supplier_1604,,2023,Capex (Machines) ,,130030.46
+S1179,Supplier_1605,,2023,,,5149.33
+S1180,Supplier_1606,,2022,,,1580.0
+S1181,Supplier_1607,,2022,Property,Maintenance ,4014.35
+S1181,Supplier_1608,,2023,Property,,8232.35
+S1182,Supplier_1609,,2022,,,882.15
+S1183,Supplier_1610,,2022,,,3130.5
+S1183,Supplier_1611,,2023,,,3988.39
+S1184,Supplier_1612,,2022,,,6234.0
+S1184,Supplier_1612,,2023,,,7265.72
+S1185,Supplier_1613,,2022,HR,Flexible employment,39200.0
+S1186,Supplier_1614,,2022,,,20.0
+S1187,Supplier_1615,,2023,Professional Services,,207514.09
+S1188,Supplier_1616,,2022,Plastic Components,Injection Moulding,2760.31
+S1188,Supplier_1617,,2023,Plastic Components,,1897.52
+S1189,Supplier_1618,,2022,Property,Maintenance ,300.0
+S1190,Supplier_1619,,2022,,,798.72
+S1190,Supplier_1620,,2023,,,681.75
+S1191,Supplier_1621,,2022,Medical Device,Electronics,83686.14
+S1191,Supplier_1622,,2023,Medical Device,,108764.45
+S1192,Supplier_1623,,2022,,,708.25
+S1192,Supplier_1624,,2023,,,557.5
+S1193,Supplier_1625,,2022,,,32.95
+S1193,Supplier_1626,,2023,,,262.19
+S1194,Supplier_1627,,2022,MARCOM,Advertising ,19820.0
+S1194,Supplier_1628,,2023,Marcom,,31864.7
+S1195,Supplier_1629,,2022,,,2499.2
+S1196,Supplier_1630,,2022,,,450.0
+S1197,Supplier_1631,,2022,,,3332.1
+S1197,Supplier_1632,,2023,,,3319.1
+S1198,Supplier_1633,,2023,,,2815.75
+S1199,Supplier_1634,,2022,Facility Management,Other ,5029.16
+S1199,Supplier_1635,,2023,Facility Management,,4776.95
+S1200,Supplier_1636,,2023,,,832.0
+S1201,Supplier_1637,,2022,Logistics & transport,Freight - Other,18458.1
+S1201,Supplier_1638,,2023,Logistics & Transport,,29828.45
+S1202,Supplier_1639,,2022,CAPEX (Machines) ,Maintenance ,14608.79
+S1202,Supplier_1640,,2023,Capex (Machines) ,,7778.72
+S1203,Supplier_1641,,2023,,,500.0
+S1204,Supplier_1642,,2023,,,9801.6
+S1205,Supplier_1643,,2023,Metal Components,,14552.45
+S1205,Supplier_1644,,2022,,,37636.05
+S1205,Supplier_1644,,2023,Metal components ,,23283.19
+S1206,Supplier_1645,,2022,,,60.0
+S1207,Supplier_1646,,2023,Electronics,,107338.32
+S1208,Supplier_1647,,2022,,,1349.83
+S1208,Supplier_1648,,2023,,,4859.8
+S1209,Supplier_1649,,2023,,,10195.1
+S1210,Supplier_1650,,2023,,,161.72
+S1211,Supplier_1651,,2022,Electronics,Components,49802.62
+S1211,Supplier_1652,,2023,Electronics,,78775.68
+S1212,Supplier_1653,,2022,HR,Insurance,682569.05
+S1212,Supplier_1654,,2023,HR,,672818.53
+S1213,Supplier_1655,,2022,IT ,Software ,63989.3
+S1213,Supplier_1655,,2023,I.T,,86586.98
+S1214,Supplier_1656,,2023,,,12159.6
+S1215,Supplier_1657,,2022,MARCOM,Other,24090.0
+S1215,Supplier_1658,,2023,Marcom,,41125.74
+S1216,Supplier_1659,,2022,Electronics,Pneumatic,43618.9
+S1216,Supplier_1660,,2023,Electronics,,35116.94
+S1217,Supplier_1661,,2022,IT ,Software ,16530.48
+S1217,Supplier_1662,,2023,I.T,,22862.15
+S1218,Supplier_1663,,2022,Metal Components,Machined Parts,1290740.88
+S1218,Supplier_1664,,2023,Metal Components,,1621692.78
+S1219,Supplier_1665,,2022,Property,Maintenance ,51136.0
+S1219,Supplier_1666,,2023,Property,,1700.05
+S1219,Supplier_1667,,2023,,,25089.27
+S1220,Supplier_1668,,2022,,,965.0
+S1221,Supplier_1669,,2023,,,4671.71
+S1222,Supplier_1670,,2022,Packaging,Other (Polymer Packaging),5306.12
+S1222,Supplier_1671,,2023,Packaging,,14743.12
+S1223,Supplier_1672,,2022,,,10890.0
+S1224,Supplier_1673,,2022,,,2450.0
+S1224,Supplier_1674,,2023,,,3620.0
+S1225,Supplier_1675,,2022,CAPEX (Machines) ,Maintenance ,14344.56
+S1225,Supplier_1676,,2023,Capex (Machines) ,,8561.47
+S1226,Supplier_1677,,2022,HR,Flexible employment,46853.97
+S1226,Supplier_1678,,2023,HR,,30106.93
+S1227,Supplier_1679,,2022,Electronics,Components,1732.6
+S1227,Supplier_1680,,2023,Electronics,,1081.62
+S1228,Supplier_1681,,2023,,,162.21
+S1229,Supplier_1682,,2022,Sub-Contracting,Other,463.5
+S1229,Supplier_1683,,2023,Sub-Contracting,,564.47
+S1230,Supplier_1684,,2023,,,3538.0
+S1231,Supplier_1685,,2022,Facility Management,Furniture,25741.35
+S1231,Supplier_1686,,2023,Facility Management,,27988.03
+S1232,Supplier_1687,,2022,Property,Maintenance ,30906.81
+S1232,Supplier_1688,,2023,Property,,5334.29
+S1233,Supplier_1689,,2022,Metal Components,Machined Parts,12421.0
+S1233,Supplier_1690,,2023,Metal Components,,18257.18
+S1234,Supplier_1691,,2022,Property,Maintenance ,38352.35
+S1234,Supplier_1692,,2023,Property,,70389.61
+S1235,Supplier_1693,,2022,,,1281.5
+S1236,Supplier_1694,,2022,,,334.71
+S1236,Supplier_1695,,2023,,,446.4
+S1237,Supplier_1696,,2022,CAPEX (Machines) ,Maintenance ,8501.13
+S1237,Supplier_1697,,2023,Capex (Machines) ,,8413.55
+S1238,Supplier_1698,,2022,Electronics,Components,6523.24
+S1238,Supplier_1699,,2023,Electronics,,1656.9
+S1239,Supplier_1700,,2022,Sub-Contracting,Spark Eroding,832792.74
+S1239,Supplier_1701,,2023,Sub-Contracting,,885632.5
+S1240,Supplier_1702,,2023,metal components,,22703.98
+S1241,Supplier_1703,,2022,Property,Lease,16741.6
+S1241,Supplier_1704,,2023,Property,,1164.55
+S1242,Supplier_1705,,2022,,,562.5
+S1243,Supplier_1706,,2023,,,610.0
+S1244,Supplier_1707,,2022,Plastic Components,Other,3323.7
+S1244,Supplier_1708,,2023,Plastic Components,,15402.95
+S1245,Supplier_1709,,2022,Property,Maintenance ,218.25
+S1245,Supplier_1710,,2023,Property,,940.96
+S1246,Supplier_1711,,2022,Packaging,Other (Polymer Packaging),15238.01
+S1246,Supplier_1712,,2023,Packaging,,27917.1
+S1247,Supplier_1713,,2022,Plastic Components,Injection Moulding,6957.5
+S1247,Supplier_1714,,2023,Plastic Components,,6223.8
+S1248,Supplier_1715,,2022,Plastic Components,Injection Moulding,100454.16
+S1248,Supplier_1716,,2023,Plastic Components,,143890.59
+S1249,Supplier_1717,,2022,Metal Components,Machined Parts,905779.65
+S1249,Supplier_1718,,2023,Metal Components,,1398510.89
+S1250,Supplier_1719,,2022,Metal Components,Other,2734.93
+S1250,Supplier_1720,,2023,Metal Components,,3262.0
+S1251,Supplier_1721,,2022,Electronics,Components,8209.5
+S1251,Supplier_1721,,2023,Electronics,,8353.8
+S1252,Supplier_1722,,2022,Professional Services,Other,2145.75
+S1252,Supplier_1723,,2023,Professional Services,,671.71
+S1253,Supplier_1724,,2023,,,5050.2
+S1254,Supplier_1725,,2022,,,662.0
+S1254,Supplier_1726,,2023,,,480.51
+S1255,Supplier_1727,,2023,,,5585.21
+S1256,Supplier_1728,,2022,,,495.0
+S1256,Supplier_1729,,2023,,,3121.8
+S1257,Supplier_1730,,2022,,,50.03
+S1258,Supplier_1731,,2022,Electronics,Other (Equipment),16392.2
+S1258,Supplier_1732,,2023,Electronics,,12158.69
+S1259,Supplier_1733,,2022,,,7482.5
+S1259,Supplier_1734,,2023,,,8949.43
+S1260,Supplier_1735,,2022,IT ,Hardware ,2754.0
+S1260,Supplier_1735,,2023,I.T,,2783.0
+S1261,Supplier_1736,,2022,Packaging,Other (Polymer Packaging),2736.24
+S1261,Supplier_1737,,2023,Packaging,,4427.2
+S1262,Supplier_1738,,2022,,,125.0
+S1263,Supplier_1739,,2022,Facility Management,Other ,12039.18
+S1263,Supplier_1740,,2023,Facility Management,,37014.75
+S1264,Supplier_1741,,2023,,,1436.0
+S1265,Supplier_1742,,2023,,,693.9
+S1266,Supplier_1743,,2022,IT ,Software ,72353.1
+S1266,Supplier_1744,,2023,I.T,,83810.81
+S1267,Supplier_1745,,2022,Property,Other,20210.48
+S1267,Supplier_1746,,2023,Property,,20865.34
+S1268,Supplier_1747,,2022,Electronics,Panels,369667.39
+S1268,Supplier_1748,,2023,Electronics,,273746.21
+S1269,Supplier_1749,,2022,Electronics,Components,187534.73
+S1269,Supplier_1750,,2023,Electronics,,226220.76
+S1270,Supplier_1751,,2023,Facility Management,,211636.74
+S1271,Supplier_1752,,2022,Plastic Components,Other ,6223.3
+S1271,Supplier_1753,,2023,Metal Components,,1722.85
+S1272,Supplier_1754,,2023,,,5620.58
+S1273,Supplier_1755,,2022,Pharma,Liquids,17374.5
+S1273,Supplier_1756,,2023,Pharma,,8027.4
+S1274,Supplier_1757,,2022,,,531.72
+S1275,Supplier_1758,,2022,Electronics,PCB,62067.16
+S1275,Supplier_1759,,2023,Electronics,,156492.36
+S1276,Supplier_1760,,2022,Professional Services,Other,4280.0
+S1276,Supplier_1761,,2023,Professional Services,,44682.04
+S1277,Supplier_1762,,2023,Professional Services,,71550.6
+S1278,Supplier_1763,,2022,Property,Maintenance ,12355.0
+S1278,Supplier_1764,,2023,Property,,7018.25
+S1279,Supplier_1765,,2022,,,2079.96
+S1280,Supplier_1766,,2022,,,6000.0
+S1280,Supplier_1767,,2023,,,0.0
+S1281,Supplier_1768,,2022,Property,Lease,121573.75
+S1281,Supplier_1769,,2023,Property,,241733.56
+S1282,Supplier_1770,,2023,,,25427.31
+S1283,Supplier_1771,,2023,,,2137.34
+S1284,Supplier_1772,,2022,,,2830.0
+S1285,Supplier_1773,,2022,Electronics,Components,1842.4
+S1285,Supplier_1774,,2023,Electronics,,836.35
+S1286,Supplier_1775,,2022,Plastic Components,Other (Machined Parts),2345.7
+S1286,Supplier_1776,,2023,Plastic Components,,2048.2
+S1287,Supplier_1777,,2022,Facility Management,Office Supplies,11014.88
+S1287,Supplier_1778,,2023,Facility Management,,20314.19
+S1288,Supplier_1779,,2022,Electronics,Other (Wiring),2895.0
+S1288,Supplier_1780,,2023,Electronics,,2895.0
+S1289,Supplier_1781,,2023,Fleet,,-3971.69
+S1290,Supplier_1782,,2022,Logistics & transport,Warehousing,184963.17
+S1290,Supplier_1783,,2023,Logistics & Transport,,324816.97
+S1291,Supplier_1784,,2022,,,939.6
+S1291,Supplier_1785,,2023,,,1085.43
+S1292,Supplier_1786,,2022,Electronics,Pneumatic,352201.18
+S1292,Supplier_1786,,2023,Electronics,,291414.2
+S1293,Supplier_1787,,2022,Facility Management,Other ,1338.0
+S1293,Supplier_1788,,2023,Facility Management,,4785.04
+S1294,Supplier_1789,,2022,Energy,Energy,3048.61
+S1294,Supplier_1790,,2023,Energy,,1560.08
+S1295,Supplier_1791,,2022,Metal Components,Machined Parts,604935.71
+S1295,Supplier_1792,,2023,Metal Components,,1081597.41
+S1296,Supplier_1793,,2022,Electronics,Components,300179.18
+S1296,Supplier_1794,,2023,Electronics,,286338.6
+S1297,Supplier_1795,,2023,,,1980.0
+S1298,Supplier_1796,,2023,,,27126.0
+S1299,Supplier_1797,,2023,,,-14405.34
+S1300,Supplier_0928,,2023,,,770.0
+S1301,Supplier_1798,,2023,,,13297.3
+S1301,Supplier_1799,,2022,Packaging,Other (Labelling & Print),7415.5
+S1301,Supplier_1800,,2023,Packaging,,3005.44
+S1302,Supplier_1801,,2022,,,6968.67
+S1302,Supplier_1802,,2023,,,6850.85
+S1303,Supplier_1803,,2022,Packaging,Other (Labelling & Print),8053.66
+S1303,Supplier_1804,,2023,Packaging,,2321.55
+S1304,Supplier_1805,,2022,Packaging,Other (Labelling & Print),106907.04
+S1304,Supplier_1806,,2023,Packaging,,126805.36
+S1305,Supplier_1807,,2022,Energy,Energy,43704.65
+S1305,Supplier_1808,,2023,Energy,,5575.52
+S1305,Supplier_1809,,2023,,,30446.96
+S1306,Supplier_1810,,2022,,,134815.4
+S1306,Supplier_1811,,2023,,,97972.05
+S1307,Supplier_1812,,2022,,,6507.77
+S1307,Supplier_1813,,2023,,,1727.13
+S1308,Supplier_1814,,2022,Plastic Components,Other,2770.38
+S1308,Supplier_1815,,2023,Plastic Components,,6262.01
+S1309,Supplier_1816,,2022,Metal Components,Other,8135.19
+S1309,Supplier_1817,,2023,Metal Components,,3852.12
+S1310,Supplier_1818,,2022,Packaging,Other (Polymer Packaging),8578.1
+S1310,Supplier_1819,,2023,Packaging,,34219.73
+S1311,Supplier_1820,,2023,,,2898.0
+S1312,Supplier_1821,,2023,Facility Management,,103745.24
+S1313,Supplier_1822,,2022,IT ,Software ,12142.21
+S1313,Supplier_1822,,2023,I.T,,24907.42
+S1314,Supplier_1823,,2022,Electronics,Components,3228.25
+S1314,Supplier_1824,,2023,Electronics,,9156.87
+S1315,Supplier_1825,,2022,,,748.8
+S1316,Supplier_1826,,2022,Medical Device,Consumables,47992.0
+S1316,Supplier_1827,,2023,Medical Device,,1041.93
+S1317,Supplier_1828,,2022,Medical Device,Consumables,218302.1
+S1317,Supplier_1829,,2023,Medical Device,,197798.31
+S1318,Supplier_1830,,2023,,,4737.15
+S1319,Supplier_1831,,2023,,,6105.65
+S1320,Supplier_1832,,2022,Property,Maintenance ,60717.5
+S1320,Supplier_1833,,2023,Property,,45917.86
+S1321,Supplier_1834,,2022,Property,Maintenance ,134173.9
+S1321,Supplier_1835,,2023,Property,,2352.35
+S1322,Supplier_1836,,2022,Fleet,Lease,31001.58
+S1322,Supplier_1837,,2023,Fleet,,12678.69
+S1323,Supplier_1838,,2022,Professional Services,Legal ,147160.73
+S1323,Supplier_1839,,2023,Professional Services,,278813.65
+S1324,Supplier_1840,,2022,IT ,Software ,7650.0
+S1324,Supplier_1841,,2023,I.T,,9438.0
+S1325,Supplier_1842,,2022,,,9845.23
+S1325,Supplier_1843,,2023,,,7260.0
+S1326,Supplier_1844,,2022,Packaging,Cartons,70532.45
+S1326,Supplier_1845,,2023,Packaging,,113002.51
+S1327,Supplier_1846,,2023,,,3007.17
+S1328,Supplier_1847,,2022,Electronics,PCB,798.5
+S1329,Supplier_1848,,2022,Plastic Components,Other,1448.5
+S1329,Supplier_1849,,2023,Plastic Components,,577.35
+S1330,Supplier_1850,,2022,Energy,Energy,18100.0
+S1330,Supplier_1851,,2023,Energy,,24142.5
+S1331,Supplier_1852,,2022,Packaging,Other (Labelling & Print),3875.75
+S1332,Supplier_1853,,2022,Logistics & transport,Freight - Other,7397.44
+S1332,Supplier_1854,,2023,Logistics & Transport,,30604.58
+S1333,Supplier_1855,,2022,Plastic Components,Other (Machined Parts),268.75
+S1333,Supplier_1856,,2023,Plastic Components,,4706.04
+S1334,Supplier_1857,,2022,Logistics & transport,Courier Services,3888.02
+S1334,Supplier_1858,,2023,Logistics & Transport,,36288.17
+S1335,Supplier_1859,,2022,Electronics,Components,698.0
+S1335,Supplier_1860,,2023,Electronics,,5459.67
+S1336,Supplier_1861,,2022,IT ,Software ,42542.1
+S1336,Supplier_1862,,2023,I.T,,47954.25
+S1337,Supplier_1863,,2022,Metal Components,Machined Parts,26345.0
+S1337,Supplier_1864,,2023,Metal Components,,54689.77
+S1338,Supplier_1865,,2022,,,2350.0
+S1338,Supplier_1866,,2023,,,890.0
+S1339,Supplier_1867,,2023,,,4646.85
+S1340,Supplier_1868,,2023,,,4841.08
+S1341,Supplier_1869,,2023,,,18637.11
+S1342,Supplier_1870,,2023,,,4066.66
+S1343,Supplier_1871,,2023,,,4802.0
+S1344,Supplier_1872,,2023,,,762.3
+S1345,Supplier_1873,,2023,,,1515.62
+S1345,Supplier_1874,,2022,,,599.85
+S1345,Supplier_1875,,2023,,,2640.06
+S1346,Supplier_1876,,2023,,,1525.74
+S1347,Supplier_1877,,2022,Electronics,Mechatronics,689407.45
+S1347,Supplier_1878,,2023,Electronics,,1139644.33
+S1348,Supplier_1879,,2022,MARCOM,Other,288209.48
+S1348,Supplier_1880,,2023,Marcom,,273230.18
+S1349,Supplier_1881,,2022,,,2130.0
+S1350,Supplier_1882,,2022,Glass ,Other,1332.25
+S1350,Supplier_1883,,2023,Glass ,,1332.25
+S1351,Supplier_1884,,2022,Metal Components,Machined Parts,23970.0
+S1351,Supplier_1885,,2023,Metal Components,,29794.9
+S1352,Supplier_1886,,2022,Property,Maintenance ,7358.8
+S1352,Supplier_1887,,2023,Property,,12602.92
+S1353,Supplier_1888,,2022,,,5020.41
+S1353,Supplier_1889,,2023,,,4461.18
+S1354,Supplier_1890,,2023,,,2541.29
+S1355,Supplier_1891,,2022,Packaging,Other (Polymer Packaging),25221.0
+S1355,Supplier_1892,,2023,Packaging,,20280.8
+S1356,Supplier_1893,,2023,,,545.45
+S1357,Supplier_1894,,2022,,,6373.45
+S1357,Supplier_1895,,2023,Logistics & Transport,,190561.25
+S1358,Supplier_1896,,2022,Sub-Contracting,Other,100756.34
+S1358,Supplier_1897,,2023,Sub-Contracting,,96068.67
+S1359,Supplier_1898,,2022,Electronics,Components,6395.04
+S1359,Supplier_1899,,2023,Electronics,,11894.32
+S1360,Supplier_1900,,2022,IT ,Software ,72242.2
+S1360,Supplier_1901,,2023,I.T,,5868.0
+S1361,Supplier_1902,,2022,Facility Management,Other,58687.01
+S1361,Supplier_1903,,2023,Facility Management,,70184.34
+S1362,Supplier_1904,,2022,Travel,Travel agencies,509961.82
+S1362,Supplier_1905,,2023,Travel,,657837.68
+S1363,Supplier_1906,,2022,,,978.0
+S1364,Supplier_1907,,2022,Packaging,Other (Polymer Packaging),1133.7
+S1365,Supplier_1908,,2022,Electronics,Mechatronics,26831.0
+S1365,Supplier_1909,,2023,Electronics,,42195.12
+S1366,Supplier_1910,,2022,,,2870.0
+S1367,Supplier_1911,,2022,,,302.8
+S1367,Supplier_1912,,2023,,,461.19
+S1368,Supplier_1913,,2023,,,4021.34
+S1369,Supplier_1914,,2022,,,4419.0
+S1370,Supplier_1915,,2023,,,15438.74
+S1371,Supplier_1916,,2023,,,4270.0
+S1372,Supplier_1917,,2022,Travel,"Hotel, Meeting & Congres",5999.56
+S1372,Supplier_1918,,2023,Travel,,12550.51
+S1373,Supplier_1919,,2022,Fleet,Other,2411.48
+S1373,Supplier_1920,,2023,Fleet,,164.61
+S1374,Supplier_1921,,2022,Property,Maintenance ,26512.61
+S1374,Supplier_1922,,2023,Property,,31082.08
+S1375,Supplier_1923,,2022,MARCOM,Advertising ,174439.4
+S1375,Supplier_1924,,2023,Marcom,,100183.96
+S1376,Supplier_1925,,2022,Electronics,Pneumatic,53067.48
+S1376,Supplier_1926,,2023,Electronics,,41178.88
+S1377,Supplier_1927,,2022,Facility Management,Office Supplies,18780.72
+S1377,Supplier_1928,,2023,Facility Management,,15770.74
+S1378,Supplier_1929,,2022,Packaging,Other (Labelling & Print),552.0
+S1378,Supplier_1930,,2023,Packaging,,2615.0
+S1379,Supplier_1931,,2023,,,1869.04
+S1379,Supplier_1932,,2022,Metal Components,Other (Fasteners),27940.19
+S1379,Supplier_1933,,2023,Metal Components,,16520.82
+S1380,Supplier_1934,,2022,Plastic Components,Other (Machined Parts),14692.65
+S1380,Supplier_1935,,2023,Plastic Components,,4053.56
+S1381,Supplier_1936,,2023,,,2780.0
+S1382,Supplier_1937,,2023,,,31232.23
+S1383,Supplier_1938,,2023,,,3552.04
+S1383,Supplier_1939,,2022,,,3398.59
+S1383,Supplier_1940,,2023,,,4008.32
+S1384,Supplier_1941,,2023,,,170.16
+S1385,Supplier_1942,,2023,,,310.83
+S1386,Supplier_1943,,2022,MARCOM,Translation agency,88978.61
+S1386,Supplier_1943,,2023,Marcom,,54250.2
+S1387,Supplier_1944,,2023,,,2440.0
+S1388,Supplier_1945,,2023,,,3000.0
+S1389,Supplier_1946,,2023,Packaging,,1611.72
+S1390,Supplier_1947,,2022,Facility Management,Cleaning services,41628.51
+S1390,Supplier_1948,,2023,Facility Management,,47350.53
+S1391,Supplier_1949,,2022,IT ,Tele- and datacom,41342.43
+S1391,Supplier_1950,,2023,I.T,,67580.43
+S1392,Supplier_1951,,2022,,,9107.86
+S1392,Supplier_1952,,2023,,,25781.95
+S1393,Supplier_1953,,2023,,,4628.73
+S1394,Supplier_1954,,2022,,,1485.85
+S1394,Supplier_1954,,2023,,,321.0
+S1395,Supplier_1955,,2022,CAPEX (Machines) ,Maintenance ,26652.9
+S1395,Supplier_1956,,2023,Capex (Machines) ,,16896.37
+S1396,Supplier_1957,,2023,,,3612.32
+S1397,Supplier_1958,,2023,,,14178.91
+S1397,Supplier_1959,,2023,Fleet,,48019.57
+S1398,Supplier_1960,,2022,Fleet,Lease,192714.77
+S1398,Supplier_1961,,2023,Fleet,,264248.24
+S1399,Supplier_1962,,2022,,,38044.36
+S1399,Supplier_1963,,2023,,,10601.54
+S1400,Supplier_1964,,2023,,,3996.0
+S1401,Supplier_1965,,2022,Electronics,Other (Wiring),407.18
+S1401,Supplier_1966,,2023,Electronics,,497.0
+S1402,Supplier_1967,,2023,,,33523.47
+S1403,Supplier_1968,,2023,,,54536.15
+S1403,Supplier_1969,,2023,,,3258.58
+S1404,Supplier_1970,,2022,,,250.0
+S1405,Supplier_1971,,2023,,,10.0
+S1406,Supplier_1972,,2023,,,500.0
+S1407,Supplier_1973,,2023,,,18.36
+S1407,Supplier_1974,,2023,,,15305.57
+S1408,Supplier_1975,,2023,,,263.77
+S1409,Supplier_1976,,2023,,,10632.6
+S1410,Supplier_1977,,2023,,,1472.63
+S1411,Supplier_1978,,2022,Electronics,Components,78094.5
+S1411,Supplier_1979,,2023,Electronics,,96540.34
+S1412,Supplier_1980,,2022,Plastic Components,Other (Machined Parts),12498.0
+S1412,Supplier_1981,,2023,Plastic Components,,11208.34
+S1413,Supplier_1982,,2022,Property,Maintenance ,2641.45
+S1413,Supplier_1983,,2023,Property,,3196.43
+S1414,Supplier_1984,,2023,,,661.1
+S1415,Supplier_1985,,2022,,,155.01
+S1416,Supplier_1986,,2023,,,5113.64
+S1417,Supplier_1987,,2023,,,24400.0
+S1417,Supplier_1988,,2023,,,623.15
+S1418,Supplier_1989,,2022,IT ,Software ,13806.56
+S1418,Supplier_1990,,2023,I.T,,27445.91
+S1419,Supplier_1991,,2023,,,859.1
+S1419,Supplier_1992,,2022,Medical Device,Consumables,10156.8
+S1419,Supplier_1993,,2023,Medical Device,,9454.8
+S1420,Supplier_1994,,2023,,,7127.14
+S1421,Supplier_1995,,2023,,,38667.6
+S1422,Supplier_1996,,2023,,,15.01
+S1422,Supplier_1997,,2023,,,615.6
+S1422,Supplier_1998,,2023,,,4725.96
+S1423,Supplier_1999,,2022,Sub-Contracting,Other,837.33
+S1423,Supplier_1999,,2023,Sub-Contracting,,695.92
+S1423,Supplier_2000,,2023,,,18076.46
+S1424,Supplier_2001,,2022,CAPEX (Machines) ,Maintenance ,28452.1
+S1424,Supplier_2002,,2023,Capex (Machines) ,,109821.9
+S1425,Supplier_2003,,2023,,,58996.15
+S1425,Supplier_2004,,2023,,,1516.1
+S1426,Supplier_2005,,2022,Metal Components,Machined Parts,5988.89
+S1426,Supplier_2006,,2023,Metal Components,,8298.96
+S1427,Supplier_2007,,2023,,,1343.28
+S1428,Supplier_2008,,2023,,,28310.59
+S1429,Supplier_2009,,2022,,,2212.5
+S1429,Supplier_2010,,2023,,,3893.25
+S1429,Supplier_2011,,2023,,,16328.8
+S1430,Supplier_2012,,2023,,,8228.0
+S1430,Supplier_2013,,2023,,,27658.0
+S1431,Supplier_2014,,2023,,,1790.95
+S1432,Supplier_2015,,2022,Electronics,Other (Wiring),261748.35
+S1432,Supplier_2016,,2023,Electronics,,391141.28
+S1433,Supplier_2017,,2022,,,1774.71
+S1433,Supplier_2018,,2023,,,641.21
+S1434,Supplier_2019,,2022,Plastic Components,Injection Moulding,178542.16
+S1434,Supplier_2020,,2023,Plastic Components,,176948.87
+S1435,Supplier_2021,,2023,,,2821.12
+S1435,Supplier_2022,,2023,,,2826.0
+S1436,Supplier_2023,,2022,Sub-Contracting,Spray Painting,514147.99
+S1436,Supplier_2024,,2023,Sub-Contracting,,660463.94
+S1437,Supplier_2025,,2022,Property,Maintenance ,610.0
+S1438,Supplier_2026,,2023,,,200.0
+S1439,Supplier_2027,,2023,,,73014.45
+S1440,Supplier_2028,,2023,,,3444.22
+S1440,Supplier_2029,,2023,,,3055.1
+S1441,Supplier_2030,,2022,,,16595.0
+S1441,Supplier_2031,,2023,,,20156.18
+S1442,Supplier_2032,,2023,,,1774.04
+S1442,Supplier_2033,,2023,,,1572.96
+S1443,Supplier_2034,,2023,,,1500.0
+S1443,Supplier_2035,,2023,,,2308.81
+S1444,Supplier_2036,,2022,,,2418.0
+S1444,Supplier_2037,,2023,,,682.0
+S1444,Supplier_2038,,2023,,,545.0
+S1444,Supplier_2039,,2023,,,63.84
+S1445,Supplier_2040,,2023,,,75059.2
+S1445,Supplier_2041,,2023,,,8500.0
+S1445,Supplier_2042,,2023,,,750.0
+S1445,Supplier_2043,,2023,,,562.28
+S1445,Supplier_2044,,2023,,,762.3
+S1446,Supplier_2045,,2023,,,3029.97
+S1446,Supplier_2046,,2023,,,45.0
+S1446,Supplier_2047,,2023,,,87.78
+S1446,Supplier_2048,,2023,,,375.3
+S1446,Supplier_2049,,2023,,,4760.0
+S1446,Supplier_2050,,2023,,,10338.5
+S1446,Supplier_2051,,2023,,,3950.0
+S1446,Supplier_2052,,2023,,,500.0
+S1447,Supplier_2053,,2023,,,591.77
+S1447,Supplier_2054,,2023,,,1114.35
+S1447,Supplier_2055,,2023,,,8949.49
+S1447,Supplier_2056,,2023,,,526.0
+S1447,Supplier_2057,,2023,,,1870.0
+S1447,Supplier_2058,,2023,,,6732.5
+S1448,Supplier_2059,,2023,,,625.0
+S1448,Supplier_2060,,2023,,,7936.51
+S1448,Supplier_2061,,2023,,,5.6
+S1448,Supplier_2062,,2023,,,2641.51
+S1448,Supplier_2063,,2023,,,1258.85
+S1448,Supplier_2064,,2023,,,279.0
+S1448,Supplier_2065,,2023,,,79717.5
+S1448,Supplier_2066,,2023,,,23932.75
+S1449,Supplier_2067,,2023,,,14400.0
+S1449,Supplier_2068,,2023,,,259.0
+S1449,Supplier_2069,,2023,,,928.85
+S1449,Supplier_2070,,2023,,,7191.72
+S1449,Supplier_2071,,2023,,,843.25
+S1450,Supplier_2072,,2023,,,3000.0
+S1450,Supplier_2073,,2023,,,334.5
+S1450,Supplier_2074,,2023,,,1428.0
+S1450,Supplier_2075,,2023,,,25132.0
+S1450,Supplier_2076,,2023,,,7750.0
+S1450,Supplier_2077,,2023,,,3253.85
+S1450,Supplier_2078,,2023,,,500.0
+S1451,Supplier_2079,,2023,,,3439.18
+S1451,Supplier_2080,,2023,,,303.32
+S1451,Supplier_2081,,2023,,,528.0
+S1451,Supplier_2082,,2023,,,1772.7
+S1451,Supplier_2083,,2023,,,2829.15
+S1451,Supplier_2084,,2023,Professional Services,,524686.54
+S1451,Supplier_2085,,2023,,,97.03
+S1451,Supplier_2086,,2023,,,472.0
+S1451,Supplier_2087,,2023,,,6151.12
+S1451,Supplier_2088,,2023,,,413.22
+S1452,Supplier_2089,,2023,,,50220.0
+S1452,Supplier_2090,,2023,,,3400.0
+S1452,Supplier_2091,,2023,,,660.0
+S1452,Supplier_2092,,2023,,,9433.96
+S1452,Supplier_2093,,2023,,,675.0
+S1452,Supplier_2094,,2023,,,1320.0
+S1452,Supplier_2095,,2023,,,32230.0
+S1452,Supplier_1343,,2023,,,442.0
+S1453,Supplier_2096,,2023,,,1278.66
+S1453,Supplier_2097,,2023,,,104.2
+S1453,Supplier_2098,,2023,,,4375.0
+S1453,Supplier_2099,,2023,,,345.47
+S1453,Supplier_2100,,2023,,,1399.58
+S1453,Supplier_2101,,2023,,,1995.0
+S1453,Supplier_2102,,2023,,,2145.45
+S1454,Supplier_2103,,2023,,,33.34
+S1454,Supplier_2104,,2022,IT ,Software ,113040.0
+S1454,Supplier_2105,,2023,I.T,,335553.69
+S1454,Supplier_0745,,2023,,,1890.0
+S1454,Supplier_2106,,2023,,,555.42
+S1454,Supplier_2107,,2023,,,435.0
+S1454,Supplier_2108,,2023,,,2035.1
+S1454,Supplier_2109,,2023,,,109.95
+S1454,Supplier_2110,,2023,,,24275.25
+S1454,Supplier_2111,,2023,,,299.74
+S1454,Supplier_2112,,2023,,,1000.0
+S1455,Supplier_2113,,2023,Professional Services,,649751.35
+S1455,Supplier_2114,,2023,,,16537.01
+S1455,Supplier_2115,,2023,,,1107.0
+S1455,Supplier_2116,,2023,,,1778.68
+S1455,Supplier_2117,,2023,,,2189.05
+S1455,Supplier_2118,,2023,,,519.0
+S1455,Supplier_2119,,2023,,,1500.0
+S1455,Supplier_2120,,2023,,,4645.0
+S1455,Supplier_2121,,2023,,,11132.08
+S1456,Supplier_2122,,2023,,,895.0
+S1456,Supplier_2123,,2023,,,500.0
+S1456,Supplier_2124,,2023,,,6340.57
+S1456,Supplier_2125,,2023,,,813.32
+S1456,Supplier_2126,,2023,,,2272.73
+S1456,Supplier_2127,,2023,,,2669.66
+S1456,Supplier_2128,,2023,,,8697.0
+S1456,Supplier_2129,,2023,,,8000.0
+S1457,Supplier_2130,,2023,,,161.54
+S1457,Supplier_2131,,2023,,,5997.94
+S1457,Supplier_2132,,2023,,,465.0
+S1457,Supplier_2133,,2023,,,3398.87
+S1457,Supplier_2134,,2023,,,5250.0
+S1457,Supplier_2135,,2023,,,1400.0
+S1457,Supplier_2136,,2023,,,5800.85
+S1457,Supplier_2137,,2023,,,40889.4
+S1457,Supplier_2138,,2023,,,4200.0
+S1458,Supplier_2139,,2023,,,26193.85
+S1458,Supplier_2140,,2023,,,2000.0
+S1458,Supplier_2141,,2023,,,520.0
+S1458,Supplier_2142,,2023,,,139.51
+S1458,Supplier_2143,,2023,,,12567.0
+S1458,Supplier_2144,,2023,,,1800.0
+S1458,Supplier_2145,,2023,,,18463.64
+S1458,Supplier_2146,,2023,,,5591.03
+S1458,Supplier_2147,,2023,,,11391.45
+S1458,Supplier_2148,,2023,,,1666.8
+S1458,Supplier_2149,,2023,,,4000.0
+S1459,Supplier_2150,,2023,,,1000.0
+S1459,Supplier_2151,,2023,,,543.2
+S1459,Supplier_2152,,2023,,,157.24
+S1459,Supplier_2153,,2023,,,1815.0
+S1459,Supplier_2154,,2023,,,7591.0
+S1459,Supplier_2155,,2023,,,290.5
+S1460,Supplier_2156,,2023,,,535.26
+S1460,Supplier_2157,,2023,,,2870.0
+S1460,Supplier_2158,,2023,,,10774.45
+S1460,Supplier_2159,,2023,,,8619.4
+S1460,Supplier_2160,,2023,,,143025.0
+S1460,Supplier_2161,,2023,,,6099.89
+S1460,Supplier_2162,,2023,,,2443.18
+S1460,Supplier_2163,,2023,,,1362.0
+S1460,Supplier_2164,,2023,Property,,668178.0
+S1461,Supplier_2165,,2023,,,11290.0
+S1461,Supplier_2166,,2023,,,764.71
+S1461,Supplier_2167,,2023,,,845.75
+S1461,Supplier_2168,,2023,,,1050.0
+S1461,Supplier_2169,,2023,,,408.5
+S1461,Supplier_2170,,2023,,,8255.0
+S1461,Supplier_2171,,2023,,,300.0
+S1461,Supplier_2172,,2023,,,79183.59
+S1462,Supplier_2173,,2023,,,2395.0
+S1462,Supplier_2174,,2023,,,38214.74
+S1462,Supplier_2175,,2023,Travel,,141951.97
+S1462,Supplier_2176,,2023,,,6551.81
+S1462,Supplier_2177,,2023,,,13556.5
+S1462,Supplier_2178,,2023,,,1492.02
+S1462,Supplier_2179,,2023,,,9500.9
+S1462,Supplier_2180,,2023,,,14095.24
+S1462,Supplier_2181,,2023,,,6500.0
+S1463,Supplier_2182,,2023,,,5920.11
+S1463,Supplier_2183,,2023,,,28409.09
+S1463,Supplier_2184,,2023,,,5.84
+S1463,Supplier_2185,,2023,,,5560.0
+S1463,Supplier_2186,,2023,,,3000.0
+S1463,Supplier_2187,,2023,,,2026.54
+S1463,Supplier_2188,,2023,,,354.15
+S1463,Supplier_2189,,2023,,,7032.8
+S1463,Supplier_2190,,2023,,,6507.33
+S1464,Supplier_2191,,2023,,,636.26
+S1464,Supplier_2192,,2023,,,115200.0
+S1464,Supplier_2193,,2023,,,22935.41
+S1464,Supplier_2194,,2023,,,1026.6
+S1464,Supplier_2195,,2023,,,5250.0
+S1464,Supplier_2196,,2023,,,20772.5
+S1464,Supplier_2197,,2023,,,327.0
+S1464,Supplier_2198,,2023,,,76156.0
+S1464,Supplier_2199,,2023,,,9773.33
+S1465,Supplier_2200,,2023,,,3579.75
+S1465,Supplier_2201,,2023,,,8602.2
+S1465,Supplier_2202,,2023,,,129.13
+S1465,Supplier_2203,,2023,,,168.87
+S1465,Supplier_2204,,2023,,,5977.46
+S1465,Supplier_2205,,2023,,,121.38
+S1465,Supplier_2206,,2023,,,58.0
+S1465,Supplier_2207,,2023,,,19.92
+S1465,Supplier_2208,,2023,,,125.0
+S1465,Supplier_2209,,2023,,,2180.0
+S1466,Supplier_2210,,2023,,,727.58
+S1466,Supplier_2211,,2023,,,13119.89
+S1466,Supplier_2212,,2023,,,310.0
+S1466,Supplier_2213,,2023,,,995.52
+S1466,Supplier_2214,,2023,,,90.17
+S1466,Supplier_2215,,2023,,,38816.25
+S1466,Supplier_2216,,2023,,,15.0
+S1466,Supplier_2217,,2023,,,789.4
+S1466,Supplier_2218,,2023,,,41957.57
+S1467,Supplier_2219,,2023,,,4055.2
+S1467,Supplier_2220,,2023,,,650.0
+S1467,Supplier_2221,,2023,,,34.03
+S1467,Supplier_2222,,2023,,,1200.0
+S1467,Supplier_2223,,2023,,,10329.0
+S1467,Supplier_2224,,2023,,,130.25
+S1467,Supplier_0687,,2023,,,202.3
+S1467,Supplier_2225,,2023,Metal Components,,541.13
+S1467,Supplier_2226,,2023,,,1270.0
+S1468,Supplier_2227,,2023,,,32751.49
+S1468,Supplier_2228,,2023,,,1174.5
+S1468,Supplier_2229,,2023,,,753.2
+S1468,Supplier_2230,,2023,,,25990.97
+S1468,Supplier_2231,,2023,,,1037.44
+S1468,Supplier_2232,,2022,,,1069.2
+S1468,Supplier_2233,,2023,,,246.44
+S1468,Supplier_2234,,2023,,,1082.5
+S1468,Supplier_2235,,2023,,,328.0
+S1468,Supplier_2236,,2023,,,37.8
+S1468,Supplier_2237,,2023,,,784.5
+S1468,Supplier_2238,,2023,,,-106.33
+S1469,Supplier_2239,,2023,,,29373.0
+S1469,Supplier_2240,,2023,,,340260.34
+S1469,Supplier_0769,,2023,,,11650.0
+S1469,Supplier_2241,,2023,,,22845.0
+S1469,Supplier_2242,,2023,,,3822.0
+S1469,Supplier_2243,,2023,,,1959.2
+S1470,Supplier_2244,,2023,,,3727.83
+S1470,Supplier_2245,,2023,,,13000.0
+S1470,Supplier_2246,,2022,,,1178.28
+S1470,Supplier_2247,,2023,,,3773.58
+S1470,Supplier_2248,,2023,,,500.0
+S1470,Supplier_2249,,2023,,,172.81
+S1470,Supplier_2250,,2023,,,1300.0
+S1470,Supplier_2251,,2023,,,135.0
+S1470,Supplier_2252,,2023,,,92662.97
+S1470,Supplier_2253,,2023,,,17133.54
+S1470,Supplier_2254,,2023,,,2541.7
+S1471,Supplier_2255,,2023,,,262.69
+S1471,Supplier_2256,,2023,,,2242.0
+S1471,Supplier_1615,,2023,Professional Services,,449050.5
+S1471,Supplier_2257,,2023,,,653.91
+S1471,Supplier_2258,,2023,Electronics,,66164.51
+S1472,Supplier_2259,,2023,,,2715.0
+S1472,Supplier_2260,,2023,,,7485.48
+S1472,Supplier_2261,,2023,,,50225.0
+S1472,Supplier_2262,,2023,,,33694.11
+S1472,Supplier_1394,,2023,HR,,251546.87
+S1472,Supplier_2263,,2023,,,675.0
+S1472,Supplier_2264,,2023,,,681.78
+S1472,Supplier_1557,,2023,,,3128.36
+S1473,Supplier_2265,,2022,,,787.78
+S1473,Supplier_2266,,2022,,,886.78
+S1474,Supplier_2267,,2023,,,4566.82
+S1474,Supplier_2268,,2023,,,4654.0
+S1474,Supplier_2269,,2023,,,9453.36
+S1474,Supplier_2270,,2023,,,15974.51
+S1474,Supplier_2271,,2023,,,12420.0
+S1475,Supplier_2272,,2023,,,39261.9
+S1475,Supplier_2273,,2023,,,12976.66
+S1475,Supplier_2274,,2023,,,9760.0
+S1475,Supplier_2275,,2023,Professional Services,,74100.0
+S1476,Supplier_2276,,2023,,,2556.82
+S1476,Supplier_0569,,2023,,,224.81
+S1476,Supplier_2260,,2023,,,8258.34
+S1476,Supplier_0341,,2023,,,2437.78
+S1477,Supplier_2277,,2023,,,1704.55
+S1477,Supplier_2278,,2023,,,272.73
+S1477,Supplier_0035,,2023,,,13642.05
+S1478,Supplier_1986,,2023,,,931.82
+S1478,Supplier_2279,,2023,,,1303.64
+S1478,Supplier_0343,,2023,,,193.18
+S1478,Supplier_0342,,2023,,,2003.05
+S1478,Supplier_0339,,2023,,,70206.33
+S1479,Supplier_2280,,2023,,,5340.91
+S1479,Supplier_1311,,2023,,,12266.0
+S1479,Supplier_0340,,2023,,,19845.17
+S1479,Supplier_2281,,2023,,,2761.36
+S1479,Supplier_0601,,2023,,,3350.45
+S1480,Supplier_2282,,2023,,,14255.06
+S1480,Supplier_2283,,2023,,,3995.71
+S1480,Supplier_2284,,2023,,,11741.25
+S1481,Supplier_2285,,2022,,,583.1
+S1481,Supplier_2286,,2023,,,292.1
+S1481,Supplier_2287,,2023,,,801.0
+S1481,Supplier_2288,,2023,,,1013.89
+S1481,Supplier_2289,,2023,,,2115.5
+S1481,Supplier_2290,,2023,,,36.29
+S1482,Supplier_2291,,2023,,,1518.37
+S1482,Supplier_2292,,2023,,,14895.28
+S1482,Supplier_2293,,2023,HR,,685914.78
+S1483,Supplier_2294,,2023,,,808.65
+S1483,Supplier_2295,,2023,,,23468.38
+S1483,Supplier_2296,,2023,,,5600.09
+S1484,Supplier_2297,,2023,,,1918.2
+S1484,Supplier_2298,,2023,,,3153.84
+S1484,Supplier_2299,,2023,,,1750.02
+S1485,Supplier_2300,,2023,,,616.4
+S1485,Supplier_2301,,2023,,,428.8
+S1485,Supplier_2302,,2023,,,5426.44
+S1485,Supplier_2303,,2023,,,280.54
+S1485,Supplier_2304,,2023,,,7061.06
+S1485,Supplier_2305,,2023,,,99.7
+S1486,Supplier_2273,,2023,,,11230.94
+S1486,Supplier_2306,,2023,,,1680.67
+S1486,Supplier_2307,,2023,,,5676.0
+S1486,Supplier_2308,,2023,,,116.71
+S1486,Supplier_2309,,2023,,,318.43
+S1486,Supplier_2310,,2023,,,27.26
+S1487,Supplier_2311,,2023,,,383.85
+S1487,Supplier_2312,,2023,,,5315.99
+S1487,Supplier_1276,,2023,,,3316.3
+S1488,Supplier_1347,,2023,,,1675.4
+S1488,Supplier_2313,,2023,,,19198.45
+S1488,Supplier_2314,,2023,,,1008.0
+S1488,Supplier_1346,,2023,,,140.0
+S1488,Supplier_1351,,2023,,,2500.0
+S1488,Supplier_1352,,2023,,,1345.0
+S1489,Supplier_1463,,2023,,,5784.5
+S1489,Supplier_2315,,2023,,,480.74
+S1489,Supplier_1466,,2023,,,21532.94
+S1489,Supplier_1431,,2023,,,58497.6
+S1489,Supplier_1354,,2023,,,1362.6
+S1489,Supplier_1358,,2023,,,1904.0
+S1490,Supplier_1684,,2023,,,2900.0
+S1490,Supplier_1681,,2023,,,132.96
+S1490,Supplier_1558,,2023,,,1123.79
+S1491,Supplier_2316,,2022,Electronics,Components,126275.61
+S1491,Supplier_2317,,2023,Electronics,,348142.42
+S1491,Supplier_1867,,2023,,,18488.81
+S1491,Supplier_1868,,2023,,,8667.3
+S1491,Supplier_2318,,2023,,,42400.0
+S1491,Supplier_1869,,2023,,,41771.92
+S1492,Supplier_2319,,2023,,,5239.6
+S1492,Supplier_1915,,2023,,,27896.76
+S1492,Supplier_1876,,2023,,,4907.57
+S1493,Supplier_1987,,2023,,,4500.0
+S1493,Supplier_1944,,2023,,,450.0
+S1493,Supplier_2320,,2023,,,1057.0
+S1493,Supplier_2007,,2023,,,13439.98
+S1493,Supplier_2003,,2023,,,2750.69
+S1493,Supplier_1994,,2023,,,21046.44
+S1493,Supplier_1938,,2023,,,20438.73
+S1493,Supplier_1937,,2023,,,37936.14
+S1494,Supplier_2321,,2023,,,15000.0
+S1494,Supplier_2011,,2023,,,34009.32
+S1494,Supplier_2013,,2023,,,55899.8
+S1494,Supplier_2322,,2023,,,29043.07
+S1494,Supplier_2323,,2023,,,3000.0
+S1494,Supplier_2324,,2023,,,7829.27
+S1494,Supplier_2325,,2023,,,92419.24
+S1494,Supplier_1353,,2023,,,1279.82
+S1495,Supplier_2008,,2023,,,37683.0
+S1495,Supplier_1998,,2023,,,5976.87
+S1495,Supplier_1564,,2023,,,114.7
+S1495,Supplier_1528,,2023,,,4366.18
+S1496,Supplier_2012,,2023,,,7200.0
+S1496,Supplier_1393,,2023,,,97.98
+S1497,Supplier_1831,,2023,,,6085.62
+S1498,Supplier_2326,,2023,,,2237.2
+S1498,Supplier_1830,,2023,,,6005.0
+S1498,Supplier_1727,,2023,,,9151.03
+S1498,Supplier_2327,,2023,,,1250.0
+S1498,Supplier_2328,,2023,,,813.89
+S1498,Supplier_1397,,2023,,,10132.09
+S1498,Supplier_2004,,2023,,,190.5
+S1499,Supplier_1957,,2023,,,-899.13
+S1499,Supplier_2329,,2023,,,1500.0
+S1499,Supplier_2330,,2023,,,6000.0
+S1500,Supplier_1995,,2023,,,25310.0
+S1500,Supplier_1945,,2023,,,2000.0
+S1500,Supplier_2331,,2023,,,5304.0
+S1500,Supplier_1449,,2023,,,4722.83
+S1501,Supplier_1959,,2023,,,99394.44
+S1501,Supplier_1941,,2023,,,161.28
+S1501,Supplier_2332,,2022,Travel,"Hotel, Meeting & Congres",19497.67
+S1501,Supplier_2333,,2023,Travel,,3472.63
+S1501,Supplier_2334,,2023,,,1580.0
+S1501,Supplier_1555,,2023,,,-3379.57
+S1501,Supplier_2335,,2023,,,45833.63
+S1501,Supplier_1319,,2023,,,25260.64
+S1502,Supplier_2336,,2023,,,1092.0
+S1502,Supplier_1797,,2023,,,10948.56
+S1502,Supplier_1798,,2023,,,14997.43
+S1502,Supplier_2337,,2023,,,2105.0
+S1502,Supplier_2324,,2023,,,4529.03
+S1502,Supplier_2338,,2023,,,30000.0
+S1503,Supplier_1976,,2023,,,38882.8
+S1503,Supplier_2000,,2023,,,29989.71
+S1503,Supplier_1796,,2023,,,52694.0
+S1503,Supplier_2339,,2023,,,17017.0
+S1503,Supplier_2340,,2023,,,2550.98
+S1503,Supplier_1913,,2023,,,2083.58
+S1504,Supplier_1973,,2023,,,18.36
+S1504,Supplier_2322,,2023,,,24874.97
+S1504,Supplier_0571,,2023,,,2175.5
+S1504,Supplier_2341,,2023,,,2400.0
+S1504,Supplier_0369,,2023,,,399.8
+S1504,Supplier_0360,,2023,,,12000.0
+S1505,Supplier_1969,,2023,,,4623.2
+S1505,Supplier_2342,,2023,,,1000.0
+S1505,Supplier_2343,,2023,,,1250.0
+S1505,Supplier_2344,,2023,,,5842.38
+S1506,Supplier_1321,,2023,,,3711.99
+S1506,Supplier_2345,,2023,,,73532.53
+S1506,Supplier_2346,,2023,,,321.55
+S1507,Supplier_0582,,2023,,,537.25
+S1507,Supplier_2347,,2023,,,2400.0
+S1507,Supplier_0374,,2023,,,220.0
+S1507,Supplier_2348,,2023,,,1500.0
+S1508,Supplier_2349,,2023,,,13340.25
+S1508,Supplier_0930,,2023,,,122.0
+S1508,Supplier_2350,,2023,,,226.33
+S1508,Supplier_2351,,2023,,,500.0
+S1508,Supplier_2352,,2023,,,10.0
+S1509,Supplier_2353,,2023,,,38760.0
+S1509,Supplier_2354,,2022,,,6254.16
+S1509,Supplier_0345,,2023,,,262.42
+S1510,Supplier_1974,,2023,,,7725.87
+S1510,Supplier_2355,,2023,,,460.0
+S1510,Supplier_2356,,2023,,,11684.19
+S1510,Supplier_2357,,2023,,,2209.35
+S1511,Supplier_2358,,2023,,,468.0
+S1511,Supplier_0863,,2023,,,5186.24
+S1511,Supplier_0576,,2023,,,1979.5
+S1511,Supplier_2359,,2023,,,327.44
+S1512,Supplier_1967,,2023,Fleet,,102073.36
+S1512,Supplier_2360,,2023,,,111.76
+S1512,Supplier_0349,,2023,,,6087.38
+S1513,Supplier_1977,,2023,,,396.0
+S1513,Supplier_2361,,2023,,,29.41
+S1513,Supplier_0368,,2023,,,2803.0
+S1513,Supplier_0350,,2023,,,65.34
+S1514,Supplier_0928,,2023,,,1723.0
+S1514,Supplier_2362,,2023,,,2040.0
+S1514,Supplier_0362,,2023,,,6486.7
+S1515,Supplier_0931,,2023,,,26635.22
+S1515,Supplier_0926,,2023,,,1442.0
+S1515,Supplier_2363,,2023,,,1400.0
+S1516,Supplier_0356,,2023,,,1458.35
+S1516,Supplier_0358,,2023,,,-176.67
+S1516,Supplier_0359,,2023,,,650.0
+S1516,Supplier_0363,,2023,,,231.46
+S1516,Supplier_2364,,2023,,,500.0
+S1517,Supplier_2326,,2023,,,1992.8
+S1517,Supplier_2365,,2023,,,1417.85
+S1517,Supplier_0372,,2023,,,23293.0
+S1517,Supplier_2366,,2023,,,34521.18
+S1518,Supplier_0380,,2023,,,460.0
+S1518,Supplier_2367,,2023,,,3000.0
+S1518,Supplier_0376,,2023,,,9725.56
+S1518,Supplier_2368,,2023,,,2079.0
+S1518,Supplier_2369,,2023,,,172.0
+S1519,Supplier_0712,GERMANY,2024,Pharma,,8853876.82
+S1520,Supplier_0453,UNITED STATES OF AMERICA,2024,Fibers,,8435467.1
+S1521,Supplier_2370,NETHERLANDS,2024,,,4566221.36
+S1522,Supplier_0439,UNITED STATES OF AMERICA,2024,Fibers,,4238426.73
+S1523,Supplier_0462,SWITZERLAND,2024,Metal Components,,3652336.86
+S1524,Supplier_1877,NETHERLANDS,2024,Electronics,,2995214.7
+S1525,Supplier_1440,NETHERLANDS,2024,Plastic Components,,2866430.49
+S1526,Supplier_0474,JAPAN,2024,Metal Components,,2717665.52
+S1527,Supplier_0746,ITALY,2024,Medical Device,,2713382.33
+S1528,Supplier_1337,NETHERLANDS,2024,Sub-Contracting,,2563726.77
+S1529,Supplier_0907,GERMANY,2024,Electronics,,2482415.74
+S1530,Supplier_1663,NETHERLANDS,2024,Metal Components,,2058036.97
+S1531,Supplier_1257,NETHERLANDS,2024,Logistics & Transport,,2018224.75
+S1532,Supplier_0464,SWITZERLAND,2024,Medical Device,,1960844.65
+S1533,Supplier_2371,JAPAN,2024,Non-influencial spend,,1856862.45
+S1534,Supplier_1520,NETHERLANDS,2024,Plastic Components,,1723770.29
+S1535,Supplier_0593,GERMANY,2024,Medical Device,,1707268.65
+S1536,Supplier_1717,NETHERLANDS,2024,Metal Components,,1622204.03
+S1537,Supplier_2372,NETHERLANDS,2024,,,1590615.02
+S1538,Supplier_1483,NETHERLANDS,2024,Electronics,,1466844.1
+S1539,Supplier_2373,NETHERLANDS,2024,,,1373861.0
+S1540,Supplier_2374,NETHERLANDS,2024,,,1363928.56
+S1541,Supplier_0657,GERMANY,2024,Medical Device,,1361792.32
+S1542,Supplier_1271,NETHERLANDS,2024,Electronics,,1244337.89
+S1543,Supplier_1015,NETHERLANDS,2024,I.T,,1031763.89
+S1544,Supplier_2375,NETHERLANDS,2024,Electronics,,1012351.5
+S1545,Supplier_1700,NETHERLANDS,2024,Sub-Contracting,,934235.0
+S1546,Supplier_1592,NETHERLANDS,2024,Sub-Contracting,,893615.37
+S1547,Supplier_1363,NETHERLANDS,2024,Logistics & Transport,,873252.47
+S1548,Supplier_2023,NETHERLANDS,2024,Sub-Contracting,,852229.98
+S1549,Supplier_2376,CHINA,2024,Non-influencial spend,,837330.67
+S1550,Supplier_2377,NETHERLANDS,2024,Pharma,,820142.6
+S1551,Supplier_0634,NETHERLANDS,2024,I.T,,805290.98
+S1552,Supplier_2378,NETHERLANDS,2024,HR,,761493.48
+S1553,Supplier_0886,GREAT BRITAIN,2024,Electronics,,750326.93
+S1554,Supplier_0850,GERMANY,2024,Electronics,,736897.3
+S1555,Supplier_1653,NETHERLANDS,2024,HR,,725049.67
+S1556,Supplier_1197,NETHERLANDS,2024,Metal Components,,720279.5
+S1557,Supplier_2015,NETHERLANDS,2024,Electronics,,718025.38
+S1558,Supplier_2379,NETHERLANDS,2024,HR,,716187.99
+S1558,Supplier_2379,NETHERLANDS,2024,Not Categorised,,716187.99
+S1559,Supplier_2380,NETHERLANDS,2024,,,689796.61
+S1560,Supplier_2381,NETHERLANDS,2024,Professional Services,,669548.71
+S1561,Supplier_2382,NETHERLANDS,2024,,,644559.61
+S1562,Supplier_1904,GERMANY,2024,Travel,,642522.65
+S1563,Supplier_2316,NETHERLANDS,2024,Electronics,,636110.0
+S1563,Supplier_2316,NETHERLANDS,2024,Not Categorised,,636110.0
+S1564,Supplier_0664,UNITED STATES OF AMERICA,2024,Plastic Components,,628602.94
+S1565,Supplier_1786,NETHERLANDS,2024,Electronics,,627192.99
+S1566,Supplier_0950,NETHERLANDS,2024,Metal Components,,593680.67
+S1567,Supplier_0557,UNITED STATES OF AMERICA,2024,Plastic Components,,578936.54
+S1568,Supplier_2383,NETHERLANDS,2024,Electronics,,554312.93
+S1569,Supplier_1210,NETHERLANDS,2024,Professional Services,,520229.1
+S1570,Supplier_2384,GERMANY,2024,Metal Components,,505465.75
+S1571,Supplier_1050,NETHERLANDS,2024,Sub-Contracting,,503902.72
+S1572,Supplier_2385,JAPAN,2024,,,501926.12
+S1573,Supplier_2386,FRANCE,2024,,,500000.0
+S1574,Supplier_1791,NETHERLANDS,2024,Capex (Machines) ,,487992.75
+S1574,Supplier_1791,NETHERLANDS,2024,Metal Components,,487992.75
+S1575,Supplier_0400,UNITED STATES OF AMERICA,2024,Metal Components,,477573.9
+S1576,Supplier_0726,GERMANY,2024,Medical Device,,476969.86
+S1577,Supplier_0654,BELGIUM,2024,Sub-Contracting,,439290.82
+S1578,Supplier_2387,ITALY,2024,Plastic Components,,435213.64
+S1579,Supplier_1294,NETHERLANDS,2024,Packaging,,425698.6
+S1580,Supplier_2388,RUSSIAN FEDERATION (,2024,,,425542.18
+S1581,Supplier_2389,NETHERLANDS,2024,,,414685.5
+S1582,Supplier_0847,GREAT BRITAIN,2024,Metal components,,413595.68
+S1583,Supplier_1747,NETHERLANDS,2024,Electronics,,410071.78
+S1584,Supplier_2390,NETHERLANDS,2024,,,400656.33
+S1585,Supplier_0408,CHINA,2024,Metal Components,,395983.91
+S1586,Supplier_1048,NETHERLANDS,2024,Energy,,383759.1
+S1587,Supplier_1960,NETHERLANDS,2024,Fleet,,383409.28
+S1588,Supplier_1793,NETHERLANDS,2024,Electronics,,379802.97
+S1589,Supplier_1425,NETHERLANDS,2024,Professional Services,,373772.57
+S1590,Supplier_2391,NETHERLANDS,2024,I.T,,368710.23
+S1591,Supplier_2392,NETHERLANDS,2024,Logistics & Transport,,367414.48
+S1592,Supplier_2393,UNITED STATES OF AMERICA,2024,Not Categorised,,363942.59
+S1593,Supplier_2394,NETHERLANDS,2024,Metal Components,,363707.08
+S1594,Supplier_1751,NETHERLANDS,2024,Facility Management,,363645.89
+S1595,Supplier_1366,NETHERLANDS,2024,Facility Management,,363634.57
+S1596,Supplier_2395,SPAIN,2024,Non-influencial spend,,363000.0
+S1597,Supplier_1594,NETHERLANDS,2024,HR,,356918.83
+S1598,Supplier_2396,UNITED STATES OF AMERICA,2024,,,356310.79
+S1599,Supplier_2397,NETHERLANDS,2024,,,354068.16
+S1600,Supplier_1419,NETHERLANDS,2024,HR,,347391.76
+S1601,Supplier_0541,SWITZERLAND,2024,Medical Device,,340357.65
+S1602,Supplier_2398,NETHERLANDS,2024,,,338320.0
+S1603,Supplier_2399,NETHERLANDS,2024,Professional Services,,333732.15
+S1604,Supplier_0466,UNITED STATES OF AMERICA,2024,Medical Device,,321978.25
+S1605,Supplier_2400,NETHERLANDS,2024,Not Categorised,,316949.43
+S1606,Supplier_1879,NETHERLANDS,2024,Marcom,,315614.17
+S1607,Supplier_2401,NETHERLANDS,2024,Not Categorised,,313308.15
+S1608,Supplier_1749,GERMANY,2024,Electronics,,311357.15
+S1609,Supplier_2402,NETHERLANDS,2024,,,311019.65
+S1610,Supplier_1332,NETHERLANDS,2024,Electronics,,301794.93
+S1611,Supplier_2403,NETHERLANDS,2024,Professional Services,,289623.53
+S1612,Supplier_2404,BELGIUM,2024,Professional Services,,287916.52
+S1613,Supplier_1874,NETHERLANDS,2024,Not Categorised,,282484.61
+S1614,Supplier_2405,NETHERLANDS,2024,,,282473.88
+S1615,Supplier_2406,NETHERLANDS,2024,,,272271.73
+S1616,Supplier_2407,NETHERLANDS,2024,,,262322.04
+S1617,Supplier_0545,SWITZERLAND,2024,Medical Device,,261762.27
+S1618,Supplier_1768,NETHERLANDS,2024,Property,,259744.99
+S1619,Supplier_1894,NETHERLANDS,2024,Logistics & Transport,,256243.81
+S1620,Supplier_1540,NETHERLANDS,2024,Plastic Components,,253080.0
+S1621,Supplier_2408,NETHERLANDS,2024,Professional Services,,247643.85
+S1622,Supplier_2409,UNITED STATES OF AMERICA,2024,,,242385.2
+S1623,Supplier_2410,NETHERLANDS,2024,,,241686.13
+S1624,Supplier_2411,BELGIUM,2024,,,230814.72
+S1625,Supplier_1857,NETHERLANDS,2024,Logistics & Transport,,228710.91
+S1626,Supplier_1715,NETHERLANDS,2024,Plastic Components,,226296.0
+S1627,Supplier_1106,NETHERLANDS,2024,Professional Services,,222873.65
+S1628,Supplier_0534,CHINA,2024,Medical Device,,219424.01
+S1629,Supplier_2412,NETHERLANDS,2024,Professional Services,,199127.59
+S1630,Supplier_2413,NETHERLANDS,2024,,,194931.76
+S1631,Supplier_2414,NETHERLANDS,2024,I.T,,191866.1
+S1632,Supplier_1329,NETHERLANDS,2024,Plastic Components,,191665.0
+S1633,Supplier_0555,UNITED STATES OF AMERICA,2024,Plastic Components,,190942.57
+S1634,Supplier_2415,NETHERLANDS,2024,,,188978.1
+S1635,Supplier_2416,NETHERLANDS,2024,Plastic Components,,185978.43
+S1636,Supplier_1259,NETHERLANDS,2024,HR,,183240.0
+S1637,Supplier_2417,NETHERLANDS,2024,,,180058.6
+S1638,Supplier_1828,NETHERLANDS,2024,Medical Device,,174892.0
+S1639,Supplier_2418,FRANCE,2024,Non-influencial spend,,173995.0
+S1640,Supplier_2419,NETHERLANDS,2024,metal components,,172796.74
+S1641,Supplier_1621,UNITED STATES OF AMERICA,2024,Medical Device,,168734.79
+S1642,Supplier_2420,SPAIN,2024,,,168190.0
+S1643,Supplier_1805,NETHERLANDS,2024,Packaging,,166142.76
+S1644,Supplier_2421,NETHERLANDS,2024,I.T,,163866.18
+S1645,Supplier_2422,ITALY,2024,,,161160.0
+S1646,Supplier_1172,NETHERLANDS,2024,Packaging,,159412.91
+S1647,Supplier_2423,GERMANY,2024,,,158665.2
+S1648,Supplier_2424,UNITED STATES OF AMERICA,2024,Not Categorised,,158644.19
+S1649,Supplier_2425,NETHERLANDS,2024,,,157846.0
+S1650,Supplier_2426,NETHERLANDS,2024,Non-influencial spend,,157734.64
+S1651,Supplier_1810,NETHERLANDS,2024,Not Categorised,,157160.73
+S1652,Supplier_2427,UNITED STATES OF AMERICA,2024,,,156545.87
+S1653,Supplier_2428,CZECHIA,2024,Not Categorised,,156274.45
+S1654,Supplier_1583,NETHERLANDS,2024,I.T,,152777.49
+S1655,Supplier_1180,GERMANY,2024,Medical Device,,151709.8
+S1656,Supplier_0882,BELGIUM,2024,HR,,151463.97
+S1657,Supplier_2429,NETHERLANDS,2024,,,150838.0
+S1658,Supplier_2430,GERMANY,2024,,,150000.0
+S1659,Supplier_0536,SOUTH AFRICA,2024,Sub-Contracting,,149663.35
+S1660,Supplier_1200,NETHERLANDS,2024,Travel,,148726.48
+S1661,Supplier_1896,NETHERLANDS,2024,Sub-Contracting,,147347.75
+S1662,Supplier_2431,FRANCE,2024,,,146236.4
+S1663,Supplier_0895,BELGIUM,2024,Not Categorised,,144185.28
+S1664,Supplier_0854,BELGIUM,2024,Plastic Components,,142410.23
+S1665,Supplier_1193,NETHERLANDS,2024,Facility Management,,138709.23
+S1666,Supplier_2432,NETHERLANDS,2024,Electronics,,138077.96
+S1667,Supplier_2433,NETHERLANDS,2024,I.T,,137028.08
+S1668,Supplier_1838,NETHERLANDS,2024,Professional Services,,136015.45
+S1669,Supplier_2434,KOREA (THE REPUBLIC ,2024,Not Categorised,,134398.93
+S1670,Supplier_2435,NETHERLANDS,2024,,,134088.12
+S1671,Supplier_2436,NETHERLANDS,2024,,,133196.65
+S1672,Supplier_1033,NETHERLANDS,2024,Not Categorised,,132455.5
+S1673,Supplier_2437,GERMANY,2024,Logistics & Transport,,132113.0
+S1674,Supplier_0643,GREAT BRITAIN,2024,I.T,,129873.0
+S1675,Supplier_0758,GERMANY,2024,Plastic Components,,125589.4
+S1676,Supplier_2438,NETHERLANDS,2024,Not Categorised,,125104.64
+S1677,Supplier_2001,NETHERLANDS,2024,Capex (Machines) ,,119110.5
+S1678,Supplier_2439,NETHERLANDS,2024,Professional Services,,117475.0
+S1679,Supplier_0697,GREAT BRITAIN,2024,Metal Components,,114036.62
+S1680,Supplier_2440,MEXICO,2024,Not Categorised,,113631.32
+S1681,Supplier_0938,NETHERLANDS,2024,Professional Services,,112626.83
+S1682,Supplier_2441,NETHERLANDS,2024,Not Categorised,,107557.71
+S1683,Supplier_2442,NETHERLANDS,2024,,,107358.19
+S1684,Supplier_0856,GREAT BRITAIN,2024,Metal Components,,106132.15
+S1685,Supplier_2443,FRANCE,2024,,,104500.0
+S1686,Supplier_0603,SLOVAKIA,2024,Plastic Components,,103024.56
+S1687,Supplier_1435,NETHERLANDS,2024,I.T,,103000.0
+S1688,Supplier_0706,GREAT BRITAIN,2024,I.T,,102215.02
+S1689,Supplier_2444,NETHERLANDS,2024,,,101150.0
+S1690,Supplier_2445,NETHERLANDS,2024,Not Categorised,,100725.75
+S1691,Supplier_2446,NETHERLANDS,2024,I.T,,100501.44
+S1692,Supplier_1947,NETHERLANDS,2024,Facility Management,,100060.49
+S1693,Supplier_2447,MOROCCO,2024,Not Categorised,,98870.05
+S1694,Supplier_0648,GERMANY,2024,Plastic Components,,97744.3
+S1695,Supplier_0897,BELGIUM,2024,Marcom,,97742.64
+S1696,Supplier_2448,KOREA (THE REPUBLIC ,2024,,,96955.0
+S1697,Supplier_1832,NETHERLANDS,2024,Property,,96318.36
+S1698,Supplier_2449,BELGIUM,2024,,,96134.24
+S1699,Supplier_2450,SWITZERLAND,2024,,,95120.0
+S1700,Supplier_1166,NETHERLANDS,2024,Capex (Machines) ,,94310.97
+S1701,Supplier_1603,NETHERLANDS,2024,Capex (Machines) ,,93597.0
+S1702,Supplier_1949,NETHERLANDS,2024,I.T,,92950.19
+S1703,Supplier_2451,GREAT BRITAIN,2024,,,91704.5
+S1704,Supplier_2452,IRELAND,2024,Not Categorised,,90750.0
+S1705,Supplier_0800,GERMANY,2024,Glass ,,89602.7
+S1706,Supplier_1212,NETHERLANDS,2024,Packaging,,89421.25
+S1707,Supplier_1068,NETHERLANDS,2024,Logistics & Transport,,87326.93
+S1708,Supplier_1469,NETHERLANDS,2024,Travel,,87020.37
+S1709,Supplier_1438,NETHERLANDS,2024,I.T,,85766.12
+S1710,Supplier_0752,NETHERLANDS,2024,Electronics,,85581.11
+S1711,Supplier_0661,GREAT BRITAIN,2024,Medical Device,,85168.86
+S1712,Supplier_1758,NETHERLANDS,2024,Electronics,,84925.0
+S1713,Supplier_1743,NETHERLANDS,2024,I.T,,83995.32
+S1714,Supplier_1923,NETHERLANDS,2024,Marcom,,80799.97
+S1715,Supplier_0411,JAPAN,2024,Metal Components,,79421.05
+S1716,Supplier_2453,NETHERLANDS,2024,Not Categorised,,79340.0
+S1716,Supplier_2453,NETHERLANDS,2024,Property,,79340.0
+S1717,Supplier_2454,NETHERLANDS,2024,Professional Services,,79143.63
+S1718,Supplier_0749,GREAT BRITAIN,2024,Electronics,,78501.26
+S1719,Supplier_0515,UNITED STATES OF AMERICA,2024,Professional Services,,78449.56
+S1720,Supplier_2455,NETHERLANDS,2024,Not Categorised,,78265.31
+S1721,Supplier_2456,SLOVENIA,2024,Electronics,,76678.4
+S1722,Supplier_2457,HONG KONG,2024,Non-influencial spend,,76389.35
+S1723,Supplier_1902,NETHERLANDS,2024,Facility Management,,76248.95
+S1724,Supplier_2458,UNITED STATES OF AMERICA,2024,,,72702.03
+S1725,Supplier_0762,BELGIUM,2024,,,70800.0
+S1726,Supplier_1044,NETHERLANDS,2024,Facility Management,,70505.56
+S1727,Supplier_0751,GERMANY,2024,Not Categorised,,69846.09
+S1728,Supplier_2459,NETHERLANDS,2024,Not Categorised,,69784.38
+S1729,Supplier_2460,NETHERLANDS,2024,,,67946.25
+S1730,Supplier_1908,NETHERLANDS,2024,Electronics,,67750.0
+S1731,Supplier_0505,JAPAN,2024,,,66204.83
+S1732,Supplier_2461,SINGAPORE,2024,,,65988.12
+S1733,Supplier_2462,SINGAPORE,2024,Not Categorised,,65350.35
+S1734,Supplier_2463,NETHERLANDS,2024,Property,,65002.92
+S1735,Supplier_0490,UNITED STATES OF AMERICA,2024,Professional Services,,64646.76
+S1736,Supplier_0632,GERMANY,2024,Metal Components,,64312.25
+S1737,Supplier_2464,NETHERLANDS,2024,Property,,64090.25
+S1738,Supplier_2465,NETHERLANDS,2024,Not Categorised,,63550.8
+S1739,Supplier_1651,NETHERLANDS,2024,Electronics,,63236.73
+S1740,Supplier_1304,NETHERLANDS,2024,Metal Components,,62143.98
+S1741,Supplier_2466,BELGIUM,2024,,,61575.66
+S1742,Supplier_1302,NETHERLANDS,2024,Metal Components,,61470.4
+S1743,Supplier_1834,NETHERLANDS,2024,Property,,61032.78
+S1744,Supplier_1863,NETHERLANDS,2024,Metal Components,,60390.0
+S1745,Supplier_1943,NETHERLANDS,2024,Marcom,,60207.41
+S1746,Supplier_0659,GERMANY,2024,Medical Device,,58912.76
+S1747,Supplier_0478,NETHERLANDS,2024,Electronics,,56995.48
+S1748,Supplier_2467,NETHERLANDS,2024,,,56956.74
+S1749,Supplier_2468,MALAYSIA,2024,Not Categorised,,56593.36
+S1750,Supplier_0919,BELGIUM,2024,Electronics,,55808.91
+S1751,Supplier_2469,UNITED STATES OF AMERICA,2024,,,55598.8
+S1752,Supplier_2470,NETHERLANDS,2024,,,55200.0
+S1753,Supplier_2471,BELGIUM,2024,,,55046.97
+S1754,Supplier_2472,NETHERLANDS,2024,,,54864.25
+S1755,Supplier_2473,SPAIN,2024,,,54642.25
+S1756,Supplier_0997,NETHERLANDS,2024,Not Categorised,,53785.69
+S1757,Supplier_2474,INDIA,2024,Not Categorised,,53677.86
+S1758,Supplier_2475,NETHERLANDS,2024,HR,,53530.0
+S1759,Supplier_2476,CHINA,2024,Not Categorised,,52823.74
+S1760,Supplier_2477,NETHERLANDS,2024,,,52168.0
+S1761,Supplier_2478,NETHERLANDS,2024,,,52058.01
+S1762,Supplier_2479,ITALY,2024,,,51398.5
+S1763,Supplier_0488,IRELAND,2024,HR,,51125.0
+S1764,Supplier_0539,UNITED STATES OF AMERICA,2024,Not Categorised,,51053.62
+S1765,Supplier_2480,UNITED STATES OF AMERICA,2024,,,51014.76
+S1766,Supplier_0783,DENMARK,2024,I.T,,50358.39
+S1767,Supplier_2481,NETHERLANDS,2024,,,50150.0
+S1768,Supplier_2482,FRANCE,2024,,,50109.0
+S1769,Supplier_1360,NETHERLANDS,2024,Electronics,,49977.06
+S1770,Supplier_1844,NETHERLANDS,2024,Packaging,,49823.74
+S1771,Supplier_2483,IRELAND,2024,Not Categorised,,49726.74
+S1772,Supplier_2484,CHINA,2024,,,49614.44
+S1773,Supplier_0485,CHINA,2024,Plastic Components,,49603.12
+S1774,Supplier_1703,NETHERLANDS,2024,Property,,49439.13
+S1775,Supplier_0518,UNITED STATES OF AMERICA,2024,I.T,,48999.22
+S1776,Supplier_1818,NETHERLANDS,2024,Packaging,,48734.9
+S1777,Supplier_1659,SWITZERLAND,2024,Electronics,,48734.0
+S1778,Supplier_2485,NETHERLANDS,2024,,,48365.52
+S1779,Supplier_2486,FRANCE,2024,Not Categorised,,47957.5
+S1780,Supplier_1545,NETHERLANDS,2024,Electronics,,47900.0
+S1781,Supplier_1760,NETHERLANDS,2024,Professional Services,,47872.03
+S1782,Supplier_1685,NETHERLANDS,2024,Facility Management,,47161.08
+S1783,Supplier_2487,NETHERLANDS,2024,I.T,,47124.05
+S1784,Supplier_2104,NETHERLANDS,2024,I.T,,47041.0
+S1784,Supplier_2104,NETHERLANDS,2024,Not Categorised,,47041.0
+S1785,Supplier_0676,GREAT BRITAIN,2024,Electronics,,46770.3
+S1786,Supplier_0523,UNITED STATES OF AMERICA,2024,Not Categorised,,46509.0
+S1787,Supplier_2488,NETHERLANDS,2024,Not Categorised,,46280.0
+S1788,Supplier_2489,PERU,2024,,,45262.87
+S1789,Supplier_2490,NETHERLANDS,2024,,,45137.23
+S1790,Supplier_1571,NETHERLANDS,2024,I.T,,45067.11
+S1791,Supplier_1274,NETHERLANDS,2024,HR,,44502.56
+S1792,Supplier_2491,FRANCE,2024,,,44487.38
+S1793,Supplier_2492,IRELAND,2024,,,44320.0
+S1794,Supplier_0943,NETHERLANDS,2024,,,44049.6
+S1795,Supplier_0888,FRANCE,2024,Plastic Components,,43960.48
+S1796,Supplier_2493,UNITED STATES OF AMERICA,2024,,,43786.49
+S1797,Supplier_1207,NETHERLANDS,2024,Electronics,,43698.32
+S1798,Supplier_2494,GERMANY,2024,,,43645.0
+S1799,Supplier_1989,NETHERLANDS,2024,I.T,,42093.39
+S1800,Supplier_1290,NETHERLANDS,2024,I.T,,41871.19
+S1801,Supplier_2495,NETHERLANDS,2024,Capex (Machines) ,,41175.2
+S1802,Supplier_2496,MEXICO,2024,Not Categorised,,40805.08
+S1803,Supplier_2497,NETHERLANDS,2024,Energy,,40757.97
+S1803,Supplier_2497,NETHERLANDS,2024,Not Categorised,,40757.97
+S1804,Supplier_0905,BELGIUM,2024,Fleet,,40699.45
+S1805,Supplier_2498,NETHERLANDS,2024,,,40660.0
+S1806,Supplier_0424,UNITED STATES OF AMERICA,2024,Medical Device,,40432.43
+S1807,Supplier_0607,IRELAND,2024,I.T,,40080.0
+S1808,Supplier_1552,NETHERLANDS,2024,Marcom,,39605.35
+S1809,Supplier_1492,NETHERLANDS,2024,I.T,,39450.0
+S1810,Supplier_0573,SWITZERLAND,2024,Travel,,39447.47
+S1811,Supplier_2499,NETHERLANDS,2024,Not Categorised,,38575.0
+S1812,Supplier_1925,NETHERLANDS,2024,Electronics,,38535.9
+S1813,Supplier_1098,NETHERLANDS,2024,Professional Services,,38473.8
+S1814,Supplier_1884,NETHERLANDS,2024,Metal Components,,38280.0
+S1815,Supplier_0444,KOREA (THE REPUBLIC ,2024,Not Categorised,,37885.0
+S1816,Supplier_2500,SPAIN,2024,,,37698.0
+S1817,Supplier_1576,NETHERLANDS,2024,Facility Management,,37650.14
+S1818,Supplier_2501,NETHERLANDS,2024,Metal components ,,37622.69
+S1819,Supplier_1373,NETHERLANDS,2024,,,36468.44
+S1820,Supplier_2502,NETHERLANDS,2024,Not Categorised,,35901.25
+S1821,Supplier_1289,NETHERLANDS,2024,Capex (Machines) ,,35459.42
+S1822,Supplier_2503,NETHERLANDS,2024,,,35336.25
+S1823,Supplier_1978,NETHERLANDS,2024,Electronics,,34810.36
+S1824,Supplier_2504,NETHERLANDS,2024,Not Categorised,,34602.48
+S1825,Supplier_1298,NETHERLANDS,2024,Plastic Components,,34244.07
+S1826,Supplier_2017,NETHERLANDS,2024,Not Categorised,,33938.61
+S1827,Supplier_0496,UNITED STATES OF AMERICA,2024,Metal Components,,33645.09
+S1828,Supplier_1713,NETHERLANDS,2024,Plastic Components,,33066.5
+S1829,Supplier_1161,NETHERLANDS,2024,HR,,32702.46
+S1830,Supplier_2505,NETHERLANDS,2024,,,32512.3
+S1831,Supplier_1459,NETHERLANDS,2024,Property,,32450.69
+S1832,Supplier_1485,NETHERLANDS,2024,I.T,,32259.0
+S1833,Supplier_2506,UNITED STATES OF AMERICA,2024,,,32219.46
+S1834,Supplier_0755,BELGIUM,2024,Travel,,32154.49
+S1835,Supplier_0460,BRAZIL,2024,Not Categorised,,31898.38
+S1836,Supplier_2507,NETHERLANDS,2024,Not Categorised,,31775.36
+S1837,Supplier_0827,GREAT BRITAIN,2024,HR,,31431.96
+S1838,Supplier_1745,NETHERLANDS,2024,Property,,31313.29
+S1839,Supplier_1455,NETHERLANDS,2024,Metal Components,,30953.6
+S1840,Supplier_1100,NETHERLANDS,2024,Professional Services,,30916.0
+S1841,Supplier_0392,UNITED STATES OF AMERICA,2024,,,30398.48
+S1842,Supplier_1146,NETHERLANDS,2024,I.T,,30225.5
+S1843,Supplier_2508,NETHERLANDS,2024,,,29928.0
+S1844,Supplier_0525,UNITED STATES OF AMERICA,2024,Metal Components,,29856.0
+S1845,Supplier_0728,GERMANY,2024,Medical Device,,29765.44
+S1846,Supplier_2509,NETHERLANDS,2024,,,29088.0
+S1847,Supplier_1921,NETHERLANDS,2024,Property,,29081.9
+S1848,Supplier_0866,GERMANY,2024,Professional Services,,29027.57
+S1849,Supplier_1391,NETHERLANDS,2024,Electronics,,28426.84
+S1849,Supplier_1391,NETHERLANDS,2024,Not Categorised,,28426.84
+S1850,Supplier_2510,NETHERLANDS,2024,Not Categorised,,28140.88
+S1851,Supplier_2511,NETHERLANDS,2024,Not Categorised,,27916.64
+S1852,Supplier_0605,GREAT BRITAIN,2024,Medical Device,,27877.92
+S1853,Supplier_1831,SPAIN,2024,,,27713.89
+S1854,Supplier_1826,NETHERLANDS,2024,Medical Device,,27712.07
+S1855,Supplier_2512,THAILAND,2024,,,27522.36
+S1856,Supplier_1711,NETHERLANDS,2024,Packaging,,27384.34
+S1857,Supplier_0903,IRELAND,2024,I.T,,27049.73
+S1858,Supplier_1000,NETHERLANDS,2024,I.T,,26835.0
+S1859,Supplier_2513,NETHERLANDS,2024,,,26690.0
+S1860,Supplier_2514,NETHERLANDS,2024,,,26243.52
+S1861,Supplier_2515,SPAIN,2024,,,26170.49
+S1862,Supplier_2516,SLOVENIA,2024,,,26000.0
+S1863,Supplier_1563,NETHERLANDS,2024,Metal Components,,25947.3
+S1864,Supplier_0613,GERMANY,2024,,,25846.0
+S1865,Supplier_1565,NETHERLANDS,2024,I.T,,25840.2
+S1866,Supplier_1587,NETHERLANDS,2024,,,25803.4
+S1867,Supplier_2517,GERMANY,2024,,,25580.69
+S1868,Supplier_0948,NETHERLANDS,2024,Capex (Machines) ,,25556.2
+S1869,Supplier_2518,NETHERLANDS,2024,,,25465.45
+S1870,Supplier_1107,NETHERLANDS,2024,HR,,24986.56
+S1871,Supplier_2519,HONG KONG,2024,,,24588.14
+S1872,Supplier_0468,UNITED STATES OF AMERICA,2024,Medical Device,,24219.9
+S1873,Supplier_1191,NETHERLANDS,2024,Not Categorised,,24208.25
+S1874,Supplier_1900,NETHERLANDS,2024,I.T,,24145.0
+S1875,Supplier_1670,NETHERLANDS,2024,Packaging,,23884.35
+S1876,Supplier_1504,NETHERLANDS,2024,Not Categorised,,23848.0
+S1877,Supplier_1410,NETHERLANDS,2024,Not Categorised,,23808.75
+S1878,Supplier_0732,DENMARK,2024,I.T,,23800.0
+S1879,Supplier_1850,NETHERLANDS,2024,Energy,,23685.0
+S1880,Supplier_2520,NETHERLANDS,2024,Not Categorised,,23652.64
+S1881,Supplier_2521,BELGIUM,2024,,,23630.0
+S1882,Supplier_0840,FRANCE,2024,Professional Services,,23473.5
+S1883,Supplier_1461,NETHERLANDS,2024,Metal Components,,22914.5
+S1884,Supplier_2522,NETHERLANDS,2024,,,22900.0
+S1885,Supplier_2523,SLOVAKIA,2024,,,22787.61
+S1886,Supplier_1689,NETHERLANDS,2024,Metal Components,,22702.35
+S1887,Supplier_0437,UNITED STATES OF AMERICA,2024,Electronics,,22407.54
+S1888,Supplier_0772,GREAT BRITAIN,2024,,,22329.8
+S1889,Supplier_0710,IRELAND,2024,Not Categorised,,22167.32
+S1890,Supplier_0450,UNITED STATES OF AMERICA,2024,Marcom,,21954.05
+S1891,Supplier_1637,NETHERLANDS,2024,Logistics & Transport,,21783.5
+S1892,Supplier_2524,GERMANY,2024,,,21511.87
+S1893,Supplier_1755,NETHERLANDS,2024,Pharma,,21312.74
+S1894,Supplier_2525,QATAR,2024,,,20991.8
+S1895,Supplier_2030,NETHERLANDS,2024,Not Categorised,,20946.0
+S1896,Supplier_1122,NETHERLANDS,2024,Property,,20907.4
+S1897,Supplier_0405,JAPAN,2024,Metal Components,,20817.19
+S1898,Supplier_0743,GERMANY,2024,Travel,,20717.9
+S1899,Supplier_2526,NETHERLANDS,2024,,,20627.94
+S1900,Supplier_1130,NETHERLANDS,2024,Not Categorised,,20565.42
+S1901,Supplier_1281,NETHERLANDS,2024,I.T,,20504.2
+S1902,Supplier_0892,GERMANY,2024,Metal Components,,20200.59
+S1903,Supplier_1071,NETHERLANDS,2024,I.T,,20154.11
+S1904,Supplier_1022,NETHERLANDS,2024,Facility Management,,20139.58
+S1905,Supplier_2527,NETHERLANDS,2024,,,20089.2
+S1906,Supplier_2528,UNITED STATES OF AMERICA,2024,,,20000.0
+S1907,Supplier_1627,NETHERLANDS,2024,Marcom,,19976.27
+S1908,Supplier_1497,NETHERLANDS,2024,Property,,19975.04
+S1909,Supplier_2529,NETHERLANDS,2024,Not Categorised,,19761.82
+S1910,Supplier_1215,NETHERLANDS,2024,Professional Services,,19718.4
+S1911,Supplier_2530,UNITED STATES OF AMERICA,2024,,,19625.74
+S1912,Supplier_2531,NETHERLANDS,2024,,,19547.0
+S1913,Supplier_2532,FRANCE,2024,,,19500.0
+S1914,Supplier_1385,NETHERLANDS,2024,Plastic Components,,19386.29
+S1915,Supplier_0419,CHINA,2024,Not Categorised,,19357.75
+S1916,Supplier_0589,GREAT BRITAIN,2024,Marcom,,19000.0
+S1917,Supplier_0512,SWITZERLAND,2024,HR,,18999.95
+S1918,Supplier_1955,NETHERLANDS,2024,Capex (Machines) ,,18958.4
+S1919,Supplier_1891,NETHERLANDS,2024,Packaging,,18926.0
+S1920,Supplier_0874,BELGIUM,2024,Fleet,,18737.32
+S1921,Supplier_1313,NETHERLANDS,2024,,,18680.9
+S1922,Supplier_1980,NETHERLANDS,2024,Plastic Components,,18228.0
+S1923,Supplier_1777,NETHERLANDS,2024,Facility Management,,18175.6
+S1924,Supplier_2533,NETHERLANDS,2024,,,18098.29
+S1925,Supplier_0878,CYPRUS,2024,Travel,,18000.0
+S1926,Supplier_2534,TAIWAN,2024,,,17989.87
+S1927,Supplier_1549,NETHERLANDS,2024,Packaging,,17909.8
+S1928,Supplier_2535,GREAT BRITAIN,2024,,,17331.64
+S1929,Supplier_2536,NETHERLANDS,2024,Not Categorised,,17151.56
+S1930,Supplier_2537,NETHERLANDS,2024,,,17136.8
+S1931,Supplier_1932,NETHERLANDS,2024,Metal Components,,16815.09
+S1931,Supplier_1932,NETHERLANDS,2024,Not Categorised,,16815.09
+S1932,Supplier_2538,NETHERLANDS,2024,Not Categorised,,16525.5
+S1933,Supplier_1535,NETHERLANDS,2024,Plastic Components,,16445.0
+S1934,Supplier_2539,NORWAY,2024,,,16274.3
+S1935,Supplier_1853,NETHERLANDS,2024,Logistics & Transport,,16032.55
+S1936,Supplier_2540,NETHERLANDS,2024,Not Categorised,,15702.13
+S1937,Supplier_2541,NETHERLANDS,2024,,,15583.88
+S1938,Supplier_2542,NETHERLANDS,2024,Marcom,,15225.0
+S1939,Supplier_1687,NETHERLANDS,2024,Property,,15097.39
+S1940,Supplier_2543,NETHERLANDS,2024,,,15093.0
+S1941,Supplier_1675,NETHERLANDS,2024,Capex (Machines) ,,15083.34
+S1942,Supplier_2544,GERMANY,2024,Not Categorised,,15048.35
+S1943,Supplier_2545,GERMANY,2024,Not Categorised,,15000.0
+S1944,Supplier_2546,SOUTH AFRICA,2024,,,14752.4
+S1945,Supplier_0559,UNITED STATES OF AMERICA,2024,Travel,,14618.32
+S1946,Supplier_1157,NETHERLANDS,2024,HR,,14603.5
+S1947,Supplier_1471,NETHERLANDS,2024,Not Categorised,,14586.53
+S1948,Supplier_1677,NETHERLANDS,2024,HR,,14436.2
+S1949,Supplier_1731,NETHERLANDS,2024,Electronics,,14355.0
+S1950,Supplier_2547,NETHERLANDS,2024,,,14198.32
+S1951,Supplier_1573,NETHERLANDS,2024,I.T,,14175.77
+S1952,Supplier_1538,NETHERLANDS,2024,Medical Device,,14043.4
+S1953,Supplier_2548,TURKEY,2024,Not Categorised,,13980.29
+S1954,Supplier_1530,NETHERLANDS,2024,I.T,,13864.0
+S1955,Supplier_1803,NETHERLANDS,2024,Packaging,,13818.37
+S1956,Supplier_1174,NETHERLANDS,2024,,,13790.0
+S1957,Supplier_2549,NETHERLANDS,2024,,,13490.0
+S1958,Supplier_2550,NETHERLANDS,2024,,,13284.94
+S1959,Supplier_1182,NETHERLANDS,2024,HR,,13280.4
+S1960,Supplier_2551,NETHERLANDS,2024,Not Categorised,,13167.2
+S1961,Supplier_2552,NETHERLANDS,2024,,,13114.08
+S1962,Supplier_2553,UNITED STATES OF AMERICA,2024,,,13046.89
+S1963,Supplier_2554,NETHERLANDS,2024,,,12880.0
+S1964,Supplier_2555,NETHERLANDS,2024,,,12846.5
+S1965,Supplier_0796,GREAT BRITAIN,2024,I.T,,12841.8
+S1966,Supplier_0695,GERMANY,2024,Medical Device,,12750.0
+S1967,Supplier_2556,NETHERLANDS,2024,,,12500.0
+S1968,Supplier_0483,KOREA (THE REPUBLIC ,2024,,,12408.14
+S1969,Supplier_1765,NETHERLANDS,2024,,,12340.28
+S1970,Supplier_2557,NETHERLANDS,2024,Fleet,,12310.29
+S1971,Supplier_2558,ITALY,2024,,,12230.0
+S1972,Supplier_0476,BRAZIL,2024,Not Categorised,,11908.99
+S1973,Supplier_2559,GERMANY,2024,Capex (Machines) ,,11555.84
+S1974,Supplier_1886,NETHERLANDS,2024,Property,,11426.13
+S1975,Supplier_0871,NETHERLANDS,2024,Facility Management,,11425.24
+S1976,Supplier_2560,NETHERLANDS,2024,,,11418.68
+S1977,Supplier_2561,NETHERLANDS,2024,,,11290.0
+S1978,Supplier_1590,NETHERLANDS,2024,HR,,11244.78
+S1979,Supplier_2562,NETHERLANDS,2024,,,10997.51
+S1980,Supplier_1992,GERMANY,2024,Medical Device,,10931.47
+S1980,Supplier_1992,GERMANY,2024,Not Categorised,,10931.47
+S1981,Supplier_2563,NETHERLANDS,2024,,,10899.63
+S1982,Supplier_2564,NETHERLANDS,2024,,,10875.0
+S1983,Supplier_2565,NETHERLANDS,2024,,,10855.2
+S1984,Supplier_1733,NETHERLANDS,2024,Not Categorised,,10538.18
+S1985,Supplier_2566,ITALY,2024,,,10500.0
+S1986,Supplier_2189,SWITZERLAND,2024,,,10450.0
+S1987,Supplier_1618,NETHERLANDS,2024,,,10370.0
+S1988,Supplier_1138,NETHERLANDS,2024,Professional Services,,10205.9
+S1989,Supplier_2567,NETHERLANDS,2024,,,10090.0
+S1990,Supplier_1607,NETHERLANDS,2024,Property,,10061.09
+S1991,Supplier_0530,EGYPT,2024,,,10000.0
+S1992,Supplier_1266,NETHERLANDS,2024,Property,,9894.02
+S1993,Supplier_0724,GREAT BRITAIN,2024,Metal Components,,9837.65
+S1994,Supplier_0785,GERMANY,2024,Travel,,9808.58
+S1995,Supplier_2568,NETHERLANDS,2024,,,9750.0
+S1996,Supplier_2569,FRANCE,2024,,,9682.0
+S1997,Supplier_2570,CHINA,2024,,,9659.82
+S1998,Supplier_2571,NETHERLANDS,2024,,,9652.0
+S1999,Supplier_2572,NETHERLANDS,2024,,,9647.31
+S2000,Supplier_0531,UNITED ARAB EMIRATES,2024,Professional Services,,9577.86
+S2001,Supplier_0586,BELGIUM,2024,Not Categorised,,9553.5
+S2002,Supplier_1752,NETHERLANDS,2024,Metal Components,,9552.1
+S2003,Supplier_2573,UNITED STATES OF AMERICA,2024,,,9506.83
+S2004,Supplier_1822,NETHERLANDS,2024,I.T,,9473.76
+S2005,Supplier_2574,NETHERLANDS,2024,Not Categorised,,9276.0
+S2006,Supplier_1476,NETHERLANDS,2024,Capex (Machines) ,,9266.54
+S2007,Supplier_2575,GERMANY,2024,,,9252.16
+S2008,Supplier_2576,NETHERLANDS,2024,,,9015.0
+S2009,Supplier_2577,NETHERLANDS,2024,,,8966.02
+S2010,Supplier_2578,NETHERLANDS,2024,,,8797.0
+S2011,Supplier_2579,SPAIN,2024,,,8755.0
+S2012,Supplier_0798,GERMANY,2024,Medical Device,,8720.0
+S2013,Supplier_2580,NETHERLANDS,2024,Professional Services,,8697.5
+S2014,Supplier_2581,NETHERLANDS,2024,Not Categorised,,8666.15
+S2015,Supplier_1326,NETHERLANDS,2024,Metal Components,,8656.66
+S2016,Supplier_2582,NETHERLANDS,2024,,,8486.98
+S2017,Supplier_2583,SPAIN,2024,,,8467.39
+S2018,Supplier_2584,NETHERLANDS,2024,,,8456.5
+S2019,Supplier_2585,GERMANY,2024,,,8379.0
+S2020,Supplier_0806,GERMANY,2024,Medical Device,,8297.36
+S2020,Supplier_0806,GERMANY,2024,Not Categorised,,8297.36
+S2021,Supplier_0722,GREAT BRITAIN,2024,Marcom,,8275.85
+S2022,Supplier_1698,NETHERLANDS,2024,Electronics,,8260.72
+S2023,Supplier_2586,TURKEY,2024,Not Categorised,,8250.0
+S2024,Supplier_1149,NETHERLANDS,2024,Not Categorised,,8250.0
+S2025,Supplier_1445,NETHERLANDS,2024,I.T,,8250.0
+S2026,Supplier_1840,NETHERLANDS,2024,I.T,,8112.0
+S2027,Supplier_2005,NETHERLANDS,2024,Metal Components,,8079.48
+S2028,Supplier_2587,NETHERLANDS,2024,Electronics,,7958.25
+S2029,Supplier_2588,NETHERLANDS,2024,,,7930.78
+S2030,Supplier_2589,NETHERLANDS,2024,,,7910.89
+S2031,Supplier_1934,NETHERLANDS,2024,Plastic Components,,7867.41
+S2032,Supplier_0681,FRANCE,2024,I.T,,7865.0
+S2033,Supplier_1799,NETHERLANDS,2024,Not Categorised,,7826.05
+S2033,Supplier_1799,NETHERLANDS,2024,Packaging,,7826.05
+S2034,Supplier_2590,GREAT BRITAIN,2024,,,7796.38
+S2035,Supplier_2051,NETHERLANDS,2024,,,7782.5
+S2036,Supplier_2591,NETHERLANDS,2024,,,7596.32
+S2037,Supplier_1035,NETHERLANDS,2024,Professional Services,,7525.45
+S2038,Supplier_2592,SWITZERLAND,2024,,,7515.18
+S2039,Supplier_1457,NETHERLANDS,2024,Packaging,,7509.78
+S2040,Supplier_1602,NETHERLANDS,2024,Sub-Contracting,,7506.93
+S2041,Supplier_2593,ITALY,2024,,,7500.0
+S2042,Supplier_1696,NETHERLANDS,2024,Capex (Machines) ,,7491.05
+S2043,Supplier_2594,BELGIUM,2024,,,7310.27
+S2044,Supplier_1080,NETHERLANDS,2024,I.T,,7209.3
+S2045,Supplier_0899,AUSTRIA,2024,Not Categorised,,7193.02
+S2046,Supplier_1075,NETHERLANDS,2024,Professional Services,,7189.5
+S2047,Supplier_0610,NETHERLANDS,2024,Not Categorised,,7181.25
+S2048,Supplier_2595,NETHERLANDS,2024,,,7023.25
+S2049,Supplier_2596,NETHERLANDS,2024,Electronics,,6884.88
+S2050,Supplier_2597,UNITED STATES OF AMERICA,2024,Not Categorised,,6698.18
+S2051,Supplier_0990,NETHERLANDS,2024,I.T,,6684.62
+S2052,Supplier_1489,NETHERLANDS,2024,Metal Components,,6674.44
+S2053,Supplier_2598,NETHERLANDS,2024,,,6645.0
+S2054,Supplier_1433,NETHERLANDS,2024,Facility Management,,6625.36
+S2055,Supplier_1400,NETHERLANDS,2024,Not Categorised,,6615.0
+S2056,Supplier_1917,NETHERLANDS,2024,Travel,,6540.08
+S2057,Supplier_0625,ITALY,2024,Packaging,,6515.74
+S2058,Supplier_1178,NETHERLANDS,2024,Not Categorised,,6435.61
+S2059,Supplier_0901,GERMANY,2024,Travel,,6390.0
+S2060,Supplier_0441,UNITED STATES OF AMERICA,2024,I.T,,6348.81
+S2061,Supplier_1888,NETHERLANDS,2024,Not Categorised,,6286.13
+S2062,Supplier_0386,CHINA,2024,Professional Services,,6272.92
+S2063,Supplier_1629,NETHERLANDS,2024,,,6248.01
+S2064,Supplier_2599,NETHERLANDS,2024,Not Categorised,,6235.0
+S2065,Supplier_2600,NETHERLANDS,2024,Not Categorised,,6165.87
+S2066,Supplier_2601,NETHERLANDS,2024,Not Categorised,,6142.26
+S2067,Supplier_2602,NETHERLANDS,2024,,,6127.27
+S2068,Supplier_2603,NETHERLANDS,2024,,,6118.75
+S2069,Supplier_1816,NETHERLANDS,2024,Metal Components,,6115.41
+S2070,Supplier_1567,NETHERLANDS,2024,Metal Components,,6054.06
+S2071,Supplier_0884,GREAT BRITAIN,2024,Not Categorised,,5990.0
+S2072,Supplier_2604,FRANCE,2024,,,5970.0
+S2073,Supplier_1059,NETHERLANDS,2024,Not Categorised,,5966.63
+S2074,Supplier_2605,NETHERLANDS,2024,Not Categorised,,5925.0
+S2075,Supplier_0858,IRELAND,2024,Travel,,5898.6
+S2076,Supplier_0592,GREAT BRITAIN,2024,,,5888.54
+S2077,Supplier_2606,GREAT BRITAIN,2024,,,5873.54
+S2078,Supplier_1631,NETHERLANDS,2024,Not Categorised,,5869.2
+S2079,Supplier_2607,NETHERLANDS,2024,Not Categorised,,5821.81
+S2080,Supplier_1779,NETHERLANDS,2024,Electronics,,5790.0
+S2081,Supplier_1639,NETHERLANDS,2024,Capex (Machines) ,,5746.39
+S2082,Supplier_0492,CANADA,2024,Not Categorised,,5737.84
+S2083,Supplier_2608,UNITED STATES OF AMERICA,2024,,,5515.13
+S2084,Supplier_2609,SWITZERLAND,2024,,,5501.0
+S2085,Supplier_1506,NETHERLANDS,2024,Property,,5488.29
+S2086,Supplier_2610,NETHERLANDS,2024,Not Categorised,,5456.3
+S2087,Supplier_1292,NETHERLANDS,2024,Packaging,,5333.9
+S2088,Supplier_1939,NETHERLANDS,2024,Not Categorised,,5303.34
+S2089,Supplier_2611,ITALY,2024,,,5249.97
+S2090,Supplier_1087,NETHERLANDS,2024,Not Categorised,,5190.14
+S2091,Supplier_2612,NETHERLANDS,2024,,,5162.95
+S2092,Supplier_2613,SINGAPORE,2024,,,5160.47
+S2093,Supplier_1634,NETHERLANDS,2024,Facility Management,,5158.95
+S2094,Supplier_2614,NETHERLANDS,2024,,,5157.5
+S2095,Supplier_2615,NETHERLANDS,2024,,,5135.0
+S2096,Supplier_1787,NETHERLANDS,2024,Facility Management,,5116.84
+S2097,Supplier_2616,SAUDI ARABIA,2024,,,5078.02
+S2098,Supplier_1898,NETHERLANDS,2024,Electronics,,5059.6
+S2099,Supplier_0775,GREAT BRITAIN,2024,I.T,,5040.0
+S2100,Supplier_1578,NETHERLANDS,2024,Not Categorised,,4922.1
+S2101,Supplier_2617,NETHERLANDS,2024,,,4891.15
+S2102,Supplier_2618,NETHERLANDS,2024,Not Categorised,,4830.75
+S2103,Supplier_0685,AUSTRIA,2024,I.T,,4780.0
+S2104,Supplier_1647,NETHERLANDS,2024,Not Categorised,,4739.7
+S2105,Supplier_2619,NETHERLANDS,2024,Property,,4737.5
+S2106,Supplier_1709,NETHERLANDS,2024,Property,,4715.46
+S2107,Supplier_2620,NETHERLANDS,2024,Not Categorised,,4605.0
+S2108,Supplier_1188,NETHERLANDS,2024,Property,,4496.4
+S2109,Supplier_1719,NETHERLANDS,2024,Metal Components,,4413.36
+S2110,Supplier_2621,NETHERLANDS,2024,Not Categorised,,4321.08
+S2111,Supplier_2622,UNITED STATES OF AMERICA,2024,Not Categorised,,4250.0
+S2112,Supplier_1679,NETHERLANDS,2024,Electronics,,4241.7
+S2113,Supplier_2623,NETHERLANDS,2024,Facility Management,,4240.34
+S2114,Supplier_2624,UNITED STATES OF AMERICA,2024,Medical Device,,4193.31
+S2115,Supplier_1525,NETHERLANDS,2024,Not Categorised,,4188.24
+S2116,Supplier_0922,BELGIUM,2024,Not Categorised,,4174.02
+S2117,Supplier_1253,NETHERLANDS,2024,Property,,4133.89
+S2118,Supplier_2625,NETHERLANDS,2024,,,4130.0
+S2119,Supplier_2626,GREAT BRITAIN,2024,,,4130.0
+S2120,Supplier_2627,NETHERLANDS,2024,Not Categorised,,4084.0
+S2121,Supplier_0820,GREAT BRITAIN,2024,Not Categorised,,4084.0
+S2122,Supplier_1443,NETHERLANDS,2024,I.T,,4062.0
+S2123,Supplier_2628,SWITZERLAND,2024,,,4019.12
+S2124,Supplier_2629,NETHERLANDS,2024,,,3975.0
+S2125,Supplier_1300,NETHERLANDS,2024,Not Categorised,,3970.0
+S2126,Supplier_2630,NETHERLANDS,2024,Not Categorised,,3916.14
+S2127,Supplier_1322,NETHERLANDS,2024,Not Categorised,,3837.91
+S2128,Supplier_2631,TURKEY,2024,Not Categorised,,3824.5
+S2129,Supplier_0977,NETHERLANDS,2024,,,3793.59
+S2130,Supplier_2632,NETHERLANDS,2024,Not Categorised,,3785.0
+S2131,Supplier_2633,NETHERLANDS,2024,Not Categorised,,3760.47
+S2132,Supplier_2634,NETHERLANDS,2024,,,3693.58
+S2133,Supplier_2635,NETHERLANDS,2024,Not Categorised,,3600.0
+S2134,Supplier_1228,NETHERLANDS,2024,Not Categorised,,3579.72
+S2135,Supplier_2636,TURKEY,2024,Not Categorised,,3573.11
+S2136,Supplier_2637,NETHERLANDS,2024,,,3540.0
+S2137,Supplier_2638,UNITED STATES OF AMERICA,2024,,,3500.0
+S2138,Supplier_2639,NETHERLANDS,2024,Not Categorised,,3500.0
+S2139,Supplier_0452,UNITED STATES OF AMERICA,2024,,,3467.76
+S2140,Supplier_1982,NETHERLANDS,2024,Property,,3316.02
+S2141,Supplier_2640,NETHERLANDS,2024,,,3288.75
+S2142,Supplier_2641,BRAZIL,2024,Not Categorised,,3240.0
+S2143,Supplier_2642,NETHERLANDS,2024,,,3210.0
+S2144,Supplier_2643,BELGIUM,2024,,,3182.32
+S2145,Supplier_2644,NETHERLANDS,2024,,,3143.46
+S2146,Supplier_2645,BELGIUM,2024,Not Categorised,,3132.57
+S2147,Supplier_0862,GERMANY,2024,Not Categorised,,3126.13
+S2148,Supplier_2646,NETHERLANDS,2024,,,3118.52
+S2149,Supplier_2647,CHINA,2024,,,3101.5
+S2150,Supplier_1814,NETHERLANDS,2024,Plastic Components,,3097.57
+S2151,Supplier_1151,NETHERLANDS,2024,,,3081.37
+S2152,Supplier_2648,ITALY,2024,,,3035.0
+S2153,Supplier_2649,FRANCE,2024,,,3030.0
+S2154,Supplier_1739,NETHERLANDS,2024,Facility Management,,3007.77
+S2155,Supplier_2650,NETHERLANDS,2024,Plastic Components,,2987.0
+S2156,Supplier_2651,NETHERLANDS,2024,,,2942.04
+S2157,Supplier_2652,NETHERLANDS,2024,,,2940.0
+S2158,Supplier_2653,NETHERLANDS,2024,Not Categorised,,2858.99
+S2159,Supplier_2654,GREAT BRITAIN,2024,Not Categorised,,2850.43
+S2160,Supplier_0803,GERMANY,2024,Medical Device,,2847.34
+S2161,Supplier_1348,NETHERLANDS,2024,Packaging,,2823.15
+S2162,Supplier_2655,NETHERLANDS,2024,,,2795.0
+S2163,Supplier_2656,NETHERLANDS,2024,,,2794.24
+S2164,Supplier_2657,NETHERLANDS,2024,,,2765.26
+S2165,Supplier_2658,NETHERLANDS,2024,Not Categorised,,2750.0
+S2166,Supplier_2659,GERMANY,2024,,,2733.54
+S2167,Supplier_1673,NETHERLANDS,2024,Not Categorised,,2706.0
+S2168,Supplier_0547,UNITED ARAB EMIRATES,2024,Not Categorised,,2582.67
+S2169,Supplier_1382,NETHERLANDS,2024,Packaging,,2582.46
+S2170,Supplier_0909,GERMANY,2024,Plastic Components,,2571.5
+S2171,Supplier_2660,NETHERLANDS,2024,,,2525.44
+S2172,Supplier_2661,UNITED STATES OF AMERICA,2024,Electronics ,,2516.8
+S2173,Supplier_2662,NETHERLANDS,2024,,,2483.86
+S2174,Supplier_1309,NETHERLANDS,2024,Plastic Components,,2461.75
+S2175,Supplier_0890,GREAT BRITAIN,2024,Not Categorised,,2459.13
+S2176,Supplier_2663,NETHERLANDS,2024,,,2442.58
+S2177,Supplier_1184,NETHERLANDS,2024,Not Categorised,,2381.5
+S2178,Supplier_1735,NETHERLANDS,2024,I.T,,2370.0
+S2179,Supplier_1225,NETHERLANDS,2024,Not Categorised,,2350.38
+S2180,Supplier_2664,NETHERLANDS,2024,,,2321.8
+S2181,Supplier_1092,NETHERLANDS,2024,HR,,2311.64
+S2182,Supplier_2665,FRANCE,2024,,,2310.0
+S2183,Supplier_1773,NETHERLANDS,2024,Electronics,,2300.0
+S2184,Supplier_2666,AUSTRIA,2024,,,2300.0
+S2185,Supplier_0839,BELGIUM,2024,,,2276.88
+S2186,Supplier_2667,NETHERLANDS,2024,,,2264.15
+S2187,Supplier_1344,NETHERLANDS,2024,Not Categorised,,2245.4
+S2188,Supplier_2668,NETHERLANDS,2024,,,2233.0
+S2189,Supplier_2669,NETHERLANDS,2024,,,2215.5
+S2190,Supplier_2670,ITALY,2024,,,2200.0
+S2191,Supplier_1616,NETHERLANDS,2024,Plastic Components,,2134.36
+S2192,Supplier_2671,NETHERLANDS,2024,Electronics,,2109.21
+S2193,Supplier_2672,NETHERLANDS,2024,,,2105.75
+S2194,Supplier_0813,ITALY,2024,Professional Services,,2095.0
+S2195,Supplier_2673,NETHERLANDS,2024,,,2038.02
+S2196,Supplier_0487,UNITED STATES OF AMERICA,2024,,,2034.34
+S2197,Supplier_2674,NETHERLANDS,2024,Packaging,,2011.2
+S2198,Supplier_2675,NETHERLANDS,2024,Not Categorised,,2010.8
+S2199,Supplier_2676,NETHERLANDS,2024,,,2000.0
+S2200,Supplier_2677,AUSTRIA,2024,,,2000.0
+S2201,Supplier_1388,NETHERLANDS,2024,Not Categorised,,1989.05
+S2202,Supplier_2678,NETHERLANDS,2024,,,1931.5
+S2203,Supplier_1464,NETHERLANDS,2024,Packaging,,1913.55
+S2204,Supplier_2679,FRANCE,2024,,,1900.0
+S2205,Supplier_2680,NETHERLANDS,2024,,,1898.0
+S2206,Supplier_2681,NETHERLANDS,2024,Not Categorised,,1865.0
+S2207,Supplier_2682,UNITED STATES OF AMERICA,2024,,,1860.4
+S2208,Supplier_2683,NETHERLANDS,2024,,,1840.0
+S2209,Supplier_1380,NETHERLANDS,2024,Not Categorised,,1838.51
+S2210,Supplier_1331,NETHERLANDS,2024,,,1815.6
+S2211,Supplier_2684,GERMANY,2024,,,1800.0
+S2212,Supplier_0816,GERMANY,2024,Plastic Components,,1788.88
+S2213,Supplier_1547,NETHERLANDS,2024,HR,,1760.0
+S2214,Supplier_2685,FRANCE,2024,,,1749.0
+S2215,Supplier_1450,NETHERLANDS,2024,Sub-Contracting,,1735.0
+S2216,Supplier_1848,NETHERLANDS,2024,Plastic Components,,1704.95
+S2217,Supplier_2686,NETHERLANDS,2024,,,1695.0
+S2218,Supplier_2687,NETHERLANDS,2024,Not Categorised,,1684.25
+S2219,Supplier_0760,SPAIN,2024,Professional Services,,1634.8
+S2220,Supplier_1104,NETHERLANDS,2024,Not Categorised,,1595.0
+S2221,Supplier_1859,NETHERLANDS,2024,Electronics,,1587.71
+S2222,Supplier_1134,NETHERLANDS,2024,Not Categorised,,1575.5
+S2223,Supplier_1882,GREAT BRITAIN,2024,Glass ,,1573.5
+S2224,Supplier_2688,NETHERLANDS,2024,,,1539.9
+S2225,Supplier_0690,GREAT BRITAIN,2024,Marcom,,1529.42
+S2226,Supplier_1522,NETHERLANDS,2024,Packaging,,1517.07
+S2227,Supplier_2689,NETHERLANDS,2024,,,1500.0
+S2228,Supplier_2690,NETHERLANDS,2024,,,1500.0
+S2229,Supplier_2691,ITALY,2024,,,1500.0
+S2230,Supplier_2692,NETHERLANDS,2024,,,1499.0
+S2231,Supplier_0620,GERMANY,2024,Electronics,,1488.0
+S2232,Supplier_2693,GERMANY,2024,,,1475.0
+S2233,Supplier_1404,NETHERLANDS,2024,Property,,1472.5
+S2234,Supplier_2694,NETHERLANDS,2024,Not Categorised,,1462.9
+S2235,Supplier_2695,NETHERLANDS,2024,Not Categorised,,1423.75
+S2236,Supplier_1559,NETHERLANDS,2024,Not Categorised,,1420.39
+S2237,Supplier_1052,NETHERLANDS,2024,I.T,,1417.01
+S2238,Supplier_2696,NETHERLANDS,2024,Not Categorised,,1413.89
+S2239,Supplier_1037,NETHERLANDS,2024,Facility Management,,1410.0
+S2240,Supplier_2697,NETHERLANDS,2024,,,1409.3
+S2241,Supplier_0421,UNITED STATES OF AMERICA,2024,Not Categorised,,1383.76
+S2242,Supplier_2698,NETHERLANDS,2024,,,1376.6
+S2243,Supplier_2036,NETHERLANDS,2024,Not Categorised,,1364.0
+S2244,Supplier_2699,NETHERLANDS,2024,,,1363.57
+S2245,Supplier_2700,ITALY,2024,,,1360.0
+S2246,Supplier_2701,ITALY,2024,,,1344.12
+S2247,Supplier_1707,NETHERLANDS,2024,Plastic Components,,1322.0
+S2248,Supplier_1090,NETHERLANDS,2024,,,1317.96
+S2249,Supplier_2702,NETHERLANDS,2024,Not Categorised,,1300.0
+S2250,Supplier_2703,NETHERLANDS,2024,,,1286.72
+S2251,Supplier_1061,NETHERLANDS,2024,Property,,1272.0
+S2252,Supplier_1017,NETHERLANDS,2024,Property,,1265.53
+S2253,Supplier_2704,ITALY,2024,,,1260.0
+S2254,Supplier_2705,NETHERLANDS,2024,,,1250.0
+S2255,Supplier_1205,NETHERLANDS,2024,Not Categorised,,1247.98
+S2256,Supplier_1255,NETHERLANDS,2024,Logistics & Transport,,1240.69
+S2257,Supplier_1395,NETHERLANDS,2024,Not Categorised,,1227.33
+S2258,Supplier_2706,NETHERLANDS,2024,,,1220.76
+S2259,Supplier_1029,NETHERLANDS,2024,Not Categorised,,1188.0
+S2260,Supplier_0945,NETHERLANDS,2024,Property,,1186.91
+S2261,Supplier_2707,SPAIN,2024,,,1186.69
+S2262,Supplier_2708,NETHERLANDS,2024,Not Categorised,,1184.23
+S2263,Supplier_2709,NETHERLANDS,2024,,,1182.0
+S2264,Supplier_2710,NETHERLANDS,2024,,,1180.67
+S2265,Supplier_2711,GREAT BRITAIN,2024,,,1174.25
+S2266,Supplier_0623,GREAT BRITAIN,2024,Not Categorised,,1173.71
+S2267,Supplier_2712,GREAT BRITAIN,2024,,,1167.07
+S2268,Supplier_0674,BELGIUM,2024,Not Categorised,,1160.76
+S2269,Supplier_1542,NETHERLANDS,2024,Not Categorised,,1151.21
+S2270,Supplier_1342,NETHERLANDS,2024,,,1150.0
+S2271,Supplier_2713,NETHERLANDS,2024,,,1136.43
+S2272,Supplier_2714,GERMANY,2024,,,1133.0
+S2273,Supplier_1705,NETHERLANDS,2024,,,1125.0
+S2274,Supplier_0618,GERMANY,2024,Not Categorised,,1100.0
+S2275,Supplier_2715,CHINA,2024,Not Categorised,,1093.31
+S2276,Supplier_1561,NETHERLANDS,2024,Not Categorised,,1082.85
+S2277,Supplier_1244,NETHERLANDS,2024,Not Categorised,,1072.5
+S2278,Supplier_2716,NETHERLANDS,2024,,,1055.0
+S2279,Supplier_1478,NETHERLANDS,2024,Not Categorised,,1050.0
+S2280,Supplier_1481,NETHERLANDS,2024,Property,,1030.0
+S2281,Supplier_1237,NETHERLANDS,2024,Not Categorised,,1020.0
+S2282,Supplier_2717,NETHERLANDS,2024,,,1020.0
+S2283,Supplier_2718,NETHERLANDS,2024,,,1020.0
+S2284,Supplier_1066,NETHERLANDS,2024,Not Categorised,,1000.0
+S2285,Supplier_1082,NETHERLANDS,2024,Not Categorised,,1000.0
+S2286,Supplier_2719,GREAT BRITAIN,2024,Not Categorised,,1000.0
+S2287,Supplier_1285,NETHERLANDS,2024,Packaging,,990.0
+S2288,Supplier_2720,SPAIN,2024,,,975.0
+S2289,Supplier_0992,NETHERLANDS,2024,Not Categorised,,970.9
+S2290,Supplier_2721,NETHERLANDS,2024,,,966.0
+S2291,Supplier_2722,GERMANY,2024,,,962.0
+S2292,Supplier_1406,NETHERLANDS,2024,Not Categorised,,958.5
+S2293,Supplier_1965,NETHERLANDS,2024,Electronics,,957.28
+S2294,Supplier_2723,NETHERLANDS,2024,,,954.24
+S2295,Supplier_2724,NETHERLANDS,2024,,,932.32
+S2296,Supplier_2725,GERMANY,2024,,,920.0
+S2297,Supplier_2726,NETHERLANDS,2024,Not Categorised,,918.0
+S2298,Supplier_2727,BELGIUM,2024,,,913.22
+S2299,Supplier_1784,NETHERLANDS,2024,Not Categorised,,909.75
+S2300,Supplier_1452,NETHERLANDS,2024,Not Categorised,,907.05
+S2301,Supplier_2728,GREAT BRITAIN,2024,,,900.0
+S2302,Supplier_2729,FRANCE,2024,,,900.0
+S2303,Supplier_2730,BELGIUM,2024,,,900.0
+S2304,Supplier_2731,SWEDEN,2024,,,898.0
+S2305,Supplier_2732,NETHERLANDS,2024,,,890.0
+S2306,Supplier_1402,NETHERLANDS,2024,Not Categorised,,876.12
+S2307,Supplier_2733,GREAT BRITAIN,2024,Not Categorised,,870.0
+S2308,Supplier_0426,SWITZERLAND,2024,Not Categorised,,862.24
+S2309,Supplier_2734,NETHERLANDS,2024,,,860.0
+S2310,Supplier_2735,GREAT BRITAIN,2024,,,844.26
+S2311,Supplier_0650,GERMANY,2024,Sub-Contracting,,837.32
+S2312,Supplier_0428,UNITED STATES OF AMERICA,2024,Not Categorised,,830.26
+S2313,Supplier_1144,NETHERLANDS,2024,Facility Management,,822.0
+S2314,Supplier_2736,NETHERLANDS,2024,,,802.0
+S2315,Supplier_1836,NETHERLANDS,2024,Fleet,,779.43
+S2316,Supplier_2737,ITALY,2024,,,778.68
+S2317,Supplier_2738,POLAND,2024,,,777.29
+S2318,Supplier_0456,UNITED STATES OF AMERICA,2024,Medical Device,,772.78
+S2319,Supplier_2739,NETHERLANDS,2024,,,765.38
+S2320,Supplier_1230,NETHERLANDS,2024,,,764.6
+S2321,Supplier_2740,BELGIUM,2024,Not Categorised,,761.46
+S2322,Supplier_2741,GERMANY,2024,,,750.95
+S2323,Supplier_2742,NETHERLANDS,2024,,,722.04
+S2324,Supplier_2743,GERMANY,2024,,,721.03
+S2325,Supplier_2744,NETHERLANDS,2024,,,700.0
+S2326,Supplier_0845,GERMANY,2024,Marcom,,690.0
+S2327,Supplier_1929,NETHERLANDS,2024,Packaging,,687.0
+S2328,Supplier_2745,UNITED STATES OF AMERICA,2024,Not Categorised,,685.75
+S2329,Supplier_2746,NETHERLANDS,2024,,,662.47
+S2330,Supplier_2747,NETHERLANDS,2024,Packaging,,656.0
+S2331,Supplier_2748,GERMANY,2024,,,654.5
+S2332,Supplier_2749,BELGIUM,2024,,,648.0
+S2333,Supplier_1454,NETHERLANDS,2024,,,625.0
+S2334,Supplier_2750,NETHERLANDS,2024,,,622.0
+S2335,Supplier_1999,NETHERLANDS,2024,Not Categorised,,621.41
+S2335,Supplier_1999,NETHERLANDS,2024,Sub-Contracting,,621.41
+S2336,Supplier_1020,NETHERLANDS,2024,Facility Management,,609.93
+S2337,Supplier_2751,SPAIN,2024,,,600.0
+S2338,Supplier_2752,SPAIN,2024,,,600.0
+S2339,Supplier_2753,NETHERLANDS,2024,,,600.0
+S2340,Supplier_2754,GERMANY,2024,,,595.9
+S2341,Supplier_2755,HONG KONG,2024,,,592.13
+S2342,Supplier_1623,NETHERLANDS,2024,Not Categorised,,586.5
+S2343,Supplier_1176,NETHERLANDS,2024,Not Categorised,,586.15
+S2344,Supplier_2756,NETHERLANDS,2024,,,576.25
+S2345,Supplier_2757,NETHERLANDS,2024,,,566.57
+S2346,Supplier_1026,NETHERLANDS,2024,Not Categorised,,553.0
+S2347,Supplier_1195,NETHERLANDS,2024,I.T,,548.29
+S2348,Supplier_2758,UNITED STATES OF AMERICA,2024,,,541.32
+S2349,Supplier_2759,NETHERLANDS,2024,Not Categorised,,530.63
+S2350,Supplier_2285,NETHERLANDS,2024,Not Categorised,,521.3
+S2351,Supplier_0849,BELGIUM,2024,,,519.92
+S2352,Supplier_2760,NETHERLANDS,2024,,,517.8
+S2353,Supplier_0708,GERMANY,2024,Facility Management,,516.6
+S2354,Supplier_2761,GERMANY,2024,Not Categorised,,501.0
+S2355,Supplier_2762,NETHERLANDS,2024,,,500.0
+S2356,Supplier_2763,NETHERLANDS,2024,,,500.0
+S2357,Supplier_0594,BELGIUM,2024,Not Categorised,,500.0
+S2358,Supplier_2764,BELGIUM,2024,,,500.0
+S2359,Supplier_2765,ISRAEL,2024,Not Categorised,,496.5
+S2360,Supplier_2766,NETHERLANDS,2024,,,484.88
+S2361,Supplier_2767,GERMANY,2024,,,470.0
+S2362,Supplier_1682,NETHERLANDS,2024,Sub-Contracting,,466.5
+S2363,Supplier_1126,NETHERLANDS,2024,Capex (Machines) ,,462.96
+S2364,Supplier_2768,NETHERLANDS,2024,,,455.0
+S2365,Supplier_2769,IRELAND,2024,,,450.0
+S2366,Supplier_2770,NETHERLANDS,2024,,,425.0
+S2367,Supplier_1515,NETHERLANDS,2024,Not Categorised,,408.99
+S2368,Supplier_2771,TURKEY,2024,,,407.0
+S2369,Supplier_2772,NETHERLANDS,2024,,,399.0
+S2370,Supplier_2773,NETHERLANDS,2024,,,397.5
+S2371,Supplier_2774,NETHERLANDS,2024,,,387.37
+S2372,Supplier_1378,NETHERLANDS,2024,Not Categorised,,370.26
+S2373,Supplier_2775,NETHERLANDS,2024,,,368.0
+S2374,Supplier_1919,NETHERLANDS,2024,Fleet,,367.65
+S2375,Supplier_1487,NETHERLANDS,2024,Not Categorised,,365.0
+S2376,Supplier_0765,BELGIUM,2024,Not Categorised,,363.0
+S2377,Supplier_2776,NETHERLANDS,2024,,,355.0
+S2378,Supplier_0431,UNITED STATES OF AMERICA,2024,Plastic Components,,352.14
+S2379,Supplier_1124,NETHERLANDS,2024,I.T,,350.0
+S2380,Supplier_1725,NETHERLANDS,2024,Not Categorised,,346.0
+S2381,Supplier_1094,NETHERLANDS,2024,I.T,,344.65
+S2382,Supplier_2777,FRANCE,2024,,,340.0
+S2383,Supplier_2778,NETHERLANDS,2024,,,339.9
+S2384,Supplier_1517,NETHERLANDS,2024,Facility Management,,306.61
+S2385,Supplier_2779,GERMANY,2024,,,300.0
+S2386,Supplier_1789,NETHERLANDS,2024,Energy,,299.52
+S2387,Supplier_2780,UNITED STATES OF AMERICA,2024,,,278.93
+S2388,Supplier_1328,NETHERLANDS,2024,I.T,,273.27
+S2389,Supplier_1532,NETHERLANDS,2024,Packaging,,265.25
+S2390,Supplier_2009,NETHERLANDS,2024,Not Categorised,,262.5
+S2391,Supplier_2781,NETHERLANDS,2024,Not Categorised,,250.0
+S2392,Supplier_2782,NETHERLANDS,2024,,,250.0
+S2393,Supplier_2783,NETHERLANDS,2024,,,250.0
+S2394,Supplier_2784,GERMANY,2024,,,250.0
+S2395,Supplier_2785,NETHERLANDS,2024,,,249.0
+S2396,Supplier_1296,NETHERLANDS,2024,Not Categorised,,230.6
+S2397,Supplier_1694,NETHERLANDS,2024,Not Categorised,,230.48
+S2398,Supplier_2786,NETHERLANDS,2024,,,226.42
+S2399,Supplier_2787,NETHERLANDS,2024,,,225.0
+S2400,Supplier_2788,NETHERLANDS,2024,,,213.0
+S2401,Supplier_2789,NETHERLANDS,2024,,,203.1
+S2402,Supplier_1335,NETHERLANDS,2024,Not Categorised,,200.0
+S2403,Supplier_0986,NETHERLANDS,2024,Not Categorised,,175.0
+S2404,Supplier_1927,NETHERLANDS,2024,Facility Management,,155.78
+S2405,Supplier_2790,NETHERLANDS,2024,Medical Device,,154.26
+S2406,Supplier_1371,NETHERLANDS,2024,Not Categorised,,150.0
+S2407,Supplier_2791,NETHERLANDS,2024,,,135.63
+S2408,Supplier_2792,NETHERLANDS,2024,,,129.35
+S2409,Supplier_1140,NETHERLANDS,2024,,,128.0
+S2410,Supplier_2793,NETHERLANDS,2024,Plastic Components,,115.8
+S2411,Supplier_1263,NETHERLANDS,2024,Fleet,,108.25
+S2412,Supplier_2794,NETHERLANDS,2024,,,104.6
+S2413,Supplier_2795,GERMANY,2024,,,100.23
+S2414,Supplier_1630,NETHERLANDS,2024,,,100.0
+S2415,Supplier_2796,NETHERLANDS,2024,Not Categorised,,97.0
+S2416,Supplier_2797,NETHERLANDS,2024,,,90.34
+S2417,Supplier_2798,NETHERLANDS,2024,,,86.78
+S2418,Supplier_2799,NETHERLANDS,2024,,,83.81
+S2419,Supplier_1610,NETHERLANDS,2024,Not Categorised,,81.0
+S2420,Supplier_1855,NETHERLANDS,2024,Plastic Components,,76.0
+S2421,Supplier_2800,BELGIUM,2024,Not Categorised,,75.5
+S2422,Supplier_2801,NETHERLANDS,2024,Not Categorised,,75.0
+S2423,Supplier_1510,NETHERLANDS,2024,,,75.0
+S2424,Supplier_2802,NETHERLANDS,2024,,,73.5
+S2425,Supplier_2803,NETHERLANDS,2024,,,68.45
+S2426,Supplier_2804,NETHERLANDS,2024,,,67.5
+S2427,Supplier_2805,SWEDEN,2024,,,64.58
+S2428,Supplier_1063,NETHERLANDS,2024,Not Categorised,,60.0
+S2429,Supplier_2806,NETHERLANDS,2024,,,50.0
+S2430,Supplier_1429,NETHERLANDS,2024,Facility Management,,45.86
+S2431,Supplier_1013,NETHERLANDS,2024,Facility Management,,45.0
+S2432,Supplier_1186,NETHERLANDS,2024,,,34.71
+S2433,Supplier_0981,NETHERLANDS,2024,,,34.7
+S2434,Supplier_2807,UNITED STATES OF AMERICA,2024,Not Categorised,,0.0
+S2435,Supplier_1427,NETHERLANDS,2024,I.T,,0.0
+S2436,Supplier_1511,NETHERLANDS,2024,I.T,,0.0
+S2437,Supplier_2808,NETHERLANDS,2024,,,0.0
+S2438,Supplier_2809,GREAT BRITAIN,2024,Not Categorised,,0.0
+S2439,Supplier_2810,GREAT BRITAIN,2024,,,0.0
+S2440,Supplier_2811,GREAT BRITAIN,2024,,,0.0
+S2441,Supplier_0638,GERMANY,2024,Not Categorised,,0.0
+S2442,Supplier_2812,NETHERLANDS,2024,Not Categorised,,-1729.0
+S2443,Supplier_2813,NETHERLANDS,2024,Fleet,,-3240.26
