@@ -40,70 +40,7 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script type="module">
-    // Helper to parse CSV
-    async function loadCSV(url) {
-      const text = await fetch(url).then(r => r.text());
-      const [header, ...rows] = text.trim().split(/\r?\n/).map(r => r.split(","));
-      return rows.map(r => Object.fromEntries(r.map((v,i) => [header[i], v])));
-    }
-
-    const fvContainer = document.getElementById("fvContainer");
-    const btnDownload = document.getElementById("fvDownload");
-    const btnFullscreen = document.getElementById("fvFullscreen");
-
-    document.getElementById("fullViewModal").addEventListener("shown.bs.modal", async () => {
-      const rows = await loadCSV("data/supplier_spend.csv");
-
-      // Group by supplier_name and spend_year
-      const suppliers = [...new Set(rows.map(r => r.supplier_name))];
-      const years = [...new Set(rows.map(r => r.spend_year))];
-
-      const traces = years.map(year => {
-        const y = suppliers.map(supp => {
-          const row = rows.find(r => r.supplier_name === supp && r.spend_year === year);
-          return row ? +row.spend_anonymized : 0;
-        });
-        return {
-          x: suppliers,
-          y,
-          name: year,
-          type: "bar"
-        };
-      });
-
-      const layout = {
-        barmode: "stack",
-        paper_bgcolor: "#191919",
-        plot_bgcolor: "#191919",
-        font: { color: "#F9F3D9" },
-        xaxis: { title: "Supplier" },
-        yaxis: { title: "Spend (AED)" },
-        margin: { t:40, l:60, r:20, b:80 }
-      };
-
-      await Plotly.newPlot(fvContainer, traces, layout, { responsive:true });
-    });
-
-    // Fullscreen
-    btnFullscreen.addEventListener("click", () => {
-      const el = fvContainer;
-      if(document.fullscreenElement) {
-        document.exitFullscreen();
-      } else if(el.requestFullscreen) {
-        el.requestFullscreen();
-      }
-    });
-
-    // Download
-    btnDownload.addEventListener("click", () => {
-      Plotly.downloadImage(fvContainer, {
-        format:"png",
-        filename:"supplier_spend_analysis",
-        width:1280,
-        height:720
-      });
-    });
-  </script>
+  <!-- Use external script instead of inline -->
+  <script type="module" src="js/plotly-test.js"></script>
 </body>
 </html>
