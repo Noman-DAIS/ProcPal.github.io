@@ -14,7 +14,7 @@ let chartMounted = false;
 
 modalEl.addEventListener("shown.bs.modal", async () => {
   if(chartMounted) return;
-  const rows = await loadCSV("data/spend_by_cat.csv");
+  const rows = await loadCSV("data/all_spend_anonymized.csv");
   const categories = rows.map(r => r.Category);
   const values = rows.map(r => +r.SpendAED);
 
