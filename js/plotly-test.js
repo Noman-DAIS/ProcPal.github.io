@@ -1,5 +1,5 @@
 // js/plotly-test.js
-import { renderSpendChart } from "./plotly-renderer.js";
+import { renderSpendChart } from "./output_renderer.js";
 
 // CHANGE THIS to your CSV path
 const CSV_URL = "./data/supplier_spend.csv";
