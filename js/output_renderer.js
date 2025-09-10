@@ -1,5 +1,5 @@
 // js/plotly-renderer.js
-import { loadCSVasJSON } from "./csv-loader.js";
+import { loadCSVasJSON } from "./csv_parser.js";
 
 export async function renderSpendChart(csvUrl, containerIdOrEl) {
   const container = typeof containerIdOrEl === "string"
