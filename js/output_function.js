@@ -1,4 +1,4 @@
-import { loadCSVasJSON } from "./csv-loader.js";
+import { loadCSVasJSON } from "./csv_parser.js";
 
 /**
  * Render supplier spend chart
