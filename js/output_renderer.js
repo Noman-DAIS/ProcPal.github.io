@@ -16,7 +16,6 @@ export async function renderFromSpec(spec, containerIdOrEl) {
   }
   // Pass populated data forward so the rest of the renderer doesn’t care about CSV loading
   spec = { ...spec, data };
-  const data = Array.isArray(spec?.data) ? spec.data : [];
   const supportsHistory = !!(window?.history?.pushState);
   const SORT_KEY = "pp.sortMode";
 
