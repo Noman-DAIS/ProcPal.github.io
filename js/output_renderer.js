@@ -3,10 +3,19 @@ import { loadCSVasJSON } from "./csv_parser.js";
 export async function renderFromSpec(spec, containerIdOrEl) {
   // ----- Setup -----
   const container = typeof containerIdOrEl === "string"
-    ? (containerIdOrEl.startsWith("#") ? document.querySelector(containerIdOrEl)
-                                       : document.getElementById(containerIdOrEl))
+    ? (containerIdOrEl.startsWith("#")
+        ? document.querySelector(containerIdOrEl)
+        : document.getElementById(containerIdOrEl))
     : containerIdOrEl;
   if (!container) throw new Error("Container not found");
+  // Load data from spec; prefer inline `spec.data`, else CSV via csv_parser.js
+  let data = Array.isArray(spec?.data) && spec.data.length ? spec.data : [];
+  if (!data.length && spec?.dataUrl) {
+    // csv_parser auto-types by default; no need to pass numeric fields unless you want to override
+    data = await loadCSVasJSON(spec.dataUrl);
+  }
+  // Pass populated data forward so the rest of the renderer doesn’t care about CSV loading
+  spec = { ...spec, data };
   const data = Array.isArray(spec?.data) ? spec.data : [];
   const supportsHistory = !!(window?.history?.pushState);
   const SORT_KEY = "pp.sortMode";
