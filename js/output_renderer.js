@@ -427,3 +427,4 @@ export async function renderFromSpec(spec, containerIdOrEl) {
   // ----- Initial draw -----
   await drawMain();
 }
+export { renderFromSpec as renderSpendChart };
