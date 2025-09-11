@@ -1,5 +1,5 @@
 // output_renderer.js — consolidated renderer
-
+import { loadCSVasJSON } from "./csv_parser.js";
 export async function renderFromSpec(spec, containerIdOrEl) {
   // ----- Setup -----
   const container = typeof containerIdOrEl === "string"
