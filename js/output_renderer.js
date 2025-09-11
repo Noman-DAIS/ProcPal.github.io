@@ -450,6 +450,6 @@ export async function renderFromSpec(spec, containerIdOrEl) {
 }
 
 // Flexible exports
-export { renderFromSpec };
+//export { renderFromSpec };
 export { renderFromSpec as renderSpendChart };
-export default renderFromSpec;
+//export default renderFromSpec;
