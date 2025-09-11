@@ -30,6 +30,10 @@ export async function renderFromSpec(spec, containerIdOrEl) {
     modeBarButtonsToAdd: ["v1hovermode", "toggleSpikelines"],
     toImageButtonOptions: { filename: spec.fileName || "chart" }
   };
+  // NEW: state for extras
+  let sortMode = "label";          // "label" | "value"
+  let barmode = "group";           // "group" | "stack"
+  const supportsHistory = !!(window?.history?.pushState);
 
   const baseLayout = (overrides = {}) => ({
     title: spec.format?.title || "",
@@ -146,6 +150,79 @@ export async function renderFromSpec(spec, containerIdOrEl) {
       hovertemplate: `<b>%{x}</b><br>${spec.format?.units||""}: %{y:,}<extra></extra>`
     }];
   }
+    // NEW: sort helper (single-series only)
+  function applySort(shaped) {
+    if (!shaped || shaped.series) return shaped; // keep simple for series
+    if (sortMode === "value" && shaped.x && shaped.y) {
+      const zipped = shaped.x.map((x,i)=>({x, y: shaped.y[i]})).sort((a,b)=>b.y-a.y);
+      shaped.x = zipped.map(d=>d.x); shaped.y = zipped.map(d=>d.y);
+    }
+    return shaped;
+  }
+
+  // NEW: toolbar UI
+  function ensureToolbar() {
+    if (container.querySelector(".pp-toolbar")) return;
+    container.style.position = container.style.position || "relative";
+    const bar = document.createElement("div");
+    bar.className = "pp-toolbar";
+    bar.style.cssText = "position:absolute;top:8px;left:8px;display:flex;gap:6px;z-index:10";
+    const mkBtn = (label, title, fn) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "btn btn-sm btn-outline-light";
+      b.style.cssText = "padding:2px 8px;border-radius:10px;background:#222;color:#eee;border:1px solid #555";
+      b.textContent = label; b.title = title; b.onclick = fn; return b;
+    };
+    const btnBack  = mkBtn("← Back","Return to main view", ()=> exitDrill());
+    btnBack.dataset.role = "pp-back";
+    const btnFull  = mkBtn("⛶ Full","Toggle fullscreen", ()=> toggleFull());
+    const btnReset = mkBtn("Reset","Reset chart", ()=> redrawCurrent(true));
+    const btnSort  = mkBtn("Sort: A→Z","Toggle sort by value/label", ()=> { sortMode = (sortMode==="label"?"value":"label"); btnSort.textContent = sortMode==="label"?"Sort: A→Z":"Sort: Value"; redrawCurrent(); });
+    const btnStack = mkBtn("Stack","Toggle group/stack", ()=> { barmode = (barmode==="group"?"stack":"group"); Plotly.relayout(gd, { barmode }); });
+    const btnCSV   = mkBtn("CSV","Download visible data", ()=> downloadVisible());
+    bar.append(btnBack, btnFull, btnReset, btnSort, btnStack, btnCSV);
+    container.appendChild(bar);
+    updateToolbar();
+  }
+  function updateToolbar() {
+    const back = container.querySelector('[data-role="pp-back"]');
+    if (back) back.style.display = (view.mode === "drill") ? "inline-block" : "none";
+  }
+  async function toggleFull() {
+    if (!document.fullscreenElement) { await container.requestFullscreen?.(); }
+    else { await document.exitFullscreen?.(); }
+  }
+  function toCSV(rows) {
+    if (!rows?.length) return "";
+    const cols = Object.keys(rows[0]);
+    const escape = s => `"${String(s).replaceAll('"','""')}"`;
+    return [cols.join(","), ...rows.map(r=>cols.map(c=>escape(r[c]??"")).join(","))].join("\n");
+  }
+  function download(name, text) {
+    const blob = new Blob([text], {type:"text/csv;charset=utf-8"});
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name; a.click(); URL.revokeObjectURL(a.href);
+  }
+  function visibleRowsForExport(shaped) {
+    // Single-series export of what’s on screen
+    if (view.mode === "drill") {
+      const key = spec.drilldown?.by || spec.mappings.x;
+      const label = view.context?.x;
+      if (shaped?.x && shaped?.y) {
+        return shaped.x.map((x,i)=>({ [spec.drilldown?.filterKey||spec.mappings.x]: label, [key]: x, value: shaped.y[i] }));
+      }
+    } else {
+      if (shaped?.x && shaped?.y) {
+        return shaped.x.map((x,i)=>({ [spec.mappings.x]: x, value: shaped.y[i] }));
+      }
+    }
+    return [];
+  }
+  function downloadVisible() {
+    const shaped = lastShaped;
+    const rows = visibleRowsForExport(shaped);
+    download((spec.fileName||"chart") + (view.mode==="drill"?"_drill":"") + ".csv", toCSV(rows));
+  }
 
   // Shape data according to type/mappings
   function shapeData(rows, spec) {
@@ -189,6 +266,7 @@ export async function renderFromSpec(spec, containerIdOrEl) {
   let view = { mode: "main", context: null };
   let gd = null; // graph div
   let firstPlotDone = false;
+  let lastShaped = null; // NEW: remember what’s on screen
 
   async function plot(traces, layout) {
     if (!firstPlotDone) {
@@ -208,22 +286,48 @@ export async function renderFromSpec(spec, containerIdOrEl) {
       if (!spec.drilldown || view.mode !== "main") return;
       const clickedX = ev?.points?.[0]?.x;
       if (clickedX == null) return;
-      view = { mode: "drill", context: { x: clickedX } };
-      drawDrill(clickedX);
+      //view = { mode: "drill", context: { x: clickedX } };
+      //drawDrill(clickedX);
+      enterDrill(clickedX);
     });
-    // click "Back"
-    gd.on("plotly_clickannotation", () => {
-      if (view.mode === "drill") {
-        view = { mode: "main", context: null };
-        drawMain();
-      }
+    //// click "Back"
+    //gd.on("plotly_clickannotation", () => {
+    //  if (view.mode === "drill") {
+    //    view = { mode: "main", context: null };
+    //    drawMain();
+    //  }
+    //});
+    gd.on("plotly_clickannotation", () => { if (view.mode === "drill") exitDrill(); });
+    // NEW: keyboard + browser back
+    window.addEventListener("keydown", (e) => {
+      if (view.mode === "drill" && (e.key === "Escape" || e.key === "Backspace")) exitDrill();
     });
+    if (supportsHistory) {
+      window.addEventListener("popstate", () => {
+        if (view.mode === "drill") exitDrill(false); // don’t push state again
+      });
+    }
     window.addEventListener("resize", () => gd && Plotly.Plots.resize(gd));
+    ensureToolbar();
+  }
+  function enterDrill(clickedX) {
+    view = { mode: "drill", context: { x: clickedX } };
+    if (supportsHistory) history.pushState({ drill: clickedX }, "", `#drill=${encodeURIComponent(clickedX)}`);
+    drawDrill(clickedX);
+    updateToolbar();
+  }
+  function exitDrill(pushHistory = true) {
+    view = { mode: "main", context: null };
+    if (pushHistory && supportsHistory) history.pushState({}, "", location.pathname + location.search);
+    drawMain();
+    updateToolbar();
   }
 
   // ---------- Views ----------
   async function drawMain() {
-    const shaped = shapeData(data, spec);
+    //const shaped = shapeData(data, spec);
+    let shaped = shapeData(data, spec);
+    shaped = applySort(shaped);
     const traces = buildTraces(spec.chartType, shaped, spec);
     const layout = baseLayout({
       title: spec.format?.title || spec.titleMain,
@@ -234,6 +338,8 @@ export async function renderFromSpec(spec, containerIdOrEl) {
       }] : []
     });
     await plot(traces, layout);
+    lastShaped = shaped;
+    Plotly.relayout(gd, { barmode });
   }
 
   async function drawDrill(clickedX) {
@@ -254,18 +360,22 @@ export async function renderFromSpec(spec, containerIdOrEl) {
         yTitle: spec.format?.yTitle || spec.format?.units || ""
       }
     };
-    const shaped = shapeData(subset, drillSpec);
+    let shaped = shapeData(subset, drillSpec);
+    shaped = applySort(shaped);
     const traces = buildTraces(drillSpec.chartType, shaped, drillSpec);
     const layout = baseLayout({
       title: drillSpec.format.title,
       annotations: [{
         text: "← Back",
         xref: "paper", yref: "paper", x: 0, y: 1.1,
-        showarrow: false, font: { color: "#16AF8E", size: 14 },
+        //showarrow: false, font: { color: "#16AF8E", size: 14 },
+        showarrow: false, font: { color: "#16AF8E", size: 14 }, captureevents: true, // NEW
         bgcolor: "#333", bordercolor: "#16AF8E", borderpad: 4
       }]
     });
     await plot(traces, layout);
+    lastShaped = shaped;
+    Plotly.relayout(gd, { barmode });
   }
 
   // ---------- Go ----------
