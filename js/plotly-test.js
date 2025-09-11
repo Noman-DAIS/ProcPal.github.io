@@ -1,6 +1,6 @@
 // js/plotly-test.js
-//import { renderSpendChart } from "./output_renderer.js";
-import { renderFromSpec as renderSpendChart } from './output_renderer.js';
+import { renderSpendChart } from "./output_renderer.js";
+//import { renderFromSpec as renderSpendChart } from './output_renderer.js';
 
 const CSV_URL = "./data/supplier_spend.csv"; // <-- update if your CSV lives elsewhere
 
