@@ -1,26 +1,48 @@
 // js/output_renderer.js
+// Uses v1 data bootstrap & wrapper; includes updated features.
+// Requires: window.Plotly and loadCSVasJSON from ./csv_parser.js
 import { loadCSVasJSON } from "./csv_parser.js";
 
 /**
- * Generic, reusable Plotly renderer with drilldown, type switcher,
- * persistent sorting, selection summary, CSV export, and stack/group toggle.
- * Use either:
- *   renderFromSpec(spec, el)
- * or the legacy wrapper:
- *   renderSpendChart(csvUrl, el, getSpec)
+ * Render from a full spec.
+ * @param {Object} spec
+ * @param {string|HTMLElement} containerIdOrEl
  */
 export async function renderFromSpec(spec, containerIdOrEl) {
-  // ----- Setup -----
+  // ----- Container -----
   const container = typeof containerIdOrEl === "string"
     ? (containerIdOrEl.startsWith("#") ? document.querySelector(containerIdOrEl)
                                        : document.getElementById(containerIdOrEl))
     : containerIdOrEl;
   if (!container) throw new Error("Container not found");
 
+  // ----- Data bootstrap (v1-compatible) -----
+  // Accept: spec.data (array of objects) OR spec.dataUrl/csvUrl/url (CSV)
   let data = Array.isArray(spec?.data) && spec.data.length ? spec.data : [];
-  if (!data.length && spec?.dataUrl) data = await loadCSVasJSON(spec.dataUrl);
-  spec = { ...spec, data };
+  const csvUrl = spec?.dataUrl || spec?.csvUrl || spec?.url;
+  if (!data.length && csvUrl) {
+    try {
+      data = await loadCSVasJSON(csvUrl); // auto-typed by csv_parser.js
+    } catch (e) {
+      console.error("[renderer] CSV load failed:", csvUrl, e);
+      showStatus(container, "Failed to load CSV. See console.");
+      return;
+    }
+  }
 
+  // v1 behavior: coerce declared numeric fields
+  if (Array.isArray(spec?.numericFields)) {
+    for (const row of data) for (const k of spec.numericFields) row[k] = +row[k] || 0;
+  }
+
+  spec = { ...spec, data, dataUrl: csvUrl, mappings: { ...(spec?.mappings || {}) } };
+
+  if (!Array.isArray(spec.data) || !spec.data.length) {
+    showStatus(container, "No data.");
+    return;
+  }
+
+  // ----- Plot config + state -----
   const supportsHistory = !!(window?.history?.pushState);
   const SORT_KEY = "pp.sortMode";
 
@@ -31,7 +53,6 @@ export async function renderFromSpec(spec, containerIdOrEl) {
     toImageButtonOptions: { filename: spec.fileName || "chart" }
   };
 
-  // State
   let sortMode = localStorage.getItem(SORT_KEY) || "label"; // "label" | "value"
   let barmode = "group";                                     // "group" | "stack"
   let view = { mode: "main", context: null };
@@ -40,30 +61,31 @@ export async function renderFromSpec(spec, containerIdOrEl) {
   let firstPlotDone = false;
 
   // ----- Helpers -----
-  const baseLayout = (overrides = {}) => ({
-    paper_bgcolor: "#111",
-    plot_bgcolor: "#111",
-    font: { color: "#e6e6e6" },
-    margin: { t: 72, r: 20, b: 56, l: 64 },
-    hovermode: spec.interactions?.hoverMode || "closest",
-    legend: { orientation: "h", y: -0.22 },
-    updatemenus: buildTypeMenu(spec),
-    // Keep axis formatting from your working renderer
-    xaxis: {
-      title: spec.format?.xTitle || "",
-      showspikes: true, spikemode: "across", spikecolor: "#777", spikethickness: 1,
-      categoryorder: spec.format?.categoryOrder || "trace"
-    },
-    yaxis: {
-      title: spec.format?.yTitle || "",
-      showspikes: true, spikemode: "across", spikecolor: "#777", spikethickness: 1,
-      tickprefix: spec.format?.yTickPrefix || (spec.format?.units ? spec.format.units + " " : ""),
-      separatethousands: true,
-      tickformat: spec.format?.yTickFormat || ",.0f"
-    },
-    annotations: [],
-    ...overrides
-  });
+  function baseLayout(overrides = {}) {
+    return {
+      paper_bgcolor: "#111",
+      plot_bgcolor: "#111",
+      font: { color: "#e6e6e6" },
+      margin: { t: 72, r: 20, b: 56, l: 64 },
+      hovermode: spec.interactions?.hoverMode || "closest",
+      legend: { orientation: "h", y: -0.22 },
+      updatemenus: buildTypeMenu(spec),
+      xaxis: {
+        title: spec.format?.xTitle || "",
+        showspikes: true, spikemode: "across", spikecolor: "#777", spikethickness: 1,
+        categoryorder: spec.format?.categoryOrder || "trace"
+      },
+      yaxis: {
+        title: spec.format?.yTitle || "",
+        showspikes: true, spikemode: "across", spikecolor: "#777", spikethickness: 1,
+        tickprefix: spec.format?.yTickPrefix || (spec.format?.units ? spec.format.units + " " : ""),
+        separatethousands: true,
+        tickformat: spec.format?.yTickFormat || ",.0f"
+      },
+      annotations: [],
+      ...overrides
+    };
+  }
 
   function buildTypeMenu(s) {
     if (!s.interactions?.typeSwitcher) return [];
@@ -177,7 +199,6 @@ export async function renderFromSpec(spec, containerIdOrEl) {
     }];
   }
 
-  // Sorting (single-series only)
   function applySort(shaped) {
     if (!shaped || shaped.series) return shaped;
     if (sortMode === "value" && shaped.x && shaped.y) {
@@ -190,7 +211,6 @@ export async function renderFromSpec(spec, containerIdOrEl) {
     return shaped;
   }
 
-  // Drill helpers
   function filterForDrill(rows, clickedX, rootSpec) {
     const filterKey = rootSpec?.drilldown?.filterKey || rootSpec?.mappings?.x;
     return rows.filter(r => safeVal(r[filterKey]) === clickedX);
@@ -341,7 +361,7 @@ export async function renderFromSpec(spec, containerIdOrEl) {
       const n = ys.length;
       const sum = ys.reduce((a,b)=>a+b,0);
       const avg = n ? (sum / n) : 0;
-      showSummary(`Selected: ${n} • Sum: ${fmt(sum)} • Avg: ${fmt(avg)}`);
+      showSummary(`Selected: ${fmt(sum)} over ${n} points • Avg: ${fmt(avg)}`);
     });
     gd.on("plotly_deselect", hideSummary);
 
@@ -462,13 +482,30 @@ export async function renderFromSpec(spec, containerIdOrEl) {
   function fmt(n) { try { return new Intl.NumberFormat().format(n); } catch { return String(n); } }
   function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
 
+  function showStatus(container, msg) {
+    let el = container.querySelector(".pp-status");
+    if (!el) {
+      el = document.createElement("div");
+      el.className = "pp-status";
+      el.style.cssText = "position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#ccc;background:transparent;font-size:14px;pointer-events:none";
+      container.style.position = container.style.position || "relative";
+      container.appendChild(el);
+    }
+    el.textContent = msg;
+  }
+
   // ----- Initial draw -----
   await drawMain();
 }
 
-/** Back-compat convenience (preserves your working calls) */
+/**
+ * v1-compatible wrapper.
+ * @param {string} csvUrl
+ * @param {string|HTMLElement} containerIdOrEl
+ * @param {function|Object} getSpec  Function returning spec OR the spec object itself
+ */
 export async function renderSpendChart(csvUrl, containerIdOrEl, getSpec) {
-  const base = (getSpec ? getSpec() : {});
-  const spec = { ...base, dataUrl: csvUrl };
+  const base = typeof getSpec === "function" ? await getSpec() : (getSpec || {});
+  const spec = { ...base, dataUrl: base.dataUrl || base.csvUrl || base.url || csvUrl };
   return renderFromSpec(spec, containerIdOrEl);
 }
