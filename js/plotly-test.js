@@ -3,7 +3,7 @@ import { renderSpendChart } from "./output_renderer.js";
 //import { renderFromSpec as renderSpendChart } from './output_renderer.js';
 
 const CSV_URL = "./data/supplier_spend.csv"; // <-- update if your CSV lives elsewhere
-
+await renderSpendChart({ csvUrl: CSV_URL, containerIdOrEl: "#fvContainer" });
 const modalEl = document.getElementById("fullViewModal");
 const chartEl = document.getElementById("fvContainer");
 const dlBtn   = document.getElementById("fvDownload");
@@ -23,7 +23,9 @@ function safeLogEnv() {
 
 async function safeRender() {
   try {
-    await renderSpendChart(CSV_URL, chartEl);
+    //await renderSpendChart(CSV_URL, chartEl);
+    await renderSpendChart({ csvUrl: CSV_URL, containerIdOrEl: chartSel });
+    rendered = true;
   } catch (err) {
     console.error("[plotly-test] CSV render failed, using inline sample:", err);
     const sample = [
@@ -67,4 +69,18 @@ fsBtn?.addEventListener("click", async () => {
 // Optional immediate render if you want the chart even without opening the modal.
 // ensureRendered();
 
-document.addEventListener("DOMContentLoaded", safeLogEnv);
+//document.addEventListener("DOMContentLoaded", safeLogEnv);
+document.addEventListener("DOMContentLoaded", () => {
+  safeLogEnv();
+
+  if (!modalEl) return safeRender(); // no modal: render now
+
+  modalEl.addEventListener("shown.bs.modal", () => {
+    if (!rendered) {
+      safeRender();
+    } else {
+      // already rendered: just fix sizing on reopen
+      const gd = document.querySelector(`${chartSel} > div`);
+      if (gd && window.Plotly) Plotly.Plots.resize(gd);
+    }
+  });
