@@ -1,86 +1,44 @@
 // js/plotly-test.js
 import { renderSpendChart } from "./output_renderer.js";
-//import { renderFromSpec as renderSpendChart } from './output_renderer.js';
 
-const CSV_URL = "./data/supplier_spend.csv"; // <-- update if your CSV lives elsewhere
-await renderSpendChart({ csvUrl: CSV_URL, containerIdOrEl: "#fvContainer" });
-const modalEl = document.getElementById("fullViewModal");
-const chartEl = document.getElementById("fvContainer");
-const dlBtn   = document.getElementById("fvDownload");
-const fsBtn   = document.getElementById("fvFullscreen");
-
+const CSV_URL = "./data/supplier_spend.csv";
+const chartSel = "#fvContainer";
+const modalSel = "#fullViewModal";
 let rendered = false;
 
-function safeLogEnv() {
+function logEnv() {
   console.group("[plotly-test]");
   console.log("CSV_URL:", CSV_URL);
-  console.log("#fullViewModal exists:", !!modalEl);
-  console.log("#fvContainer exists:", !!chartEl);
-  console.log("#fvDownload exists:", !!dlBtn);
-  console.log("#fvFullscreen exists:", !!fsBtn);
+  console.log("#fullViewModal exists:", !!document.querySelector(modalSel));
+  console.log("#fvContainer exists:", !!document.querySelector(chartSel));
   console.groupEnd();
 }
 
-async function safeRender() {
+async function renderChart() {
   try {
-    //await renderSpendChart(CSV_URL, chartEl);
     await renderSpendChart({ csvUrl: CSV_URL, containerIdOrEl: chartSel });
     rendered = true;
   } catch (err) {
-    console.error("[plotly-test] CSV render failed, using inline sample:", err);
-    const sample = [
-      "supplier_id,supplier_name,supplier_location,spend_year,supplier_category,supplier_subcategory,spend_anonymized",
-      "S0001,Supplier_0001,,2022,Electronics,,38747.0",
-      "S0002,Supplier_0003,,2023,Metal Components,Sub-contracting,2852.9",
-      "S0004,Supplier_0004,,2023,Electronics,,3155.52",
-      "S0005,Supplier_0005,,2022,Electronics,,39780.0"
-    ].join("\n");
-    const blob = new Blob([sample], { type: "text/csv" });
-    const url = URL.createObjectURL(blob);
-    try { await renderSpendChart(url, chartEl); }
-    finally { URL.revokeObjectURL(url); }
+    console.error("[plotly-test] render failed:", err);
   }
 }
 
-function ensureRendered() {
-  if (rendered || !chartEl) return;
-  // render after modal is visible so the plot gets real dimensions
-  requestAnimationFrame(async () => {
-    await safeRender();
-    setTimeout(() => window.Plotly?.Plots.resize(chartEl), 60);
-    rendered = true;
-  });
+function onShown() {
+  if (!rendered) {
+    renderChart();
+  } else {
+    const gd = document.querySelector(`${chartSel} > div`);
+    if (gd && window.Plotly) Plotly.Plots.resize(gd);
+  }
 }
 
-// Bootstrap modal lifecycle
-modalEl?.addEventListener("shown.bs.modal", ensureRendered);
-
-// Buttons
-dlBtn?.addEventListener("click", () => {
-  window.Plotly?.downloadImage(chartEl, { format: "png", filename: "supplier_spend" });
-});
-fsBtn?.addEventListener("click", async () => {
-  try {
-    if (!document.fullscreenElement) await chartEl?.requestFullscreen?.();
-    else await document.exitFullscreen?.();
-  } catch (e) { console.error("Fullscreen error:", e); }
-});
-
-// Optional immediate render if you want the chart even without opening the modal.
-// ensureRendered();
-
-//document.addEventListener("DOMContentLoaded", safeLogEnv);
 document.addEventListener("DOMContentLoaded", () => {
-  safeLogEnv();
+  logEnv();
 
-  if (!modalEl) return safeRender(); // no modal: render now
-
-  modalEl.addEventListener("shown.bs.modal", () => {
-    if (!rendered) {
-      safeRender();
-    } else {
-      // already rendered: just fix sizing on reopen
-      const gd = document.querySelector(`${chartSel} > div`);
-      if (gd && window.Plotly) Plotly.Plots.resize(gd);
-    }
-  });
+  const modal = document.querySelector(modalSel);
+  if (modal) {
+    modal.addEventListener("shown.bs.modal", onShown);
+  } else {
+    renderChart();
+  }
+});
