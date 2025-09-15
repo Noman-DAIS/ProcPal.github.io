@@ -2,45 +2,53 @@
 import { loadCSVasJSON } from "./csv_parser.js";
 
 /**
- * Generic, reusable Plotly renderer.
- * Pass a SPEC that describes the chart (mappings, type, aggregation, drilldown, labels).
- *
- * @param {object} spec - see examples in output_function.js
- * @param {string|HTMLElement} containerIdOrEl - target div or its id
+ * Generic, reusable Plotly renderer with drilldown, type switcher,
+ * persistent sorting, selection summary, CSV export, and stack/group toggle.
+ * Use either:
+ *   renderFromSpec(spec, el)
+ * or the legacy wrapper:
+ *   renderSpendChart(csvUrl, el, getSpec)
  */
 export async function renderFromSpec(spec, containerIdOrEl) {
+  // ----- Setup -----
   const container = typeof containerIdOrEl === "string"
-    ? document.getElementById(containerIdOrEl)
+    ? (containerIdOrEl.startsWith("#") ? document.querySelector(containerIdOrEl)
+                                       : document.getElementById(containerIdOrEl))
     : containerIdOrEl;
-  if (!container) throw new Error("Chart container not found");
+  if (!container) throw new Error("Container not found");
 
-  // ---------- Load data ----------
-  let data = spec.data || [];
-  if (!data.length && spec.dataUrl) data = await loadCSVasJSON(spec.dataUrl);
+  let data = Array.isArray(spec?.data) && spec.data.length ? spec.data : [];
+  if (!data.length && spec?.dataUrl) data = await loadCSVasJSON(spec.dataUrl);
+  spec = { ...spec, data };
 
-  // Optional: normalize/auto-type selected numeric fields
-  if (Array.isArray(spec.numericFields)) {
-    for (const d of data) for (const k of spec.numericFields) d[k] = +d[k] || 0;
-  }
+  const supportsHistory = !!(window?.history?.pushState);
+  const SORT_KEY = "pp.sortMode";
 
-  // ---------- Helpers ----------
   const config = {
     responsive: true,
     displaylogo: false,
-    modeBarButtonsToAdd: ["v1hovermode", "toggleSpikelines"],
+    modeBarButtonsToAdd: ["v1hovermode", "toggleSpikelines", "select2d", "lasso2d"],
     toImageButtonOptions: { filename: spec.fileName || "chart" }
   };
-  // NEW: state for extras
-  let sortMode = "label";          // "label" | "value"
-  let barmode = "group";           // "group" | "stack"
-  const supportsHistory = !!(window?.history?.pushState);
 
+  // State
+  let sortMode = localStorage.getItem(SORT_KEY) || "label"; // "label" | "value"
+  let barmode = "group";                                     // "group" | "stack"
+  let view = { mode: "main", context: null };
+  let gd = null;
+  let lastShaped = null;
+  let firstPlotDone = false;
+
+  // ----- Helpers -----
   const baseLayout = (overrides = {}) => ({
-    title: spec.format?.title || "",
-    paper_bgcolor: "#191919",
-    plot_bgcolor: "#191919",
-    font: { color: "#F9F3D9" },
-    hovermode: spec.interactions?.hoverMode || "x unified",
+    paper_bgcolor: "#111",
+    plot_bgcolor: "#111",
+    font: { color: "#e6e6e6" },
+    margin: { t: 72, r: 20, b: 56, l: 64 },
+    hovermode: spec.interactions?.hoverMode || "closest",
+    legend: { orientation: "h", y: -0.22 },
+    updatemenus: buildTypeMenu(spec),
+    // Keep axis formatting from your working renderer
     xaxis: {
       title: spec.format?.xTitle || "",
       showspikes: true, spikemode: "across", spikecolor: "#777", spikethickness: 1,
@@ -53,120 +61,150 @@ export async function renderFromSpec(spec, containerIdOrEl) {
       separatethousands: true,
       tickformat: spec.format?.yTickFormat || ",.0f"
     },
-    updatemenus: spec.interactions?.typeSwitcher ? [{
-      buttons: (spec.interactions.types || ["bar","line","pie"]).map(t => ({
-        method: "restyle", args: ["type", t], label: t[0].toUpperCase() + t.slice(1)
-      })),
-      direction: "left", x: 0, y: 1.15, showactive: true, bgcolor: "#333", bordercolor: "#16AF8E"
-    }] : [],
     annotations: [],
     ...overrides
   });
 
-  // Aggregate by one or two keys (x and optional color)
-  function aggregate(rows, { groupKeys, valueKey, op = "sum" }) {
-    const keyFn = r => groupKeys.map(k => r[k]).join("||");
-    const map = new Map();
-    for (const r of rows) {
-      const k = keyFn(r);
-      const val = valueKey ? (+r[valueKey] || 0) : 1;
-      if (!map.has(k)) map.set(k, { count: 0, sum: 0, min: +val, max: +val });
-      const o = map.get(k);
-      o.count += 1; o.sum += val; o.min = Math.min(o.min, +val); o.max = Math.max(o.max, +val);
-    }
-    const get = (o) => op === "mean" ? (o.sum / o.count) :
-                        op === "count" ? o.count :
-                        op === "min" ? o.min :
-                        op === "max" ? o.max : o.sum;
-    const out = [];
-    for (const [k, o] of map.entries()) {
-      const parts = k.split("||");
-      const row = {};
-      groupKeys.forEach((g, i) => row[g] = parts[i]);
-      row.__value = get(o);
-      out.push(row);
-    }
-    return out;
-  }
-
-  // Pivot triples (x,y,z) into heatmap matrix
-  function pivotToMatrix(triples, xKey, yKey, zKey) {
-    const xs = [...new Set(triples.map(d => String(d[xKey])))];
-    const ys = [...new Set(triples.map(d => String(d[yKey])))];
-    const xIndex = new Map(xs.map((v,i)=>[v,i]));
-    const yIndex = new Map(ys.map((v,i)=>[v,i]));
-    const z = Array.from({length: ys.length}, () => Array(xs.length).fill(0));
-    for (const d of triples) {
-      const xi = xIndex.get(String(d[xKey]));
-      const yi = yIndex.get(String(d[yKey]));
-      z[yi][xi] = +d[zKey] || 0;
-    }
-    return { xs, ys, z };
-  }
-
-  // Build Plotly traces for common types
-  function buildTraces(type, shaped, spec) {
-    const colorKey = spec.mappings.color;
-    if (type === "pie") {
-      return [{
-        type: "pie",
-        labels: shaped.x,
-        values: shaped.y,
-        textinfo: "label+percent",
-        hovertemplate: `<b>%{label}</b><br>${spec.format?.units||""}: %{value:,}<extra></extra>`
-      }];
-    }
-    if (type === "scatter" || type === "line") {
-      // multiple series if color present
-      if (shaped.series) {
-        return shaped.series.map(s => ({
-          type, mode: type === "line" ? "lines+markers" : "markers",
-          name: s.name, x: shaped.x, y: s.y,
-          hovertemplate: `<b>${colorKey||"Series"}: ${s.name}</b><br>%{x} — ${spec.format?.units||""} %{y:,}<extra></extra>`
-        }));
-      }
-      return [{
-        type, mode: type === "line" ? "lines+markers" : "markers",
-        x: shaped.x, y: shaped.y
-      }];
-    }
-    if (type === "heatmap") {
-      return [{
-        type: "heatmap",
-        x: shaped.xs, y: shaped.ys, z: shaped.z,
-        colorbar: { title: spec.format?.units || "" }
-      }];
-    }
-    // default: bar
-    if (shaped.series) {
-      return shaped.series.map(s => ({
-        type: "bar", name: s.name, x: shaped.x, y: s.y,
-        hovertemplate: `<b>${colorKey||"Series"}: ${s.name}</b><br>%{x} — ${spec.format?.units||""} %{y:,}<extra></extra>`
-      }));
-    }
+  function buildTypeMenu(s) {
+    if (!s.interactions?.typeSwitcher) return [];
+    const types = s.interactions.types || ["bar","line","pie"];
     return [{
-      type: "bar",
-      x: shaped.x, y: shaped.y,
-      hovertemplate: `<b>%{x}</b><br>${spec.format?.units||""}: %{y:,}<extra></extra>`
+      buttons: types.map(t => {
+        const label = t[0].toUpperCase() + t.slice(1);
+        return t.toLowerCase() === "pie"
+          ? { method: "relayout", args: [{}], label } // handled via buttonclicked
+          : { method: "restyle", args: ["type", t], label };
+      }),
+      direction: "left", x: 0, y: 1.18, showactive: true, bgcolor: "#222", bordercolor: "#16AF8E"
     }];
   }
-    // NEW: sort helper (single-series only)
+
+  // Aggregators for yOp: sum | mean | count | min | max
+  function aggregator(op) {
+    switch (String(op || "sum").toLowerCase()) {
+      case "sum":  return { init: 0, add: (a,b)=>a+b, finish: a=>a };
+      case "avg":
+      case "mean": return { init: {s:0,c:0}, add: (a,b)=>({s:a.s+b,c:a.c+1}), finish: a=>(a.c? a.s/a.c : 0) };
+      case "count":return { init: 0, add: (a,_b)=>a+1, finish: a=>a };
+      case "min":  return { init: +Infinity, add: (a,b)=>Math.min(a,b), finish: a=>(Number.isFinite(a)?a:0) };
+      case "max":  return { init: -Infinity, add: (a,b)=>Math.max(a,b), finish: a=>(Number.isFinite(a)?a:0) };
+      default:     return { init: 0, add: (a,b)=>a+b, finish: a=>a };
+    }
+  }
+
+  function shapeData(rows, specLike) {
+    const xKey = specLike?.mappings?.x;
+    const yKey = specLike?.mappings?.y;
+    const colorKey = specLike?.mappings?.color;
+    const yOp = specLike?.mappings?.yOp || "sum";
+    const agg = aggregator(yOp);
+
+    if (!xKey) return { x: [], y: [] };
+
+    if (colorKey) {
+      const seriesMap = new Map(); // color -> Map(x -> agg_state)
+      for (const r of rows) {
+        const c = safeVal(r[colorKey]);
+        const x = safeVal(r[xKey]);
+        const y = toNum(yKey ? r[yKey] : 1);
+        if (!seriesMap.has(c)) seriesMap.set(c, new Map());
+        const inner = seriesMap.get(c);
+        inner.set(x, agg.add(inner.has(x) ? inner.get(x) : agg.init, y));
+      }
+      const allX = Array.from(new Set([].concat(...Array.from(seriesMap.values()).map(m => Array.from(m.keys())))));
+      const series = Array.from(seriesMap.entries()).map(([name, m]) => ({
+        name,
+        y: allX.map(x => agg.finish(m.has(x) ? m.get(x) : agg.init))
+      }));
+      return { x: allX, series, colorKey, yOp };
+    }
+
+    const map = new Map(); // x -> agg_state
+    for (const r of rows) {
+      const x = safeVal(r[xKey]);
+      const y = toNum(yKey ? r[yKey] : 1);
+      map.set(x, agg.add(map.has(x) ? map.get(x) : agg.init, y));
+    }
+    const x = Array.from(map.keys());
+    const y = x.map(k => agg.finish(map.get(k)));
+    return { x, y, yOp };
+  }
+
+  function buildTraces(chartType, shaped, specLike) {
+    const units = specLike?.format?.units || "";
+    const colorKey = shaped.colorKey || specLike?.mappings?.color;
+    const t = (chartType || "bar").toLowerCase();
+    const plotType = t === "line" ? "scatter" : t;
+
+    // Pie (collapse multi-series to totals)
+    if (t === "pie") {
+      let labels = [];
+      let values = [];
+      if (shaped.series) {
+        labels = shaped.x.slice();
+        const totals = new Array(labels.length).fill(0);
+        for (const s of shaped.series) for (let i=0;i<labels.length;i++) totals[i] += Number(s.y[i] || 0);
+        values = totals;
+      } else { labels = shaped.x; values = shaped.y; }
+      return [{
+        type: "pie",
+        labels, values,
+        textinfo: "label+percent",
+        hovertemplate: `<b>%{label}</b><br>${units}: %{value:,}<extra></extra>`
+      }];
+    }
+
+    // Multi-series bar/line/scatter
+    if (shaped.series && (t === "bar" || t === "line" || t === "scatter")) {
+      return shaped.series.map(s => ({
+        type: plotType,
+        mode: t === "line" ? "lines+markers" : undefined,
+        name: s.name,
+        x: shaped.x,
+        y: s.y,
+        hovertemplate: colorKey
+          ? `<b>${escapeHtml(colorKey)}: ${escapeHtml(s.name)}</b><br>%{x} — ${units} %{y:,}<extra></extra>`
+          : `<b>%{x}</b><br>${units}: %{y:,}<extra></extra>`
+      }));
+    }
+
+    // Single-series bar/line/scatter
+    return [{
+      type: plotType,
+      mode: t === "line" ? "lines+markers" : (t === "scatter" ? "markers" : undefined),
+      x: shaped.x, y: shaped.y,
+      hovertemplate: `<b>%{x}</b><br>${units}: %{y:,}<extra></extra>`
+    }];
+  }
+
+  // Sorting (single-series only)
   function applySort(shaped) {
-    if (!shaped || shaped.series) return shaped; // keep simple for series
+    if (!shaped || shaped.series) return shaped;
     if (sortMode === "value" && shaped.x && shaped.y) {
       const zipped = shaped.x.map((x,i)=>({x, y: shaped.y[i]})).sort((a,b)=>b.y-a.y);
+      shaped.x = zipped.map(d=>d.x); shaped.y = zipped.map(d=>d.y);
+    } else if (sortMode === "label" && shaped.x) {
+      const zipped = shaped.x.map((x,i)=>({x, y: shaped.y[i]})).sort((a,b)=> String(a.x).localeCompare(String(b.x)));
       shaped.x = zipped.map(d=>d.x); shaped.y = zipped.map(d=>d.y);
     }
     return shaped;
   }
 
-  // NEW: toolbar UI
+  // Drill helpers
+  function filterForDrill(rows, clickedX, rootSpec) {
+    const filterKey = rootSpec?.drilldown?.filterKey || rootSpec?.mappings?.x;
+    return rows.filter(r => safeVal(r[filterKey]) === clickedX);
+  }
+
+  // ----- Toolbar / UI -----
   function ensureToolbar() {
     if (container.querySelector(".pp-toolbar")) return;
     container.style.position = container.style.position || "relative";
+
     const bar = document.createElement("div");
     bar.className = "pp-toolbar";
     bar.style.cssText = "position:absolute;top:8px;left:8px;display:flex;gap:6px;z-index:10";
+
     const mkBtn = (label, title, fn) => {
       const b = document.createElement("button");
       b.type = "button";
@@ -174,25 +212,57 @@ export async function renderFromSpec(spec, containerIdOrEl) {
       b.style.cssText = "padding:2px 8px;border-radius:10px;background:#222;color:#eee;border:1px solid #555";
       b.textContent = label; b.title = title; b.onclick = fn; return b;
     };
+
     const btnBack  = mkBtn("← Back","Return to main view", ()=> exitDrill());
     btnBack.dataset.role = "pp-back";
     const btnFull  = mkBtn("⛶ Full","Toggle fullscreen", ()=> toggleFull());
     const btnReset = mkBtn("Reset","Reset chart", ()=> redrawCurrent(true));
-    const btnSort  = mkBtn("Sort: A→Z","Toggle sort by value/label", ()=> { sortMode = (sortMode==="label"?"value":"label"); btnSort.textContent = sortMode==="label"?"Sort: A→Z":"Sort: Value"; redrawCurrent(); });
-    const btnStack = mkBtn("Stack","Toggle group/stack", ()=> { barmode = (barmode==="group"?"stack":"group"); Plotly.relayout(gd, { barmode }); });
+    const btnSort  = mkBtn(sortMode==="label"?"Sort: A→Z":"Sort: Value","Toggle sort", ()=> {
+      sortMode = (sortMode==="label"?"value":"label");
+      localStorage.setItem(SORT_KEY, sortMode);
+      btnSort.textContent = sortMode==="label"?"Sort: A→Z":"Sort: Value";
+      redrawCurrent();
+    });
+    const btnStack = mkBtn("Stack","Toggle group/stack bars", ()=> {
+      barmode = (barmode==="group"?"stack":"group");
+      Plotly.relayout(gd, { barmode });
+    });
     const btnCSV   = mkBtn("CSV","Download visible data", ()=> downloadVisible());
+
     bar.append(btnBack, btnFull, btnReset, btnSort, btnStack, btnCSV);
     container.appendChild(bar);
     updateToolbar();
   }
+
   function updateToolbar() {
     const back = container.querySelector('[data-role="pp-back"]');
     if (back) back.style.display = (view.mode === "drill") ? "inline-block" : "none";
   }
+
   async function toggleFull() {
-    if (!document.fullscreenElement) { await container.requestFullscreen?.(); }
-    else { await document.exitFullscreen?.(); }
+    if (!document.fullscreenElement) await container.requestFullscreen?.();
+    else await document.exitFullscreen?.();
   }
+
+  // Selection summary pill
+  function ensureSummaryPill() {
+    if (container.querySelector(".pp-sel-pill")) return;
+    const pill = document.createElement("div");
+    pill.className = "pp-sel-pill";
+    pill.style.cssText = "position:absolute;left:8px;bottom:8px;background:#222;border:1px solid #555;color:#eee;padding:6px 10px;border-radius:12px;font-size:12px;z-index:10;display:none";
+    pill.textContent = "Selected: 0 • Sum: 0";
+    container.appendChild(pill);
+  }
+  function showSummary(text) {
+    const pill = container.querySelector(".pp-sel-pill");
+    if (!pill) return; pill.style.display = "inline-block"; pill.textContent = text;
+  }
+  function hideSummary() {
+    const pill = container.querySelector(".pp-sel-pill");
+    if (pill) pill.style.display = "none";
+  }
+
+  // CSV helpers
   function toCSV(rows) {
     if (!rows?.length) return "";
     const cols = Object.keys(rows[0]);
@@ -204,75 +274,38 @@ export async function renderFromSpec(spec, containerIdOrEl) {
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name; a.click(); URL.revokeObjectURL(a.href);
   }
   function visibleRowsForExport(shaped) {
-    // Single-series export of what’s on screen
-    if (view.mode === "drill") {
-      const key = spec.drilldown?.by || spec.mappings.x;
-      const label = view.context?.x;
-      if (shaped?.x && shaped?.y) {
-        return shaped.x.map((x,i)=>({ [spec.drilldown?.filterKey||spec.mappings.x]: label, [key]: x, value: shaped.y[i] }));
+    const out = [];
+    if (!shaped) return out;
+
+    if (shaped.series) {
+      for (const s of shaped.series) {
+        for (let i=0; i<shaped.x.length; i++) {
+          out.push({ [spec.mappings?.x || "x"]: shaped.x[i], series: s.name, value: s.y[i] });
+        }
       }
-    } else {
-      if (shaped?.x && shaped?.y) {
-        return shaped.x.map((x,i)=>({ [spec.mappings.x]: x, value: shaped.y[i] }));
+      return out;
+    }
+    for (let i=0; i<shaped.x.length; i++) {
+      if (view.mode === "drill") {
+        const label = view.context?.x;
+        out.push({ [spec.drilldown?.filterKey || spec.mappings?.x || "group"]: label, [spec.drilldown?.by || "x"]: shaped.x[i], value: shaped.y[i] });
+      } else {
+        out.push({ [spec.mappings?.x || "x"]: shaped.x[i], value: shaped.y[i] });
       }
     }
-    return [];
+    return out;
   }
   function downloadVisible() {
-    const shaped = lastShaped;
-    const rows = visibleRowsForExport(shaped);
+    const rows = visibleRowsForExport(lastShaped);
     download((spec.fileName||"chart") + (view.mode==="drill"?"_drill":"") + ".csv", toCSV(rows));
   }
 
-  // Shape data according to type/mappings
-  function shapeData(rows, spec) {
-    const { x, y, color, yOp = "sum" } = spec.mappings;
-
-    if (spec.chartType === "pie") {
-      const agg = aggregate(rows, { groupKeys: [x], valueKey: y, op: yOp });
-      const order = agg.map(a => String(a[x]));
-      return { x: order, y: agg.map(a => a.__value) };
-    }
-
-    if (spec.chartType === "heatmap") {
-      const { x: xKey, y: yKey, z, zOp = "sum" } = spec.mappings;
-      const agg = aggregate(rows, { groupKeys: [xKey, yKey], valueKey: z, op: zOp });
-      return pivotToMatrix(agg.map(a => ({ [xKey]: a[xKey], [yKey]: a[yKey], [z]: a.__value })), xKey, yKey, z);
-    }
-
-    // bar/line/scatter
-    if (color) {
-      // series per color
-      const agg = aggregate(rows, { groupKeys: [x, color], valueKey: y, op: yOp });
-      const xs = [...new Set(agg.map(a => String(a[x])))];
-      const colors = [...new Set(agg.map(a => String(a[color])))];
-      const series = colors.map(c => ({
-        name: c,
-        y: xs.map(xx => {
-          const hit = agg.find(a => String(a[x]) === xx && String(a[color]) === c);
-          return hit ? hit.__value : 0;
-        })
-      }));
-      return { x: xs, series };
-    } else {
-      const agg = aggregate(rows, { groupKeys: [x], valueKey: y, op: yOp });
-      const xs = agg.map(a => String(a[x]));
-      const ys = agg.map(a => a.__value);
-      return { x: xs, y: ys };
-    }
-  }
-
-  // ---------- Drilldown state ----------
-  let view = { mode: "main", context: null };
-  let gd = null; // graph div
-  let firstPlotDone = false;
-  let lastShaped = null; // NEW: remember what’s on screen
-
+  // ----- Plot lifecycle -----
   async function plot(traces, layout) {
     if (!firstPlotDone) {
       gd = await Plotly.newPlot(container, traces, layout, config);
       firstPlotDone = true;
-      bindHandlers(); // attach once
+      bindHandlers();
     } else {
       await Plotly.react(gd, traces, layout, config);
     }
@@ -281,41 +314,62 @@ export async function renderFromSpec(spec, containerIdOrEl) {
 
   function bindHandlers() {
     if (!gd || !gd.on) return;
-    // click to drill
+
     gd.on("plotly_click", (ev) => {
       if (!spec.drilldown || view.mode !== "main") return;
       const clickedX = ev?.points?.[0]?.x;
       if (clickedX == null) return;
-      //view = { mode: "drill", context: { x: clickedX } };
-      //drawDrill(clickedX);
       enterDrill(clickedX);
     });
-    //// click "Back"
-    //gd.on("plotly_clickannotation", () => {
-    //  if (view.mode === "drill") {
-    //    view = { mode: "main", context: null };
-    //    drawMain();
-    //  }
-    //});
+
     gd.on("plotly_clickannotation", () => { if (view.mode === "drill") exitDrill(); });
-    // NEW: keyboard + browser back
+
     window.addEventListener("keydown", (e) => {
       if (view.mode === "drill" && (e.key === "Escape" || e.key === "Backspace")) exitDrill();
     });
+
     if (supportsHistory) {
       window.addEventListener("popstate", () => {
-        if (view.mode === "drill") exitDrill(false); // don’t push state again
+        if (view.mode === "drill") exitDrill(false);
       });
     }
+
+    // selection summary (lasso/box)
+    gd.on("plotly_selected", (ev) => {
+      if (!ev?.points?.length) { hideSummary(); return; }
+      const ys = ev.points.map(p => (typeof p.y === "number" ? p.y : (typeof p.value === "number" ? p.value : 0)));
+      const n = ys.length;
+      const sum = ys.reduce((a,b)=>a+b,0);
+      const avg = n ? (sum / n) : 0;
+      showSummary(`Selected: ${n} • Sum: ${fmt(sum)} • Avg: ${fmt(avg)}`);
+    });
+    gd.on("plotly_deselect", hideSummary);
+
+    // Handle type switcher button clicks (including Pie) by redrawing
+    if (spec.interactions?.typeSwitcher) {
+      gd.on("plotly_buttonclicked", (ev) => {
+        const lbl = ev?.button?.label?.toLowerCase?.();
+        if (!lbl) return;
+        if (["bar","line","scatter","pie"].includes(lbl)) {
+          spec.chartType = lbl;
+          redrawCurrent(true);
+        }
+      });
+    }
+
     window.addEventListener("resize", () => gd && Plotly.Plots.resize(gd));
+
     ensureToolbar();
+    ensureSummaryPill();
   }
+
   function enterDrill(clickedX) {
     view = { mode: "drill", context: { x: clickedX } };
     if (supportsHistory) history.pushState({ drill: clickedX }, "", `#drill=${encodeURIComponent(clickedX)}`);
     drawDrill(clickedX);
     updateToolbar();
   }
+
   function exitDrill(pushHistory = true) {
     view = { mode: "main", context: null };
     if (pushHistory && supportsHistory) history.pushState({}, "", location.pathname + location.search);
@@ -323,79 +377,98 @@ export async function renderFromSpec(spec, containerIdOrEl) {
     updateToolbar();
   }
 
-  // ---------- Views ----------
+  function redrawCurrent(resetAxes = false) {
+    if (view.mode === "main") drawMain().then(() => resetAxes && autoRange());
+    else drawDrill(view.context?.x).then(() => resetAxes && autoRange());
+  }
+
+  function autoRange() {
+    if (!gd) return;
+    Plotly.relayout(gd, { "xaxis.autorange": true, "yaxis.autorange": true });
+  }
+
+  // ----- Views -----
   async function drawMain() {
-    //const shaped = shapeData(data, spec);
     let shaped = shapeData(data, spec);
     shaped = applySort(shaped);
     const traces = buildTraces(spec.chartType, shaped, spec);
+
+    const title = spec.format?.title || spec.titleMain || spec.title || "";
     const layout = baseLayout({
-      title: spec.format?.title || spec.titleMain,
+      title,
       annotations: spec.drilldown ? [{
         text: spec.format?.tip || "Tip: click a bar to drill down",
-        xref: "paper", yref: "paper", x: 0, y: 1.13,
+        xref: "paper", yref: "paper", x: 0, y: 1.12,
         showarrow: false, align: "left", font: { size: 12, color: "#ccc" }
       }] : []
     });
+
     await plot(traces, layout);
     lastShaped = shaped;
     Plotly.relayout(gd, { barmode });
+    hideSummary();
   }
 
   async function drawDrill(clickedX) {
-    // If no drilldown spec, do nothing
-    if (!spec.drilldown) return;
-    const { filterKey = spec.mappings.x, by, yKey = spec.mappings.y, yOp = "sum" } = spec.drilldown;
-
-    const subset = data.filter(d => String(d[filterKey]) === String(clickedX));
-    // Build a temporary spec for the drill
-    const drillSpec = {
-      ...spec,
-      chartType: spec.drilldown.chartType || "bar",
-      mappings: { x: by, y: yKey, color: spec.drilldown.color }, // allow series at drill level
-      format: {
-        ...spec.format,
-        title: `${spec.drilldown.titlePrefix || "Drill"} — ${clickedX}`,
-        xTitle: spec.drilldown.xTitle || by,
-        yTitle: spec.format?.yTitle || spec.format?.units || ""
-      }
-    };
+    const subset = filterForDrill(data, clickedX, spec);
+    const drillSpec = createDrillSpec(spec, clickedX);
     let shaped = shapeData(subset, drillSpec);
     shaped = applySort(shaped);
     const traces = buildTraces(drillSpec.chartType, shaped, drillSpec);
+
     const layout = baseLayout({
-      title: drillSpec.format.title,
+      title: makeBreadcrumbTitle(spec, clickedX),
       annotations: [{
         text: "← Back",
-        xref: "paper", yref: "paper", x: 0, y: 1.1,
-        //showarrow: false, font: { color: "#16AF8E", size: 14 },
-        showarrow: false, font: { color: "#16AF8E", size: 14 }, captureevents: true, // NEW
+        xref: "paper", yref: "paper", x: 0, y: 1.08,
+        showarrow: false, font: { color: "#16AF8E", size: 14 }, captureevents: true,
         bgcolor: "#333", bordercolor: "#16AF8E", borderpad: 4
       }]
     });
+
     await plot(traces, layout);
     lastShaped = shaped;
     Plotly.relayout(gd, { barmode });
+    hideSummary();
   }
 
-  // ---------- Go ----------
+  // ----- Drill spec + breadcrumb -----
+  function createDrillSpec(root, clickedX) {
+    const d = root?.drilldown || {};
+    return {
+      ...clone(root),
+      chartType: (d.chartType || root.chartType || "bar"),
+      format: { ...(root.format || {}), title: makeBreadcrumbTitle(root, clickedX) },
+      mappings: {
+        ...clone(root.mappings),
+        x: d.by || root.mappings?.x,
+        y: d.yKey || root.mappings?.y,
+        color: d.color || root.mappings?.color,
+        yOp: root.mappings?.yOp || "sum"
+      }
+    };
+  }
+
+  function makeBreadcrumbTitle(root, clickedX) {
+    const rootTitle = root.format?.title || root.titleMain || root.title || "Details";
+    const label = root.drilldown?.title || root.mappings?.x || "Group";
+    return `${rootTitle} ▸ ${label}: ${clickedX}`;
+  }
+
+  // ----- Utils -----
+  function clone(obj) { return JSON.parse(JSON.stringify(obj || {})); }
+  function safeVal(v) { if (v == null) return "(blank)"; return String(v); }
+  function toNum(v) { const n = Number(v); return Number.isFinite(n) ? n : 0; }
+  function fmt(n) { try { return new Intl.NumberFormat().format(n); } catch { return String(n); } }
+  function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
+
+  // ----- Initial draw -----
   await drawMain();
 }
 
-/**
- * Backward-compat convenience for your current chart.
- * (Reads a spec function and renders it.)
- */
+/** Back-compat convenience (preserves your working calls) */
 export async function renderSpendChart(csvUrl, containerIdOrEl, getSpec) {
-  const spec = (getSpec ? getSpec() : null) || {
-    dataUrl: csvUrl,
-    chartType: "bar",
-    mappings: { x: "supplier_category", y: "spend_anonymized", color: null, yOp: "sum" },
-    numericFields: ["spend_anonymized", "spend_year"],
-    format: { title: "Total Spend by Category", xTitle: "Supplier Category", yTitle: "AED", units: "AED" },
-    interactions: { typeSwitcher: true, types: ["bar", "line", "pie"] },
-    drilldown: { filterKey: "supplier_category", by: "spend_year", titlePrefix: "Spend by Year" },
-    fileName: "supplier_spend"
-  };
-  return renderFromSpec({ ...spec, dataUrl: csvUrl }, containerIdOrEl);
+  const base = (getSpec ? getSpec() : {});
+  const spec = { ...base, dataUrl: csvUrl };
+  return renderFromSpec(spec, containerIdOrEl);
 }
