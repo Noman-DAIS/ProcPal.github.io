@@ -14,20 +14,17 @@ export async function renderFromSpec(spec, containerIdOrEl) {
     // csv_parser auto-types by default; no need to pass numeric fields unless you want to override
     data = await loadCSVasJSON(spec.dataUrl);
   }
-  // Pass populated data forward so the rest of the renderer doesn’t care about CSV loading
-  spec = { ...spec, data };
+
+  // Optional numeric coercion (kept for back-compat if you still pass numericFields)
+  if (spec?.numericFields?.length && data?.length) {
+    for (const r of data) {
+      for (const f of spec.numericFields) if (r[f] != null) r[f] = +r[f];
+    }
+  }
+
+  // Local UI state
   const supportsHistory = !!(window?.history?.pushState);
-  const SORT_KEY = "pp.sortMode";
-
-  // UI/config
-  const config = {
-    responsive: true,
-    displaylogo: false,
-    modeBarButtonsToAdd: ["v1hovermode", "toggleSpikelines", "select2d", "lasso2d"],
-    toImageButtonOptions: { filename: spec.fileName || "chart" }
-  };
-
-  // Persistent state
+  const SORT_KEY = "plotly-demo-sort-mode";
   let sortMode = localStorage.getItem(SORT_KEY) || "label"; // "label" | "value"
   let barmode = "group";                                     // "group" | "stack"
   let view = { mode: "main", context: null };                // { mode: "main"|"drill", context: { x } }
@@ -43,39 +40,62 @@ export async function renderFromSpec(spec, containerIdOrEl) {
     margin: { t: 70, r: 20, b: 50, l: 60 },
     hovermode: "closest",
     legend: { orientation: "h", y: -0.2 },
-    updatemenus: buildTypeMenu(spec),
-    annotations: [],
+    xaxis: {
+      title: spec?.format?.xTitle || "",
+      gridcolor: "#2a2a2a",
+      zerolinecolor: "#2a2a2a",
+      tickangle: spec?.format?.xTickAngle ?? 0,
+      categoryorder: spec?.format?.categoryOrder || "trace"
+    },
+    yaxis: {
+      title: spec?.format?.yTitle || "",
+      gridcolor: "#2a2a2a",
+      zerolinecolor: "#2a2a2a",
+      separatethousands: true,
+      tickprefix: spec?.format?.yTickPrefix || (spec?.format?.units ? spec.format.units + " " : ""),
+      tickformat: spec?.format?.yTickFormat || ",.0f"
+    },
+    title: { text: spec?.format?.title || "", x: 0, xanchor: "left" },
     ...overrides
   });
 
-  function buildTypeMenu(spec) {
-    if (!spec.interactions?.typeSwitcher) return [];
-    const types = spec.interactions.types || ["bar","line","pie"];
-    return [{
-      buttons: types.map(t => {
-        const label = t[0].toUpperCase() + t.slice(1);
-        // For Pie, avoid invalid restyle; use a no-op relayout and handle via buttonclicked
-        if (t.toLowerCase() === "pie") return { method: "relayout", args: [{}], label };
-        return { method: "restyle", args: ["type", t], label };
-      }),
-      direction: "left", x: 0, y: 1.18, showactive: true, bgcolor: "#222", bordercolor: "#16AF8E"
-    }];
-  }
+  const config = {
+    responsive: true,
+    displaylogo: false,
+    toImageButtonOptions: {
+      filename: spec?.fileName || (spec?.format?.title?.replace(/\s+/g, "_") || "chart")
+    },
+    modeBarButtonsToAdd: ["v1hovermode", "hovercompare", "togglespikelines"]
+  };
 
-  function clone(obj) { return JSON.parse(JSON.stringify(obj || {})); }
-
-  // Aggregators for yOp: sum | avg/mean | count | min | max
-  function aggregator(op) {
-    switch (String(op || "sum").toLowerCase()) {
-      case "sum":  return { init: 0, add: (a,b)=>a+b, finish: a=>a };
-      case "avg":
-      case "mean": return { init: {s:0,c:0}, add: (a,b)=>({s:a.s+b,c:a.c+1}), finish: a=>(a.c? a.s/a.c : 0) };
-      case "count":return { init: 0, add: (a,_b)=>a+1, finish: a=>a };
-      case "min":  return { init: +Infinity, add: (a,b)=>Math.min(a,b), finish: a=>(Number.isFinite(a)?a:0) };
-      case "max":  return { init: -Infinity, add: (a,b)=>Math.max(a,b), finish: a=>(Number.isFinite(a)?a:0) };
-      default:     return { init: 0, add: (a,b)=>a+b, finish: a=>a };
-    }
-  }
+  const aggregator = (op) => {
+    if (op === "count") return {
+      init: () => ({ count: 0 }),
+      add: (s, v) => (s.count++, s),
+      finish: (s) => s.count
+    };
+    if (op === "mean") return {
+      init: () => ({ sum: 0, n: 0 }),
+      add: (s, v) => ((s.sum += +v || 0), s.n++, s),
+      finish: (s) => (s.n ? s.sum / s.n : 0)
+    };
+    if (op === "min") return {
+      init: () => ({ v: +Infinity }),
+      add: (s, v) => ((s.v = Math.min(s.v, +v || 0)), s),
+      finish: (s) => (isFinite(s.v) ? s.v : 0)
+    };
+    if (op === "max") return {
+      init: () => ({ v: -Infinity }),
+      add: (s, v) => ((s.v = Math.max(s.v, +v || 0)), s),
+      finish: (s) => (isFinite(s.v) ? s.v : 0)
+    };
+    // default sum
+    return {
+      init: () => ({ sum: 0 }),
+      add: (s, v) => ((s.sum += +v || 0), s),
+      finish: (s) => s.sum
+    };
+  };
 
   // Shape rows into {x[], y[]} or {x[], series:[{name,y[]}]} honoring mappings and yOp
   function shapeData(rows, specLike) {
@@ -90,374 +110,349 @@ export async function renderFromSpec(spec, containerIdOrEl) {
     if (colorKey) {
       const seriesMap = new Map(); // color -> Map(x -> agg_state)
       for (const r of rows) {
-        const c = safeVal(r[colorKey]);
-        const x = safeVal(r[xKey]);
-        const y = toNum(yKey ? r[yKey] : 1);
+        const x = String(r[xKey]);
+        const c = String(r[colorKey]);
+        const y = yKey ? r[yKey] : 1;
         if (!seriesMap.has(c)) seriesMap.set(c, new Map());
-        const inner = seriesMap.get(c);
-        inner.set(x, agg.add(inner.has(x) ? inner.get(x) : agg.init, y));
+        const m = seriesMap.get(c);
+        if (!m.has(x)) m.set(x, agg.init());
+        agg.add(m.get(x), y);
       }
+      // unify X across all series, maintain insertion order
       const allX = Array.from(new Set([].concat(...Array.from(seriesMap.values()).map(m => Array.from(m.keys())))));
-      const series = Array.from(seriesMap.entries()).map(([name, m]) => ({
-        name,
-        y: allX.map(x => agg.finish(m.has(x) ? m.get(x) : agg.init))
-      }));
-      return { x: allX, series, colorKey, yOp };
+      const series = [];
+      for (const [name, m] of seriesMap.entries()) {
+        const y = allX.map(xv => (m.has(xv) ? agg.finish(m.get(xv)) : 0));
+        series.push({ name, y });
+      }
+      return { x: allX, series };
     }
 
-    const map = new Map(); // x -> agg_state
+    // single-series
+    const xMap = new Map(); // x -> agg_state
     for (const r of rows) {
-      const x = safeVal(r[xKey]);
-      const y = toNum(yKey ? r[yKey] : 1);
-      map.set(x, agg.add(map.has(x) ? map.get(x) : agg.init, y));
+      const x = String(r[xKey]);
+      const y = yKey ? r[yKey] : 1;
+      if (!xMap.has(x)) xMap.set(x, agg.init());
+      agg.add(xMap.get(x), y);
     }
-    const x = Array.from(map.keys());
-    const y = x.map(k => agg.finish(map.get(k)));
-    return { x, y, yOp };
+    const xs = Array.from(xMap.keys());
+    const ys = xs.map(x => agg.finish(xMap.get(x)));
+    return { x: xs, y: ys };
   }
 
-  function buildTraces(chartType, shaped, specLike) {
-    const units = specLike?.format?.units || "";
-    const colorKey = shaped.colorKey || specLike?.mappings?.color;
-    const type = (chartType || "bar").toLowerCase();
-
-    // Pie (single- or multi-series collapsed to totals)
-    if (type === "pie") {
-      let labels = [];
-      let values = [];
-      if (shaped.series) {
-        labels = shaped.x.slice();
-        const totals = new Array(labels.length).fill(0);
-        for (const s of shaped.series) for (let i=0;i<labels.length;i++) totals[i] += Number(s.y[i] || 0);
-        values = totals;
-      } else { labels = shaped.x; values = shaped.y; }
-      return [{
-        type: "pie",
-        labels, values,
-        textinfo: "label+percent",
-        hovertemplate: `<b>%{label}</b><br>${units}: %{value:,}<extra></extra>`
-      }];
+  // Heatmap pivot helper
+  function pivotToMatrix(rows, xKey, yKey, zKey, yOp = "sum") {
+    const agg = aggregator(yOp);
+    const table = new Map(); // x -> (y -> state)
+    const xsSet = new Set();
+    const ysSet = new Set();
+    for (const r of rows) {
+      const x = String(r[xKey]);
+      const y = String(r[yKey]);
+      const z = zKey ? r[zKey] : 1;
+      xsSet.add(x); ysSet.add(y);
+      if (!table.has(x)) table.set(x, new Map());
+      const rowMap = table.get(x);
+      if (!rowMap.has(y)) rowMap.set(y, agg.init());
+      agg.add(rowMap.get(y), z);
     }
-
-    // Multi-series bar/line/scatter
-    if (shaped.series && (type === "bar" || type === "line" || type === "scatter")) {
-      return shaped.series.map(s => ({
-        type, name: s.name, x: shaped.x, y: s.y,
-        hovertemplate: colorKey
-          ? `<b>${escapeHtml(colorKey)}: ${escapeHtml(s.name)}</b><br>%{x} — ${units} %{y:,}<extra></extra>`
-          : `<b>%{x}</b><br>${units}: %{y:,}<extra></extra>`
-      }));
-    }
-
-    // Single-series bar/line/scatter
-    return [{
-      type, x: shaped.x, y: shaped.y,
-      hovertemplate: `<b>%{x}</b><br>${units}: %{y:,}<extra></extra>`
-    }];
+    const xs = Array.from(xsSet), ys = Array.from(ysSet);
+    const z = ys.map(() => Array(xs.length).fill(0));
+    ys.forEach((y, yi) => {
+      xs.forEach((x, xi) => {
+        const rowMap = table.get(x);
+        z[yi][xi] = rowMap && rowMap.has(y) ? agg.finish(rowMap.get(y)) : 0;
+      });
+    });
+    return { xs, ys, z };
   }
 
-  // Sorting (single-series only)
+  // Sorting (only for single-series)
   function applySort(shaped) {
     if (!shaped || shaped.series) return shaped;
     if (sortMode === "value" && shaped.x && shaped.y) {
-      const zipped = shaped.x.map((x,i)=>({x, y: shaped.y[i]})).sort((a,b)=>b.y-a.y);
-      shaped.x = zipped.map(d=>d.x); shaped.y = zipped.map(d=>d.y);
+      const pairs = shaped.x.map((x, i) => ({ x, y: shaped.y[i] }));
+      pairs.sort((a, b) => b.y - a.y);
+      shaped.x = pairs.map(p => p.x);
+      shaped.y = pairs.map(p => p.y);
     } else if (sortMode === "label" && shaped.x) {
-      const zipped = shaped.x.map((x,i)=>({x, y: shaped.y[i]})).sort((a,b)=> String(a.x).localeCompare(String(b.x)));
-      shaped.x = zipped.map(d=>d.x); shaped.y = zipped.map(d=>d.y);
+      const pairs = shaped.x.map((x, i) => ({ x, y: shaped.y[i] }));
+      pairs.sort((a, b) => String(a.x).localeCompare(String(b.x)));
+      shaped.x = pairs.map(p => p.x);
+      shaped.y = pairs.map(p => p.y);
     }
     return shaped;
   }
 
-  // Drill helpers
-  function filterForDrill(rows, clickedX, rootSpec) {
-    const filterKey = rootSpec?.drilldown?.filterKey || rootSpec?.mappings?.x;
-    return rows.filter(r => safeVal(r[filterKey]) === clickedX);
+  // Build Plotly traces
+  function buildTraces(type, shaped, specLike) {
+    const units = specLike?.format?.units || "";
+    if (type === "pie") {
+      return [{
+        type: "pie",
+        labels: shaped.x,
+        values: shaped.y,
+        textinfo: "label+percent",
+        hovertemplate: "<b>%{label}</b><br>" + units + " %{value:,}<extra></extra>",
+        hole: specLike?.format?.donut ? 0.5 : 0
+      }];
+    }
+    if (type === "heatmap") {
+      return [{
+        type: "heatmap",
+        x: shaped.xs, y: shaped.ys, z: shaped.z,
+        colorbar: { title: units || "Value" }
+      }];
+    }
+    if (shaped.series?.length) {
+      // multi-series (bar/line/scatter)
+      const colorKey = specLike?.mappings?.color || "Series";
+      return shaped.series.map(s => ({
+        type,
+        name: s.name,
+        x: shaped.x,
+        y: s.y,
+        hovertemplate: `<b>${colorKey}: ${s.name}</b><br>%{x} — ${units} %{y:,}<extra></extra>`
+      }));
+    }
+    // single-series
+    return [{
+      type,
+      x: shaped.x,
+      y: shaped.y,
+      hovertemplate: `<b>%{x}</b><br>${units}: %{y:,}<extra></extra>`
+    }];
   }
 
-  // ----- Toolbar / UI -----
-  function ensureToolbar() {
-    if (container.querySelector(".pp-toolbar")) return;
-    container.style.position = container.style.position || "relative";
-
-    const bar = document.createElement("div");
-    bar.className = "pp-toolbar";
-    bar.style.cssText = "position:absolute;top:8px;left:8px;display:flex;gap:6px;z-index:10";
-
-    const mkBtn = (label, title, fn) => {
-      const b = document.createElement("button");
-      b.type = "button";
-      b.className = "btn btn-sm btn-outline-light";
-      b.style.cssText = "padding:2px 8px;border-radius:10px;background:#222;color:#eee;border:1px solid #555";
-      b.textContent = label; b.title = title; b.onclick = fn; return b;
-    };
-
-    const btnBack  = mkBtn("← Back","Return to main view", ()=> exitDrill());
-    btnBack.dataset.role = "pp-back";
-
-    const btnFull  = mkBtn("⛶ Full","Toggle fullscreen", ()=> toggleFull());
-
-    const btnReset = mkBtn("Reset","Reset chart", ()=> redrawCurrent(true));
-
-    const btnSort  = mkBtn(sortMode==="label"?"Sort: A→Z":"Sort: Value","Toggle sort", ()=> {
-      sortMode = (sortMode==="label"?"value":"label");
-      localStorage.setItem(SORT_KEY, sortMode);
-      btnSort.textContent = sortMode==="label"?"Sort: A→Z":"Sort: Value";
-      redrawCurrent();
-    });
-
-    const btnStack = mkBtn("Stack","Toggle group/stack bars", ()=> {
-      barmode = (barmode==="group"?"stack":"group");
-      Plotly.relayout(gd, { barmode });
-    });
-
-    const btnCSV   = mkBtn("CSV","Download visible data", ()=> downloadVisible());
-
-    bar.append(btnBack, btnFull, btnReset, btnSort, btnStack, btnCSV);
-    container.appendChild(bar);
-    updateToolbar();
+  // Toolbar overlay
+  function ensureToolbar(containerEl) {
+    let bar = containerEl.querySelector(".chart-toolbar");
+    if (bar) return bar;
+    bar = document.createElement("div");
+    bar.className = "chart-toolbar";
+    bar.style.cssText = "display:flex;gap:.5rem;align-items:center;position:absolute;top:8px;right:8px;z-index:3;background:#1b1b1b;border:1px solid #333;border-radius:8px;padding:6px 8px;";
+    bar.innerHTML = `
+      <button data-act="back" title="Back" style="display:none">← Back</button>
+      <button data-act="reset" title="Reset view">Reset</button>
+      <button data-act="sort"  title="Toggle sort">Sort: <b>${sortMode}</b></button>
+      <button data-act="mode"  title="Group/Stack">Bars: <b>${barmode}</b></button>
+      <button data-act="csv"   title="Export visible CSV">Export CSV</button>
+    `;
+    containerEl.style.position = "relative";
+    containerEl.appendChild(bar);
+    return bar;
   }
 
   function updateToolbar() {
-    const back = container.querySelector('[data-role="pp-back"]');
-    if (back) back.style.display = (view.mode === "drill") ? "inline-block" : "none";
+    const bar = ensureToolbar(container);
+    bar.querySelector('[data-act="sort"]').innerHTML = `Sort: <b>${sortMode}</b>`;
+    bar.querySelector('[data-act="mode"]').innerHTML = `Bars: <b>${barmode}</b>`;
+    bar.querySelector('[data-act="back"]').style.display = view.mode === "drill" ? "" : "none";
   }
 
-  async function toggleFull() {
-    if (!document.fullscreenElement) { await container.requestFullscreen?.(); }
-    else { await document.exitFullscreen?.(); }
-  }
-
-  // Selection summary pill
-  function ensureSummaryPill() {
-    if (container.querySelector(".pp-sel-pill")) return;
-    const pill = document.createElement("div");
-    pill.className = "pp-sel-pill";
-    pill.style.cssText = "position:absolute;left:8px;bottom:8px;background:#222;border:1px solid #555;color:#eee;padding:6px 10px;border-radius:12px;font-size:12px;z-index:10;display:none";
-    pill.textContent = "Selected: 0 • Sum: 0";
-    container.appendChild(pill);
-  }
-  function showSummary(text) {
-    const pill = container.querySelector(".pp-sel-pill");
-    if (!pill) return;
-    pill.style.display = "inline-block";
-    pill.textContent = text;
-  }
-  function hideSummary() {
-    const pill = container.querySelector(".pp-sel-pill");
-    if (pill) pill.style.display = "none";
-  }
-
-  // CSV helpers
   function toCSV(rows) {
     if (!rows?.length) return "";
     const cols = Object.keys(rows[0]);
     const escape = s => `"${String(s).replaceAll('"','""')}"`;
     return [cols.join(","), ...rows.map(r=>cols.map(c=>escape(r[c]??"")).join(","))].join("\n");
   }
-  function download(name, text) {
-    const blob = new Blob([text], {type:"text/csv;charset=utf-8"});
-    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name; a.click(); URL.revokeObjectURL(a.href);
-  }
   function visibleRowsForExport(shaped) {
     const out = [];
     if (!shaped) return out;
-
-    if (shaped.series) {
-      // multi-series long format
+    if (shaped.series?.length) {
       for (const s of shaped.series) {
-        for (let i=0; i<shaped.x.length; i++) {
+        for (let i = 0; i < shaped.x.length; i++) {
           out.push({ [spec.mappings?.x || "x"]: shaped.x[i], series: s.name, value: s.y[i] });
         }
       }
-      return out;
-    }
-
-    // single-series
-    for (let i=0; i<shaped.x.length; i++) {
-      if (view.mode === "drill") {
-        const label = view.context?.x;
-        out.push({ [spec.drilldown?.filterKey || spec.mappings?.x || "group"]: label, [spec.drilldown?.by || "x"]: shaped.x[i], value: shaped.y[i] });
-      } else {
+    } else if (shaped.x?.length) {
+      for (let i = 0; i < shaped.x.length; i++) {
         out.push({ [spec.mappings?.x || "x"]: shaped.x[i], value: shaped.y[i] });
       }
     }
     return out;
   }
-  function downloadVisible() {
-    const rows = visibleRowsForExport(lastShaped);
-    download((spec.fileName||"chart") + (view.mode==="drill"?"_drill":"") + ".csv", toCSV(rows));
+
+  function bindToolbarEvents() {
+    const bar = ensureToolbar(container);
+    bar.onclick = (e) => {
+      const act = e.target?.getAttribute?.("data-act");
+      if (!act) return;
+      if (act === "reset" && gd) Plotly.relayout(gd, { "xaxis.autorange": true, "yaxis.autorange": true });
+      if (act === "sort") {
+        sortMode = sortMode === "label" ? "value" : "label";
+        localStorage.setItem(SORT_KEY, sortMode);
+        drawCurrent();
+      }
+      if (act === "mode") {
+        barmode = barmode === "group" ? "stack" : "group";
+        drawCurrent();
+      }
+      if (act === "csv") {
+        const csv = toCSV(visibleRowsForExport(lastShaped));
+        const name = (spec?.fileName || "chart_data") + ".csv";
+        const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+        const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name; a.click(); URL.revokeObjectURL(a.href);
+      }
+      if (act === "back" && view.mode === "drill") {
+        exitDrill();
+      }
+    };
+    updateToolbar();
   }
 
-  // ----- Plot lifecycle -----
-  async function plot(traces, layout) {
-    if (!firstPlotDone) {
-      gd = await Plotly.newPlot(container, traces, layout, config);
-      firstPlotDone = true;
-      bindHandlers(); // attach once
+  // ----- Views -----
+  function drawMain() {
+    const type = (spec?.chartType || "bar");
+    let shaped;
+    if (type === "heatmap") {
+      const x = spec?.mappings?.x, y = spec?.mappings?.y, color = spec?.mappings?.color;
+      const { xs, ys, z } = pivotToMatrix(data, x, y, color, spec?.mappings?.yOp || "sum");
+      shaped = { xs, ys, z };
+    } else if (type === "pie") {
+      shaped = shapeData(data, spec);
     } else {
-      await Plotly.react(gd, traces, layout, config);
+      shaped = applySort(shapeData(data, spec));
     }
-    return gd;
+
+    const traces = buildTraces(type, shaped, spec);
+    const layout = baseLayout({
+      barmode,
+      title: { text: spec?.format?.title || "", x: 0, xanchor: "left" }
+    });
+
+    if (!gd) {
+      gd = document.createElement("div");
+      container.innerHTML = "";
+      container.appendChild(gd);
+      firstPlotDone = true;
+      Plotly.newPlot(gd, traces, layout, config);
+    } else {
+      Plotly.react(gd, traces, layout, config);
+    }
+
+    lastShaped = shaped;
+    bindHandlersForDrill();
+    bindToolbarEvents();
+    updateToolbar();
   }
 
-  function bindHandlers() {
-    if (!gd || !gd.on) return;
-
-    // click to drill
-    gd.on("plotly_click", (ev) => {
-      if (!spec.drilldown || view.mode !== "main") return;
-      const clickedX = ev?.points?.[0]?.x;
-      if (clickedX == null) return;
-      enterDrill(clickedX);
-    });
-
-    // annotation back
-    gd.on("plotly_clickannotation", () => { if (view.mode === "drill") exitDrill(); });
-
-    // keyboard back
-    window.addEventListener("keydown", (e) => {
-      if (view.mode === "drill" && (e.key === "Escape" || e.key === "Backspace")) exitDrill();
-    });
-
-    // browser back
-    if (supportsHistory) {
-      window.addEventListener("popstate", () => {
-        if (view.mode === "drill") exitDrill(false); // don’t push state again
-      });
-    }
-
-    // selection summary (lasso/box)
-    gd.on("plotly_selected", (ev) => {
-      if (!ev?.points?.length) { hideSummary(); return; }
-      const ys = ev.points.map(p => (typeof p.y === "number" ? p.y : (typeof p.value === "number" ? p.value : 0)));
-      const n = ys.length;
-      const sum = ys.reduce((a,b)=>a+b,0);
-      const avg = n ? (sum / n) : 0;
-      showSummary(`Selected: ${n} • Sum: ${fmt(sum)} • Avg: ${fmt(avg)}`);
-    });
-    gd.on("plotly_deselect", hideSummary);
-
-    window.addEventListener("resize", () => gd && Plotly.Plots.resize(gd));
-
-    ensureToolbar();
-    ensureSummaryPill();
-
-    // Handle type switcher button clicks (including Pie) by redrawing
-    if (spec.interactions?.typeSwitcher) {
-      gd.on("plotly_buttonclicked", (ev) => {
-        const lbl = ev?.button?.label?.toLowerCase?.();
-        if (!lbl) return;
-        if (["bar","line","scatter","pie"].includes(lbl)) {
-          spec.chartType = lbl;
-          redrawCurrent(true);
-        }
-      });
-    }
+  function makeBreadcrumbTitle(root, clickedX) {
+    const base = root?.format?.title || "";
+    const sep = base ? " — " : "";
+    return `${base}${sep}${root?.mappings?.x || "X"}: ${clickedX}`;
   }
 
   function enterDrill(clickedX) {
     view = { mode: "drill", context: { x: clickedX } };
-    if (supportsHistory) history.pushState({ drill: clickedX }, "", `#drill=${encodeURIComponent(clickedX)}`);
-    drawDrill(clickedX);
+    if (supportsHistory) history.pushState({ drill: clickedX }, "", "#drill");
+    const root = spec;
+    const drillSpec = {
+      ...clone(root),
+      data: data.filter(r => String(r[root?.mappings?.x]) === String(clickedX)),
+      format: { ...(root.format || {}), title: makeBreadcrumbTitle(root, clickedX) },
+      chartType: root?.drilldown?.chartType || root?.chartType || "bar",
+      mappings: {
+        ...clone(root.mappings),
+        x: root?.drilldown?.x || root?.mappings?.x,
+        y: root?.drilldown?.y || root?.mappings?.y,
+        color: root?.drilldown?.color || root?.mappings?.color,
+        yOp: root?.drilldown?.yOp || root?.mappings?.yOp || "sum",
+      }
+    };
+    drawDrill(drillSpec);
     updateToolbar();
   }
 
-  function exitDrill(pushHistory = true) {
+  function exitDrill() {
     view = { mode: "main", context: null };
-    if (pushHistory && supportsHistory) history.pushState({}, "", location.pathname + location.search);
+    if (supportsHistory) history.pushState({}, "", "#");
     drawMain();
     updateToolbar();
   }
 
-  function redrawCurrent(resetAxes = false) {
-    if (view.mode === "main") drawMain().then(() => resetAxes && autoRange());
-    else drawDrill(view.context?.x).then(() => resetAxes && autoRange());
+  function drawDrill(drillSpec) {
+    const type = drillSpec?.chartType || "bar";
+    let shaped;
+    if (type === "heatmap") {
+      const x = drillSpec?.mappings?.x, y = drillSpec?.mappings?.y, color = drillSpec?.mappings?.color;
+      const { xs, ys, z } = pivotToMatrix(drillSpec.data, x, y, color, drillSpec?.mappings?.yOp || "sum");
+      shaped = { xs, ys, z };
+    } else if (type === "pie") {
+      shaped = shapeData(drillSpec.data, drillSpec);
+    } else {
+      shaped = applySort(shapeData(drillSpec.data, drillSpec));
+    }
+
+    const traces = buildTraces(type, shaped, drillSpec);
+    const layout = baseLayout({
+      barmode,
+      title: { text: drillSpec?.format?.title || "", x: 0, xanchor: "left" }
+    });
+
+    Plotly.react(gd, traces, layout, config);
+    lastShaped = shaped;
   }
 
-  function autoRange() {
+  function drawCurrent() {
+    if (view.mode === "drill") {
+      // rebuild a drillSpec from current spec + context
+      const root = spec;
+      const clickedX = view.context?.x;
+      const drillSpec = {
+        ...clone(root),
+        data: data.filter(r => String(r[root?.mappings?.x]) === String(clickedX)),
+        format: { ...(root.format || {}), title: makeBreadcrumbTitle(root, clickedX) },
+        chartType: root?.drilldown?.chartType || root?.chartType || "bar",
+        mappings: {
+          ...clone(root.mappings),
+          x: root?.drilldown?.x || root?.mappings?.x,
+          y: root?.drilldown?.y || root?.mappings?.y,
+          color: root?.drilldown?.color || root?.mappings?.color,
+          yOp: root?.drilldown?.yOp || root?.mappings?.yOp || "sum",
+        }
+      };
+      drawDrill(drillSpec);
+    } else {
+      drawMain();
+    }
+  }
+
+  function bindHandlersForDrill() {
     if (!gd) return;
-    Plotly.relayout(gd, { "xaxis.autorange": true, "yaxis.autorange": true });
-  }
-
-  // ----- Views -----
-  async function drawMain() {
-    let shaped = shapeData(data, spec);
-    shaped = applySort(shaped);
-    const traces = buildTraces(spec.chartType, shaped, spec);
-
-    const title = spec.format?.title || spec.titleMain || spec.title || "";
-    const layout = baseLayout({
-      title,
-      annotations: spec.drilldown ? [{
-        text: spec.format?.tip || "Tip: click a bar to drill down",
-        xref: "paper", yref: "paper", x: 0, y: 1.12,
-        showarrow: false, align: "left", font: { size: 12, color: "#ccc" }
-      }] : []
+    gd.on("plotly_click", (ev) => {
+      const p = ev?.points?.[0];
+      if (!p) return;
+      const clickedX = p.x;
+      if (spec?.drilldown) enterDrill(clickedX);
     });
-
-    await plot(traces, layout);
-    lastShaped = shaped;
-    Plotly.relayout(gd, { barmode });
-    hideSummary();
   }
-
-  async function drawDrill(clickedX) {
-    const subset = filterForDrill(data, clickedX, spec);
-    const drillSpec = createDrillSpec(spec, clickedX);
-    let shaped = shapeData(subset, drillSpec);
-    shaped = applySort(shaped);
-    const traces = buildTraces(drillSpec.chartType, shaped, drillSpec);
-
-    const layout = baseLayout({
-      title: makeBreadcrumbTitle(spec, clickedX),
-      annotations: [{
-        text: "← Back",
-        xref: "paper", yref: "paper", x: 0, y: 1.08,
-        showarrow: false, font: { color: "#16AF8E", size: 14 }, captureevents: true,
-        bgcolor: "#333", bordercolor: "#16AF8E", borderpad: 4
-      }]
-    });
-
-    await plot(traces, layout);
-    lastShaped = shaped;
-    Plotly.relayout(gd, { barmode });
-    hideSummary();
-  }
-
-  // ----- Drill spec + breadcrumb -----
-  function createDrillSpec(root, clickedX) {
-    const d = root?.drilldown || {};
-    return {
-      ...clone(root),
-      chartType: (d.chartType || root.chartType || "bar"),
-      format: { ...(root.format || {}), title: makeBreadcrumbTitle(root, clickedX) },
-      mappings: {
-        ...clone(root.mappings),
-        x: d.by || root.mappings?.x,                 // break down by
-        y: d.yKey || root.mappings?.y,               // measure key
-        color: d.color || root.mappings?.color,      // optional series
-        yOp: root.mappings?.yOp || "sum"             // preserve aggregation
+  window.addEventListener("resize", () => { if (gd) Plotly.Plots.resize(gd); });
+  if (supportsHistory) {
+    window.addEventListener("popstate", () => {
+      if (location.hash === "#drill" && view.mode !== "drill") {
+        // ignore spurious
+      } else if (location.hash !== "#drill" && view.mode === "drill") {
+        exitDrill();
       }
-    };
+    });
   }
 
-  function makeBreadcrumbTitle(root, clickedX) {
-    const rootTitle = root.format?.title || root.titleMain || root.title || "Details";
-    const label = root.drilldown?.title || root.mappings?.x || "Group";
-    return `${rootTitle} ▸ ${label}: ${clickedX}`;
-  }
+  function clone(o) { return JSON.parse(JSON.stringify(o || {})); }
 
-  // ----- Utils -----
-  function safeVal(v) { if (v == null) return "(blank)"; return String(v); }
-  function toNum(v) { const n = Number(v); return Number.isFinite(n) ? n : 0; }
-  function fmt(n) { try { return new Intl.NumberFormat().format(n); } catch { return String(n); } }
-
-  // ----- Initial draw -----
-  await drawMain();
+  // Kick off
+  drawMain();
 }
 
-// Flexible exports
-//export { renderFromSpec };
-export { renderFromSpec as renderSpendChart };
-//export default renderFromSpec;
+// Optional convenience wrapper (legacy) — build a common spend chart spec and render
+export async function renderSpendChart({ csvUrl, containerIdOrEl }) {
+  const spec = {
+    dataUrl: csvUrl,
+    chartType: "bar",
+    mappings: { x: "supplier_category", y: "spend_anonymized", yOp: "sum" },
+    format: { title: "Total Spend by Category", xTitle: "Category", yTitle: "Spend (AED)", units: "AED" },
+    drilldown: { x: "spend_year", y: "spend_anonymized", yOp: "sum" }
+  };
+  return renderFromSpec(spec, containerIdOrEl);
+}
