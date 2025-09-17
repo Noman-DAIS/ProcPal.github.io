@@ -1,0 +1,270 @@
+
+/* ==========================================================================
+   DAIS ProcPal Theme (v0.1)
+   - Centralized design tokens for Bootstrap, Plotly and custom UI.
+   - Defaults to Dark; enable Light by setting <html data-theme="light">.
+   ========================================================================== */
+
+/* ---------- Tokens (Dark default) ---------- */
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Font */
+  --font-sans: "Dubai", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  /* Core palette */
+  --bg: #0f1115;
+  --panel: #151922;
+  --muted: #1c2130;
+  --border: #2a3244;
+  --grid: #2b3242;
+  --text: #e7eaf0;
+  --text-muted: #a5aec2;
+
+  /* Brand accents */
+  --accent: #77b7ff;          /* primary */
+  --accent-2: #a78bfa;        /* secondary */
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger:  #ef4444;
+  --info:    #38bdf8;
+
+  /* Elevation */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius:    16px;
+  --shadow-1:  0 1px 2px rgba(0,0,0,.35);
+  --shadow-2:  0 4px 18px rgba(0,0,0,.35);
+
+  /* Spacing scale */
+  --space-1: .25rem;
+  --space-2: .5rem;
+  --space-3: .75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+
+  /* Legacy aliases (to match earlier code refs) */
+  --shale: var(--bg);
+  --slate: var(--panel);
+  --gypsum: var(--text);
+}
+
+/* ---------- Tokens (Light) ---------- */
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #f7f8fb;
+  --panel: #ffffff;
+  --muted: #eef1f6;
+  --border: #d7dce6;
+  --grid: #e6e9f0;
+  --text: #0e1424;
+  --text-muted: #4c5464;
+
+  --accent: #175cd3;
+  --accent-2: #6e59ff;
+  --success: #16a34a;
+  --warning: #d97706;
+  --danger:  #dc2626;
+  --info:    #0ea5e9;
+}
+
+/* ---------- Bootstrap v5.3 bridges ---------- */
+:root {
+  --bs-body-bg: var(--bg);
+  --bs-body-color: var(--text);
+  --bs-border-color: var(--border);
+  --bs-link-color: var(--accent);
+  --bs-link-hover-color: color-mix(in oklab, var(--accent) 80%, white);
+  --bs-primary: var(--accent);
+  --bs-secondary: var(--accent-2);
+  --bs-success: var(--success);
+  --bs-warning: var(--warning);
+  --bs-danger: var(--danger);
+  --bs-info: var(--info);
+  --bs-body-font-family: var(--font-sans);
+  --bs-border-radius: var(--radius-xs);
+  --bs-border-radius-sm: var(--radius-xs);
+  --bs-border-radius-lg: var(--radius);
+  --bs-body-font-size: 0.9375rem; /* 15px base for dense dashboards */
+  --bs-heading-color: var(--text);
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Headings */
+h1, .h1 { font-weight: 700; letter-spacing: .2px; }
+h2, .h2 { font-weight: 700; letter-spacing: .2px; }
+h3, .h3 { font-weight: 600; letter-spacing: .15px; }
+h4, .h4 { font-weight: 600; }
+h5, .h5 { font-weight: 600; }
+h6, .h6 { font-weight: 600; color: var(--text-muted); }
+
+/* Cards & panels */
+.card, .modal-content, .offcanvas, .dropdown-menu {
+  background: var(--panel) !important;
+  color: var(--text);
+  border-color: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-1);
+}
+
+/* Buttons */
+.btn {
+  border-radius: var(--radius-xs);
+}
+.btn-ghost {
+  --btn-bg: transparent;
+  --btn-border: var(--border);
+  --btn-color: var(--text);
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  border: 1px solid var(--btn-border);
+}
+.btn-ghost:hover { background: var(--muted); }
+.btn-soft {
+  background: color-mix(in oklab, var(--accent) 18%, black);
+  border: 1px solid color-mix(in oklab, var(--accent) 55%, transparent);
+  color: var(--text);
+}
+.btn-soft:hover { background: color-mix(in oklab, var(--accent) 28%, black); }
+
+/* Inputs */
+.form-control, .form-select {
+  background: var(--panel);
+  color: var(--text);
+  border-color: var(--border);
+}
+.form-control::placeholder { color: var(--text-muted); }
+.form-check-input { border-color: var(--border); background: var(--panel); }
+.form-check-input:checked { background-color: var(--accent); border-color: var(--accent); }
+
+/* Tables */
+.table {
+  --bs-table-bg: var(--panel);
+  --bs-table-striped-bg: color-mix(in oklab, var(--panel) 92%, black);
+  --bs-table-striped-color: var(--text);
+  --bs-table-color: var(--text);
+  --bs-table-border-color: var(--border);
+}
+.table thead th { color: var(--text-muted); font-weight: 600; }
+
+/* Links & muted text */
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.text-muted { color: var(--text-muted) !important; }
+
+/* Badges & pills */
+.badge {
+  border-radius: 999px;
+  background: var(--muted);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+/* ---------- Plotly friendliness ---------- */
+/* Provide a neutral container and legible modebar */
+.js-plotly-plot {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.js-plotly-plot .modebar {
+  background: color-mix(in oklab, var(--panel) 92%, black);
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border);
+}
+.js-plotly-plot .modebar-btn svg path,
+.js-plotly-plot .modebar-btn svg polygon {
+  fill: var(--text);
+}
+
+/* Optional full-view area */
+#fvContainer, .full-view-container {
+  background: var(--panel);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  min-height: 360px;
+}
+
+/* ---------- Visuals Gallery ---------- */
+.visuals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--space-4);
+}
+.visuals-item {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  transition: transform .12s ease, box-shadow .12s ease;
+  cursor: pointer;
+}
+.visuals-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-2);
+}
+.visuals-thumb {
+  display: block;
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: calc(var(--radius) - 6px);
+  background: var(--muted);
+}
+.visuals-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-3);
+  font-size: .8rem;
+  color: var(--text-muted);
+}
+
+/* Preview modal specifics */
+#vpImage {
+  max-height: 70vh;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--muted);
+}
+
+/* ---------- Utilities ---------- */
+.pill { border-radius: 999px; padding: .25rem .6rem; background: var(--muted); border:1px solid var(--border); }
+.text-dim { color: var(--text-muted) !important; }
+.divider { height: 1px; background: var(--border); margin: var(--space-4) 0; }
+
+/* Scrollbar (WebKit) */
+*::-webkit-scrollbar { height: 10px; width: 10px; }
+*::-webkit-scrollbar-track { background: var(--muted); }
+*::-webkit-scrollbar-thumb { background: var(--border); border-radius: var(--radius-xs); }
+*::-webkit-scrollbar-thumb:hover { background: color-mix(in oklab, var(--border) 70%, white); }
+
+/* Focus ring */
+:where(a, button, input, .btn, .form-control, .form-select):focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--accent) 70%, white);
+  outline-offset: 2px;
+}
+
+/* ---------- Print ---------- */
+@media print {
+  html { background: white; }
+  body { background: white; color: #111; }
+  .card, .modal-content { background: white !important; color:#111; border-color:#ccc; }
+  .js-plotly-plot { border-color:#ccc; }
+}
