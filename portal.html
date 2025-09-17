@@ -234,9 +234,7 @@
                 <div class="small muted">Rendered from responses</div>
               </div>
               <div class="surface-body">
-                <div class="vis-wrap p-2">
-                  <div id="visualGallery" class="row g-2 row-cols-2 row-cols-md-3"></div>
-                </div>
+                <div class="vis-wrap">Visuals (charts, graphs) will appear here</div>
               </div>
             </div>
           </div>
@@ -364,46 +362,14 @@
     </div>
   </div>
 
-  <!-- Lightbox for PNG previews -->
-<div class="modal fade" id="visualLightbox" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content bg-dark text-light">
-      <div class="modal-header">
-        <h5 class="modal-title" id="lbTitle">Preview</h5>
-        <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body text-center">
-        <img id="lbImg" class="img-fluid rounded" alt="Chart preview"/>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-outline-light" id="lbFullView">Full View Mode</button>
-        <button class="btn btn-outline-light" id="lbSave">Save</button>
-        <button class="btn btn-primary" id="lbReport">Generate Report</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-  <!-- Full View (interactive Plotly) -->
-  <div class="modal fade" id="fullViewModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen">
-      <div class="modal-content bg-dark text-light">
-        <div class="modal-header border-0">
-          <h5 class="modal-title" id="fvTitle">Full View</h5>
-          <button class="btn btn-sm btn-outline-light" data-bs-dismiss="modal">
-            <i class="bi bi-x-lg"></i>
-          </button>
-        </div>
-        <div class="modal-body p-0">
-          <div id="fvContainer" style="width:100%;height:100%;min-height:75vh;"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+  <!-- Plotly core (needed for preview capture + Full View) -->
+  <script src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js"></script>
+  
+  <!-- Our modules -->
+  <script type="module" src="./js/visuals_store.js"></script>
+  <script type="module" src="./js/visuals_gallery.js"></script>
+  
   <!-- Micro-interactions: remember active tab + mock chat append -->
   <script>
     // Persist active tab across refresh
@@ -443,75 +409,5 @@
       if(e.key==='Enter' && !e.shiftKey){ e.preventDefault(); sendBtn.click(); }
     });
   </script>
-<!-- Plotly (needed for Full View render) -->
-<script src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js"></script>
-
-<!-- Visuals gallery wiring -->
-<script type="module">
-  import { renderFromSpec } from './js/output_renderer.js';
-
-  const galleryEl = document.getElementById('visualGallery');
-  const lbImg     = document.getElementById('lbImg');
-  const lbTitle   = document.getElementById('lbTitle');
-  const fvModal   = document.getElementById('fullViewModal');
-  const fvTitle   = document.getElementById('fvTitle');
-  const fvContainerSel = '#fvContainer';
-
-  const state = { items: [], current: -1 };
-
-  function addThumb({ dataUrl, title, spec, ts }) {
-    const idx = state.items.push({ dataUrl, title, spec, ts }) - 1;
-    const col = document.createElement('div');
-    col.className = 'col';
-    col.innerHTML = `
-      <a href="#" class="d-block" data-idx="${idx}" data-bs-toggle="modal" data-bs-target="#visualLightbox" title="${title}">
-        <img src="${dataUrl}" class="img-fluid rounded border" alt="${title}">
-      </a>
-      <div class="small mt-1 opacity-75 text-truncate" title="${title}">${title}</div>
-    `;
-    galleryEl?.prepend(col);
-    col.querySelector('a').addEventListener('click', (e) => {
-      e.preventDefault();
-      const i = Number(e.currentTarget.getAttribute('data-idx'));
-      state.current = i;
-      lbImg.src = state.items[i].dataUrl;
-      lbTitle.textContent = state.items[i].title || 'Preview';
-    });
-  }
-
-  // Listen for PNGs emitted by the renderer
-  document.addEventListener('dais:chart-png', (ev) => addThumb(ev.detail));
-
-  // Buttons: Save / Full View / Generate Report
-  document.getElementById('lbSave')?.addEventListener('click', () => {
-    const it = state.items[state.current]; if (!it) return;
-    const a = document.createElement('a');
-    a.href = it.dataUrl;
-    a.download = (it.title || 'chart') + '.png';
-    a.click();
-  });
-
-  document.getElementById('lbFullView')?.addEventListener('click', async () => {
-    const it = state.items[state.current]; if (!it) return;
-    const modal = new bootstrap.Modal(fvModal);
-    fvTitle.textContent = it.title || 'Full View';
-    modal.show();
-    await renderFromSpec(it.spec, fvContainerSel);
-    const gd = document.querySelector(fvContainerSel + ' > div');
-    if (gd && window.Plotly) Plotly.Plots.resize(gd);
-  });
-
-  document.getElementById('lbReport')?.addEventListener('click', () => {
-    const it = state.items[state.current]; if (!it) return;
-    document.dispatchEvent(new CustomEvent('dais:generate-report', {
-      detail: { selection: [it], all: state.items }
-    }));
-    const btn = document.getElementById('lbReport');
-    const old = btn.innerHTML;
-    btn.innerHTML = '<i class="bi bi-check2-circle me-1"></i>Queued';
-    setTimeout(() => btn.innerHTML = old, 1200);
-  });
-</script>
-
 </body>
 </html>
