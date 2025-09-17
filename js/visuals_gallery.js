@@ -135,4 +135,21 @@ async function captureAndSaveFromGraphDiv(graphDiv, spec) {
 
 function wireAutoCapture() {
   // Fired by output_renderer after initial plot
-  window.addEventListener("v
+  window.addEventListener("visuals:capture", async (e) => {
+    const { graphDiv, spec } = e.detail || {};
+    try {
+      await captureAndSaveFromGraphDiv(graphDiv, spec);
+      await renderGrid();
+    } catch (err) {
+      console.warn("capture failed", err);
+    }
+  });
+}
+
+(async function init() {
+  ensureModals();
+  try { await visualsStore.requestPersist(); } catch {}
+  await renderGrid();
+  visualsStore.watch(renderGrid);
+  wireAutoCapture();
+})();
