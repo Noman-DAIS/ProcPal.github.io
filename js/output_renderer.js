@@ -389,19 +389,24 @@ export async function renderFromSpec(spec, containerIdOrEl) {
     const layout = baseLayout({ title: { text: titleText, x: 0, xanchor: "left" } });
     // set x category order explicitly
     layout.xaxis.categoryarray = shaped.x || [];
-    
-    let plotPromise;
+
     if (gd && gd.parentElement === container.querySelector(":scope > div:last-child")) {
-      plotPromise  = Plotly.react(gd, traces, layout, { displaylogo: false, responsive: true });
+      Plotly.react(gd, traces, layout, { displaylogo: false, responsive: true });
     } else {
       gd = container.querySelector(":scope > div:last-child");
-      plotPromise  = Plotly.newPlot(gd, traces, layout, { displaylogo: false, responsive: true });
+      Plotly.newPlot(gd, traces, layout, { displaylogo: false, responsive: true });
     }
     lastShaped = shaped;
     bindPlotHandlers();
     bindToolbarEvents();
     updateToolbar();
-    plotPromise?.then(() => maybeCapturePNG(level, specLike));
+    // Emit once at first level to allow gallery to capture and persist
+    if (level === 0) {
+      try {
+        const graphDiv = gd || container.querySelector(":scope > div:last-child");
+        window.dispatchEvent(new CustomEvent("visuals:capture", { detail: { graphDiv, spec } }));
+      } catch (e) { /* no-op */ }
+    }
   }
 
   window.addEventListener("resize", () => {
