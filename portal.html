@@ -373,8 +373,8 @@
   <script type="module" src="./js/visuals_gallery.js"></script>
   
   <!-- Micro-interactions: remember active tab + mock chat append -->
+    <!-- Keep tab persistence -->
   <script>
-    // Persist active tab across refresh
     const tabs = document.querySelectorAll('button[data-bs-toggle="tab"],button[data-bs-toggle="pill"]');
     tabs.forEach(t => {
       t.addEventListener('shown.bs.tab', e => localStorage.setItem('dais-active-tab', e.target.getAttribute('data-bs-target')));
@@ -386,30 +386,10 @@
         if(triggerEl){ new bootstrap.Tab(triggerEl).show(); }
       }
     });
-
-    // Mock chat (front-end only): append user bubble
-    const sendBtn = document.getElementById('sendBtn');
-    const chatInput = document.getElementById('chatInput');
-    const chatFeed = document.getElementById('chatFeed');
-    function appendBubble(text, me=false){
-      const wrap = document.createElement('div');
-      wrap.className = 'bubble' + (me ? ' me' : '');
-      wrap.innerHTML = (me?'<strong>You</strong><br>':'<strong>AI</strong><br>') + text +
-        `<br><small>${new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}</small>`;
-      chatFeed.appendChild(wrap);
-      chatFeed.scrollTop = chatFeed.scrollHeight;
-    }
-    sendBtn?.addEventListener('click', () => {
-      const v = chatInput.value.trim();
-      if(!v) return;
-      appendBubble(v, true);
-      chatInput.value = '';
-      // placeholder AI echo (replace with real API call)
-      setTimeout(() => appendBubble('Received. Generating analysis…'), 500);
-    });
-    chatInput?.addEventListener('keydown', e => {
-      if(e.key==='Enter' && !e.shiftKey){ e.preventDefault(); sendBtn.click(); }
-    });
   </script>
+
+  <!-- Chat wiring -->
+  <script type="module" src="./js/chat_controller.js"></script>
+
 </body>
 </html>
